@@ -58,8 +58,8 @@ export default function MenuSection({ dict }: Props) {
                     >
                       <div className="min-w-0 flex-1">
                         {item.signature && (
-                          <span className="inline-flex items-center gap-1 text-[10px] font-[900] tracking-[0.14em] uppercase text-gold border border-gold/40 bg-gold/[0.06] rounded-full px-2.5 py-[3px] mb-2">
-                            ⭐ Signature
+                          <span className="inline-flex items-center gap-[5px] text-[9px] font-[900] tracking-[0.16em] uppercase text-gold border border-gold/35 bg-gold/[0.07] rounded-full px-3 py-[4px] mb-2">
+                            ⭐ Signature du Chef
                           </span>
                         )}
                         <p className={[

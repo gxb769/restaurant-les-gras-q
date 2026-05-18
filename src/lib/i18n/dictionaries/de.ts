@@ -187,9 +187,9 @@ const de: Dictionary = {
     title: "Vor der Reservierung.",
     text: "Schnelle Antworten, die die Suche ersparen. Für besondere Fälle ist ein Anruf am effizientesten.",
     items: [
-      { q: "Muss ich im Voraus reservieren?", a: "Ja, eine Reservierung wird dringend empfohlen, besonders am Wochenende und für Gruppenessen. Rufen Sie uns direkt an, um Ihren Platz zu buchen." },
-      { q: "Haben Sie vegetarische Optionen?", a: "Unsere Karte bietet regelmäßig vegetarische Gerichte je nach Saison. Rufen Sie uns an, um die aktuellen Optionen zu erfahren." },
-      { q: "Sind Haustiere erlaubt?", a: "Ja, Haustiere sind im Restaurant herzlich willkommen." },
+      { q: "Muss ich im Voraus reservieren?", a: "Eine Reservierung wird dringend empfohlen, besonders für Abend- und Wochenendservices." },
+      { q: "Haben Sie vegetarische Optionen?", a: "Ja, unser Küchenchef bietet immer saisonale vegetarische Alternativen an. Teilen Sie es uns bitte bei Ihrer Reservierung mit." },
+      { q: "Sind Haustiere erlaubt?", a: "Hunde sind auf unserer Terrasse herzlich willkommen, im Speisesaal jedoch aus Komfortgründen nicht zugelassen." },
     ],
   },
   cta: {

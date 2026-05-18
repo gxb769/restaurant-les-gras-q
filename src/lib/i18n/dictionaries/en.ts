@@ -187,9 +187,9 @@ const en: Dictionary = {
     title: "Before booking.",
     text: "Quick answers that save searching. For anything specific, a call is still the most efficient option.",
     items: [
-      { q: "Should I book in advance?", a: "Yes, booking is strongly recommended, especially on weekends and for group meals. Call us directly to choose your time slot." },
-      { q: "Do you have vegetarian options?", a: "Our menu regularly features dishes suitable for vegetarians, depending on the season. Feel free to call us to find out about current options." },
-      { q: "Are pets welcome?", a: "Yes, pets are welcome at the restaurant." },
+      { q: "Should I book in advance?", a: "Booking is strongly recommended, especially for evening and weekend services." },
+      { q: "Do you have vegetarian options?", a: "Yes, our chef always offers seasonal vegetarian alternatives. Please let us know when you make your reservation." },
+      { q: "Are pets welcome?", a: "Dogs are welcome on our terrace, but for comfort reasons, they are not admitted in the dining room." },
     ],
   },
   cta: {

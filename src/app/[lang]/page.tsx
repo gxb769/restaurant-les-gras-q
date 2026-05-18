@@ -97,7 +97,7 @@ export default async function Page({
         {dict.mobile.call}
       </a>
 
-      <Footer dict={dict.footer} />
+      <Footer dict={dict} />
     </>
   );
 }

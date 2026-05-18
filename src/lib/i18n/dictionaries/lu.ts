@@ -187,9 +187,9 @@ const lu: Dictionary = {
     title: "Virum Reservéieren.",
     text: "Schnell Äntwerte fir d'Sich ze vermeiden. Fir speziell Fäll bleift en Uruff am effizientsten.",
     items: [
-      { q: "Muss ech am Viraus reservéieren?", a: "Jo, eng Reservatioun gëtt dréngend empfohlen, besonnesch am Weekend a fir Gruppenessen. Rufft eis direkt un fir Ären Dësch ze reservéieren." },
-      { q: "Hutt Dir vegetaresch Optiounen?", a: "Eis Kaart bitt regelméisseg vegetaresch Platen no der Saison. Rufft eis un fir d'aktuell Optiounen ze kennen." },
-      { q: "Si Déieren erlaabt?", a: "Jo, Déieren si am Restaurant häerzlech wëllkomm." },
+      { q: "Muss ech am Viraus reservéieren?", a: "Eng Reservatioun gëtt dréngend empfohlen, besonnesch fir d'Owes- a Weekendservices." },
+      { q: "Hutt Dir vegetaresch Optiounen?", a: "Jo, eise Kach bitt ëmmer saisonal vegetaresch Alternativen un. Gitt eis Bescheed bei Ärer Reservatioun." },
+      { q: "Si Déieren erlaabt?", a: "Hënn sinn op eiser Terrasse wëllkomm, awer aus Komfortgrënn si se an der Sall net zougeloss." },
     ],
   },
   cta: {

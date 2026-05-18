@@ -202,9 +202,9 @@ const fr = {
     title: "Avant de réserver.",
     text: "Les réponses rapides qui évitent de chercher. Pour tout cas particulier, un appel reste le plus efficace.",
     items: [
-      { q: "Faut-il réserver à l'avance ?", a: "Oui, la réservation est fortement conseillée, surtout le week-end et pour les repas de groupe. Appelez-nous directement pour choisir votre créneau." },
-      { q: "Avez-vous des options végétariennes ?", a: "Notre carte propose régulièrement des plats adaptés aux végétariens selon les saisons. N'hésitez pas à nous appeler pour connaître les options du moment." },
-      { q: "Les animaux de compagnie sont-ils acceptés ?", a: "Oui, les animaux sont les bienvenus au restaurant." },
+      { q: "Faut-il réserver à l'avance ?", a: "Il est fortement conseillé de réserver, surtout pour les services du soir et du week-end." },
+      { q: "Avez-vous des options végétariennes ?", a: "Oui, notre chef propose toujours des alternatives végétariennes de saison. N'hésitez pas à nous le préciser lors de votre réservation." },
+      { q: "Les animaux sont-ils acceptés ?", a: "Nos amis les chiens sont les bienvenus sur notre terrasse, mais pour des raisons de confort, ils ne sont pas admis en salle." },
     ],
   },
   cta: {
