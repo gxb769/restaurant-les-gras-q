@@ -101,10 +101,10 @@ const en: Dictionary = {
     ],
   },
   features: [
-    { title: "House", text: "Fresh produce and traditional cuisine" },
-    { title: "Terrace", text: "An outdoor space for gentle evenings" },
-    { title: "Private", text: "Private events and group moments" },
-    { title: "Handy", text: "Wi-Fi, takeaway, pets welcome" },
+    { title: "Home cooking", text: "Fresh produce, house recipes, seasonal" },
+    { title: "Fresh produce", text: "Local and seasonal sourcing" },
+    { title: "Warm atmosphere", text: "Dining room, terrace and wine cellar" },
+    { title: "Booking advised", text: "Recommended, especially on weekends" },
   ],
   moment: {
     eyebrow: "Current menu",
@@ -187,10 +187,9 @@ const en: Dictionary = {
     title: "Before booking.",
     text: "Quick answers that save searching. For anything specific, a call is still the most efficient option.",
     items: [
-      { q: "Should I book?", a: "Yes, booking is recommended, especially on weekends and for group meals." },
-      { q: "Is the restaurant wheelchair accessible?", a: "Yes, the restaurant indicates adapted access." },
-      { q: "Are pets allowed?", a: "Yes, pets are welcome." },
-      { q: "Is takeaway available?", a: "Yes, takeaway is mentioned. Call to confirm current availability." },
+      { q: "Should I book in advance?", a: "Yes, booking is strongly recommended, especially on weekends and for group meals. Call us directly to choose your time slot." },
+      { q: "Do you have vegetarian options?", a: "Our menu regularly features dishes suitable for vegetarians, depending on the season. Feel free to call us to find out about current options." },
+      { q: "Are pets welcome?", a: "Yes, pets are welcome at the restaurant." },
     ],
   },
   cta: {
@@ -201,7 +200,7 @@ const en: Dictionary = {
   },
   fullMenu: {
     eyebrow: "Full menu",
-    title: "What we serve",
+    title: "Our Menu",
     note: "Menu subject to change with the seasons and market arrivals. Prices include tax and service.",
     labels: {
       formules: "Set menus",

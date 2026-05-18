@@ -101,10 +101,10 @@ const lu: Dictionary = {
     ],
   },
   features: [
-    { title: "Haus", text: "Frësch Produiten a traditionell Kichen" },
-    { title: "Terrasse", text: "E Baussenareal fir mëll Owender" },
-    { title: "Privat", text: "Privat Eventer a Groupsmomenter" },
-    { title: "Praktesch", text: "Wi-Fi, Mathuelen, Déieren erlaabt" },
+    { title: "Hëmkichen", text: "Frësch Produiten, Hausrezepter, saisonal" },
+    { title: "Frësch Produiten", text: "Lokal a saisonal Zutaten" },
+    { title: "Gemittlech Ambiance", text: "Sall, Terrasse a Wäinkeller" },
+    { title: "Reservatioun conseillée", text: "Besonnesch am Weekend empfohlen" },
   ],
   moment: {
     eyebrow: "Aktuell Kaart",
@@ -187,10 +187,9 @@ const lu: Dictionary = {
     title: "Virum Reservéieren.",
     text: "Schnell Äntwerte fir d'Sich ze vermeiden. Fir speziell Fäll bleift en Uruff am effizientsten.",
     items: [
-      { q: "Muss ech reservéieren?", a: "Jo, eng Reservatioun gëtt empfohlen, besonnesch am Weekend a fir Gruppen." },
-      { q: "Ass de Restaurant rollstullgerecht?", a: "Jo, d'Etablissement gëtt un, en ugepassten Zougang ze bidden." },
-      { q: "Si Déieren erlaabt?", a: "Jo, Déieren si erlaabt." },
-      { q: "Ass Mathuele méiglech?", a: "Jo, de Mathueleservice gëtt erwähnt. Rufft un fir d'aktuell Verfügbarkeet ze confirméieren." },
+      { q: "Muss ech am Viraus reservéieren?", a: "Jo, eng Reservatioun gëtt dréngend empfohlen, besonnesch am Weekend a fir Gruppenessen. Rufft eis direkt un fir Ären Dësch ze reservéieren." },
+      { q: "Hutt Dir vegetaresch Optiounen?", a: "Eis Kaart bitt regelméisseg vegetaresch Platen no der Saison. Rufft eis un fir d'aktuell Optiounen ze kennen." },
+      { q: "Si Déieren erlaabt?", a: "Jo, Déieren si am Restaurant häerzlech wëllkomm." },
     ],
   },
   cta: {
@@ -201,7 +200,7 @@ const lu: Dictionary = {
   },
   fullMenu: {
     eyebrow: "Vollständeg Kaart",
-    title: "Wat mir servéieren",
+    title: "Eis Kaart",
     note: "D'Kaart kann je no Saison variéieren. Präisser inkl. MwSt. a Service.",
     labels: {
       formules: "Menüen",

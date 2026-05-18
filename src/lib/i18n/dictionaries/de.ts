@@ -101,10 +101,10 @@ const de: Dictionary = {
     ],
   },
   features: [
-    { title: "Haus", text: "Frische Produkte und traditionelle Küche" },
-    { title: "Terrasse", text: "Ein Außenbereich für laue Abende" },
-    { title: "Privat", text: "Privatveranstaltungen und Gruppenmomente" },
-    { title: "Praktisch", text: "WLAN, Mitnahme, Haustiere erlaubt" },
+    { title: "Hausküche", text: "Frische Produkte, Hausrezepte, saisonal" },
+    { title: "Frische Produkte", text: "Lokale und saisonale Zutaten" },
+    { title: "Gemütliche Atmosphäre", text: "Saal, Terrasse und Weinkeller" },
+    { title: "Reservierung empfohlen", text: "Besonders am Wochenende" },
   ],
   moment: {
     eyebrow: "Aktuelle Karte",
@@ -187,10 +187,9 @@ const de: Dictionary = {
     title: "Vor der Reservierung.",
     text: "Schnelle Antworten, die die Suche ersparen. Für besondere Fälle ist ein Anruf am effizientesten.",
     items: [
-      { q: "Muss ich reservieren?", a: "Ja, eine Reservierung wird empfohlen, besonders am Wochenende und für Gruppen." },
-      { q: "Ist das Restaurant rollstuhlgerecht?", a: "Ja, das Etablissement gibt an, einen angepassten Zugang zu bieten." },
-      { q: "Sind Haustiere erlaubt?", a: "Ja, Haustiere sind erlaubt." },
-      { q: "Ist Mitnahme möglich?", a: "Ja, der Mitnahmeservice wird erwähnt. Rufen Sie an, um die aktuelle Verfügbarkeit zu bestätigen." },
+      { q: "Muss ich im Voraus reservieren?", a: "Ja, eine Reservierung wird dringend empfohlen, besonders am Wochenende und für Gruppenessen. Rufen Sie uns direkt an, um Ihren Platz zu buchen." },
+      { q: "Haben Sie vegetarische Optionen?", a: "Unsere Karte bietet regelmäßig vegetarische Gerichte je nach Saison. Rufen Sie uns an, um die aktuellen Optionen zu erfahren." },
+      { q: "Sind Haustiere erlaubt?", a: "Ja, Haustiere sind im Restaurant herzlich willkommen." },
     ],
   },
   cta: {
@@ -201,7 +200,7 @@ const de: Dictionary = {
   },
   fullMenu: {
     eyebrow: "Vollständige Speisekarte",
-    title: "Was wir servieren",
+    title: "Unsere Speisekarte",
     note: "Die Karte kann je nach Saison variieren. Preise inkl. MwSt. und Service.",
     labels: {
       formules: "Menüs",

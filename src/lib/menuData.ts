@@ -5,6 +5,7 @@ export type MenuItem = {
   name: string;
   detail: string;
   price: string;
+  signature?: boolean;
 };
 
 export type MenuCategory = {
@@ -35,6 +36,7 @@ export const menuCategories: MenuCategory[] = [
         name: "Foie gras maison",
         detail: "Confiture de figues et toast brioche",
         price: "14€",
+        signature: true,
       },
       {
         name: "Velouté de légumes de saison",
@@ -60,11 +62,13 @@ export const menuCategories: MenuCategory[] = [
         name: "Filet de bar frais rôti",
         detail: "Légumes de saison, beurre blanc au citron",
         price: "22€",
+        signature: true,
       },
       {
         name: "Joue de bœuf braisée 7h",
         detail: "Purée maison, jus de cuisson réduit au vin rouge",
         price: "20€",
+        signature: true,
       },
       {
         name: "Côte de porc fermière",
@@ -85,6 +89,7 @@ export const menuCategories: MenuCategory[] = [
         name: "Dessert maison du jour",
         detail: "À découvrir selon la carte du moment",
         price: "7€",
+        signature: true,
       },
       {
         name: "Tarte aux fruits de saison",

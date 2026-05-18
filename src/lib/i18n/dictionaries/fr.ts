@@ -100,10 +100,10 @@ const fr = {
     ],
   },
   features: [
-    { title: "Maison", text: "Produits frais et cuisine traditionnelle" },
-    { title: "Terrasse", text: "Un espace extérieur pour les soirées douces" },
-    { title: "Privé", text: "Événements privés et moments de groupe" },
-    { title: "Pratique", text: "Wi-Fi, à emporter, animaux autorisés" },
+    { title: "Cuisine maison", text: "Produits frais, recettes maison, saisons" },
+    { title: "Produits frais", text: "Approvisionnement local et de saison" },
+    { title: "Ambiance conviviale", text: "Salle chaleureuse, terrasse et cave à vin" },
+    { title: "Réservation conseillée", text: "Recommandée, surtout le week-end" },
   ],
   moment: {
     eyebrow: "Menu du moment",
@@ -202,10 +202,9 @@ const fr = {
     title: "Avant de réserver.",
     text: "Les réponses rapides qui évitent de chercher. Pour tout cas particulier, un appel reste le plus efficace.",
     items: [
-      { q: "Faut-il réserver ?", a: "Oui, c'est recommandé, surtout le week-end et pour les repas de groupe." },
-      { q: "Le restaurant est-il accessible PMR ?", a: "Oui, l'établissement indique proposer un accès adapté." },
-      { q: "Les animaux sont-ils acceptés ?", a: "Oui, les animaux sont autorisés." },
-      { q: "Peut-on commander à emporter ?", a: "Oui, le service à emporter est mentionné. Appelez pour confirmer les disponibilités du moment." },
+      { q: "Faut-il réserver à l'avance ?", a: "Oui, la réservation est fortement conseillée, surtout le week-end et pour les repas de groupe. Appelez-nous directement pour choisir votre créneau." },
+      { q: "Avez-vous des options végétariennes ?", a: "Notre carte propose régulièrement des plats adaptés aux végétariens selon les saisons. N'hésitez pas à nous appeler pour connaître les options du moment." },
+      { q: "Les animaux de compagnie sont-ils acceptés ?", a: "Oui, les animaux sont les bienvenus au restaurant." },
     ],
   },
   cta: {
@@ -216,7 +215,7 @@ const fr = {
   },
   fullMenu: {
     eyebrow: "Carte complète",
-    title: "Ce que nous servons",
+    title: "Notre Carte",
     note: "Carte susceptible d'évoluer selon les saisons et les arrivages. Prix TTC, service compris.",
     labels: {
       formules: "Formules",

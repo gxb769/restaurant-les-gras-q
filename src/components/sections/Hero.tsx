@@ -20,8 +20,8 @@ export default function Hero({ dict }: Props) {
         aria-label="Salle du restaurant Les Gras Q"
       />
       {/* Overlays */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-r from-[rgba(16,17,20,0.94)] via-[rgba(16,17,20,0.62)] to-[rgba(16,17,20,0.16)]" />
-      <div className="absolute inset-0 -z-20 bg-gradient-to-t from-[rgba(16,17,20,0.9)] via-[rgba(16,17,20,0.08)] to-[rgba(16,17,20,0.52)]" />
+      <div className="absolute inset-0 -z-20 bg-gradient-to-r from-[rgba(16,17,20,0.97)] via-[rgba(16,17,20,0.72)] to-[rgba(16,17,20,0.22)]" />
+      <div className="absolute inset-0 -z-20 bg-gradient-to-t from-[rgba(16,17,20,0.95)] via-[rgba(16,17,20,0.12)] to-[rgba(16,17,20,0.58)]" />
 
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-[1fr_330px] gap-[42px] items-end max-md:grid-cols-1">
 
@@ -35,22 +35,25 @@ export default function Hero({ dict }: Props) {
             Restaurant<br />Les Gras Q
           </h1>
 
-          <p className="mt-6 text-cream/[0.82] text-[clamp(17px,2vw,21px)] max-w-[660px] leading-relaxed">
+          <p className="mt-4 text-gold-soft text-[clamp(15px,1.6vw,19px)] font-[500] italic tracking-[0.02em]">
+            Cuisine française généreuse &amp; raffinée
+          </p>
+
+          <p className="mt-4 text-cream/[0.78] text-[clamp(16px,1.8vw,20px)] max-w-[620px] leading-relaxed">
             {h.text}
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-3 mt-8">
+          <div className="flex flex-wrap gap-3 mt-9">
             <a
               href={`tel:${PHONE}`}
-              className="inline-flex items-center justify-center min-h-[48px] px-6 py-[14px] rounded-full text-[13px] font-[800] tracking-[0.05em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold border border-white/20 transition-all duration-[200ms] hover:-translate-y-[2px] hover:shadow-[0_16px_40px_rgba(196,160,93,0.35)] active:translate-y-0 max-sm:w-full"
+              className="inline-flex items-center justify-center min-h-[56px] px-9 py-[16px] rounded-full text-[14px] font-[900] tracking-[0.06em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold shadow-[0_8px_32px_rgba(196,160,93,0.35)] transition-all duration-[200ms] hover:-translate-y-[3px] hover:shadow-[0_20px_54px_rgba(196,160,93,0.50)] active:translate-y-0 max-sm:w-full"
             >
               {h.callBtn}
             </a>
-            {/* Links to the HTML menu section instead of a PDF */}
             <a
               href="#menu"
-              className="inline-flex items-center justify-center min-h-[48px] px-6 py-[14px] rounded-full text-[13px] font-[800] tracking-[0.05em] uppercase text-cream border border-cream/[0.28] bg-cream/[0.08] backdrop-blur-sm transition-all duration-[200ms] hover:-translate-y-[2px] hover:bg-cream/[0.15] hover:shadow-[0_16px_36px_rgba(0,0,0,0.18)] active:translate-y-0 max-sm:w-full"
+              className="inline-flex items-center justify-center min-h-[56px] px-8 py-[16px] rounded-full text-[14px] font-[800] tracking-[0.05em] uppercase text-cream border border-cream/[0.32] bg-cream/[0.08] backdrop-blur-sm transition-all duration-[200ms] hover:-translate-y-[2px] hover:bg-cream/[0.16] hover:shadow-[0_16px_36px_rgba(0,0,0,0.22)] active:translate-y-0 max-sm:w-full"
             >
               {h.menuBtn}
             </a>
