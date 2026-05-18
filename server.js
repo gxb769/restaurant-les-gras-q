@@ -2,8 +2,16 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const PORT = process.env.PORT || 3000;
-const DIST = path.join(__dirname, "dist");
+const PORT = parseInt(process.env.PORT || "3000", 10);
+
+// Find dist/ regardless of working directory
+const DIST = [
+  path.join(__dirname, "dist"),
+  path.join(process.cwd(), "dist"),
+].find((d) => fs.existsSync(d)) || path.join(__dirname, "dist");
+
+console.log("PORT:", PORT);
+console.log("DIST:", DIST, "| exists:", fs.existsSync(DIST));
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -26,21 +34,11 @@ const MIME = {
 http
   .createServer((req, res) => {
     let urlPath = req.url.split("?")[0].split("#")[0];
-
-    if (urlPath !== "/" && urlPath.endsWith("/")) {
-      urlPath = urlPath.slice(0, -1);
-    }
+    if (urlPath !== "/" && urlPath.endsWith("/")) urlPath = urlPath.slice(0, -1);
 
     const base = path.join(DIST, urlPath);
-
-    const candidates = [
-      base,
-      path.join(base, "index.html"),
-      base + ".html",
-    ];
-
     let found = null;
-    for (const c of candidates) {
+    for (const c of [base, path.join(base, "index.html"), base + ".html"]) {
       try {
         if (fs.statSync(c).isFile()) { found = c; break; }
       } catch (_) {}
@@ -57,4 +55,4 @@ http
     res.writeHead(200, { "Content-Type": MIME[ext] || "application/octet-stream" });
     res.end(fs.readFileSync(found));
   })
-  .listen(PORT, () => console.log("Listening on port " + PORT));
+  .listen(PORT, "0.0.0.0", () => console.log("Ready on port " + PORT));
