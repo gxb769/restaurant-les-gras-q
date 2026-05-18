@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { menuCategories } from "@/lib/menuData";
@@ -51,8 +52,9 @@ export default function MenuSection({ dict }: Props) {
                     <div
                       key={item.name}
                       className={[
-                        "flex justify-between items-start gap-4 py-4 group/item",
+                        "flex justify-between items-start gap-4 group/item",
                         "-mx-3 px-3 rounded transition-colors duration-150 hover:bg-ink/[0.02]",
+                        item.signature ? "py-5" : "py-4",
                         ii < cat.items.length - 1 ? "border-b border-ink/[0.07]" : "",
                       ].join(" ")}
                     >
@@ -72,9 +74,26 @@ export default function MenuSection({ dict }: Props) {
                           <p className="text-ink/45 text-[13px] m-0 mt-[3px] leading-snug">{item.detail}</p>
                         )}
                       </div>
-                      <strong className="shrink-0 text-clay font-[700] text-[15px] tabular-nums mt-1">
-                        {item.price}
-                      </strong>
+                      {item.signature && item.photo ? (
+                        <div className="shrink-0 flex flex-col items-end gap-2">
+                          <strong className="text-clay font-[700] text-[15px] tabular-nums">
+                            {item.price}
+                          </strong>
+                          <div className="relative w-[96px] h-[72px] rounded-lg overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.14)]">
+                            <Image
+                              src={item.photo}
+                              alt={item.name}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover/item:scale-[1.06]"
+                              sizes="96px"
+                            />
+                          </div>
+                        </div>
+                      ) : (
+                        <strong className="shrink-0 text-clay font-[700] text-[15px] tabular-nums mt-1">
+                          {item.price}
+                        </strong>
+                      )}
                     </div>
                   ))}
                 </div>

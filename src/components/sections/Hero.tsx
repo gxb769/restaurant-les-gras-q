@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import { PHONE } from "@/lib/constants";
 
@@ -117,8 +118,21 @@ export default function Hero({ dict }: Props) {
           className="border border-cream/[0.16] bg-[rgba(16,17,20,0.54)] backdrop-blur-[20px] rounded-xl p-6 shadow-[0_24px_80px_rgba(16,17,20,0.32)] relative overflow-hidden before:content-[''] before:absolute before:inset-y-0 before:left-0 before:w-[3px] before:bg-gradient-to-b before:from-gold-soft before:to-wine max-md:max-w-[420px] max-sm:hidden"
           style={{ animation: "fade-up 800ms 440ms ease-out both" }}
         >
-          <p className="text-cream/[0.68] text-[13px] m-0">{h.panelLabel}</p>
-          <strong className="block font-serif text-cream text-[34px] leading-none mt-3 mb-3">
+          {/* Food photo */}
+          <div className="relative w-full h-[160px] rounded-lg overflow-hidden mb-4 -mx-0">
+            <Image
+              src="/assets/dish-entree.jpg"
+              alt="Plat signature du chef"
+              fill
+              className="object-cover object-center"
+              sizes="330px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(16,17,20,0.55)] to-transparent" />
+            <span className="absolute bottom-3 left-4 text-[10px] font-[800] tracking-[0.14em] uppercase text-gold-soft">
+              {h.panelLabel}
+            </span>
+          </div>
+          <strong className="block font-serif text-cream text-[28px] leading-none mb-3">
             {h.panelTitle}
           </strong>
           <p className="text-cream/[0.68] text-[13px] m-0 leading-relaxed">{h.panelText}</p>

@@ -29,24 +29,32 @@ export default function PrivateEvents({ dict }: Props) {
           </a>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.1} className="flex flex-col justify-center p-[30px] rounded-lg bg-cream shadow-[0_18px_54px_rgba(16,17,20,0.08)]">
-          <div className="grid gap-0">
-            {p.points.map((point, i) => (
+        <ScrollReveal delay={0.1} className="grid grid-cols-2 gap-[14px]">
+          {p.points.map((point, i) => {
+            const icons = [
+              // Groupe / événement
+              <svg key="g" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M15 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM1 19c0-3.314 2.686-5 6-5h.5M21 19c0-3.314-2.686-5-6-5H9c-3.314 0-6 1.686-6 5" stroke="#C4A05D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+              // Menu / liste
+              <svg key="m" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="4" y="3" width="14" height="16" rx="2" stroke="#C4A05D" strokeWidth="1.5"/><path d="M8 8h6M8 12h6M8 16h4" stroke="#C4A05D" strokeWidth="1.5" strokeLinecap="round"/></svg>,
+              // Salle / terrasse
+              <svg key="s" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M2 19h18M4 19V9l7-6 7 6v10" stroke="#C4A05D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><rect x="8" y="13" width="6" height="6" rx="1" stroke="#C4A05D" strokeWidth="1.5"/></svg>,
+              // Téléphone / contact
+              <svg key="t" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M5.2 3h3.6l1.8 4.5-2.25 1.35a10.8 10.8 0 0 0 4.8 4.8L14.5 11.4 19 13.2v3.6c0 .99-.81 1.8-1.8 1.8C8.34 18.6 3.4 13.66 3.4 5A1.8 1.8 0 0 1 5.2 3Z" stroke="#C4A05D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+            ];
+            return (
               <div
                 key={i}
-                className="flex items-start gap-5 py-5 border-t border-ink/[0.08] first:border-t-0 group"
+                className="flex flex-col gap-4 p-[22px] rounded-xl bg-cream shadow-[0_12px_36px_rgba(16,17,20,0.07)] border border-ink/[0.05] hover:shadow-[0_18px_48px_rgba(16,17,20,0.11)] hover:-translate-y-[2px] transition-all duration-200"
               >
-                <span className="shrink-0 w-[34px] h-[34px] rounded-full border border-gold/30 bg-gold/[0.06] flex items-center justify-center mt-[1px]" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#C4A05D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <span className="w-[42px] h-[42px] rounded-xl bg-gold/[0.08] border border-gold/[0.18] flex items-center justify-center shrink-0">
+                  {icons[i]}
                 </span>
-                <span className="text-espresso/[0.78] text-[16px] leading-relaxed font-[500] pt-[6px]">
+                <p className="text-espresso text-[15px] font-[600] leading-snug m-0">
                   {point}
-                </span>
+                </p>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </ScrollReveal>
       </div>
     </section>

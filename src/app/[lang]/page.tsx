@@ -14,6 +14,7 @@ import Contact from "@/components/sections/Contact";
 import PrivateEvents from "@/components/sections/PrivateEvents";
 import Faq from "@/components/sections/Faq";
 import FinalCta from "@/components/sections/FinalCta";
+import QuoteBreak from "@/components/sections/QuoteBreak";
 import { PHONE } from "@/lib/constants";
 
 const jsonLd = {
@@ -81,6 +82,7 @@ export default async function Page({
         <MenuSection dict={dict} />
         <Gallery dict={dict} />
         <Story dict={dict} />
+        <QuoteBreak dict={dict} />
         <Reviews dict={dict} />
         <Contact dict={dict} />
         <PrivateEvents dict={dict} />
