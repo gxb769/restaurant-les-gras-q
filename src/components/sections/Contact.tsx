@@ -10,7 +10,7 @@ export default function Contact({ dict }: Props) {
   const v = dict.visit;
 
   return (
-    <section className="text-cream bg-cocoa py-[104px] pb-[84px]" id="venir">
+    <section className="text-cream bg-cocoa py-[104px] pb-[84px] max-sm:py-[64px] max-sm:pb-[36px]" id="venir">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
         <ScrollReveal className="grid grid-cols-[0.9fr_1.1fr] gap-[42px] items-end mb-11 max-md:grid-cols-1">

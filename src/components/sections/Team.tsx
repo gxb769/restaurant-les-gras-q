@@ -8,7 +8,7 @@ export default function Team({ dict }: Props) {
   const t = dict.team;
 
   return (
-    <section className="bg-paper py-[104px]">
+    <section className="bg-paper py-[104px] max-sm:py-[64px]">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-2 gap-11 items-center max-md:grid-cols-1">
 
         <ScrollReveal className="relative min-h-[520px] max-md:min-h-0 max-md:aspect-[4/3] rounded-lg overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">

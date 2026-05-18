@@ -11,7 +11,7 @@ export default function Hero({ dict }: Props) {
   return (
     <header
       id="top"
-      className="min-h-svh relative text-cream grid items-end pt-[130px] pb-14 isolate overflow-hidden"
+      className="min-h-svh relative text-cream grid items-end pt-[130px] pb-14 max-sm:pb-24 isolate overflow-hidden"
     >
       {/* Background image with slow zoom */}
       <div

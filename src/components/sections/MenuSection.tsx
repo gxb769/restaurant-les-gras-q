@@ -27,7 +27,7 @@ export default function MenuSection({ dict }: Props) {
       <div className="bg-espresso">
 
         {/* Header */}
-        <div className="w-[min(1180px,calc(100%-40px))] mx-auto pt-[104px] pb-16">
+        <div className="w-[min(1180px,calc(100%-40px))] mx-auto pt-[104px] pb-16 max-sm:pt-[64px] max-sm:pb-10">
           <ScrollReveal>
             <div className="inline-flex items-center gap-[10px] text-gold-soft text-[12px] font-[800] tracking-[0.18em] uppercase before:content-[''] before:w-[34px] before:h-px before:bg-current mb-5">
               Signatures du Chef
@@ -79,7 +79,7 @@ export default function MenuSection({ dict }: Props) {
                   <div
                     className={[
                       "relative flex-1 flex flex-col justify-center overflow-hidden",
-                      "px-14 py-16 max-md:px-7 max-md:py-10",
+                      "px-14 py-16 max-md:px-7 max-md:py-10 max-sm:px-5 max-sm:py-8",
                       "max-md:order-2",
                       reversed ? "md:order-1" : "md:order-2",
                     ].join(" ")}
@@ -124,7 +124,7 @@ export default function MenuSection({ dict }: Props) {
       {/* ══════════════════════════════
           CARTE COMPLÈTE — fond crème
       ══════════════════════════════ */}
-      <div className="bg-cream py-[80px]">
+      <div className="bg-cream py-[80px] max-sm:py-[52px]">
         <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
           <div className="grid grid-cols-[1fr_1.2fr] gap-[60px] items-start max-md:grid-cols-1">

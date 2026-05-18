@@ -8,7 +8,7 @@ export default function PrivateEvents({ dict }: Props) {
   const p = dict.private;
 
   return (
-    <section className="bg-paper py-[104px]">
+    <section className="bg-paper py-[104px] max-sm:py-[64px]">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-2 gap-11 items-stretch max-md:grid-cols-1">
 
         <ScrollReveal className="flex flex-col justify-between p-[30px] rounded-lg bg-cream shadow-[0_18px_54px_rgba(16,17,20,0.08)]">
@@ -29,7 +29,7 @@ export default function PrivateEvents({ dict }: Props) {
           </a>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.1} className="grid grid-cols-2 gap-[14px]">
+        <ScrollReveal delay={0.1} className="grid grid-cols-2 gap-[14px] max-sm:grid-cols-1">
           {p.points.map((point, i) => {
             const icons = [
               // Groupe / événement

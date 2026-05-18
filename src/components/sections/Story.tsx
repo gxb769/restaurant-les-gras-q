@@ -8,7 +8,7 @@ export default function Story({ dict }: Props) {
   const s = dict.story;
 
   return (
-    <section className="bg-cream py-[104px]" id="histoire">
+    <section className="bg-cream py-[104px] max-sm:py-[64px]" id="histoire">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-2 gap-[52px] items-center max-md:grid-cols-1">
 
         <ScrollReveal className="relative min-h-[620px] max-md:min-h-0 max-md:aspect-[3/2] rounded-lg overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">

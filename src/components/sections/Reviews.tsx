@@ -8,7 +8,7 @@ export default function Reviews({ dict }: Props) {
   const r = dict.reviews;
 
   return (
-    <section className="bg-espresso text-cream py-[104px]" id="avis">
+    <section className="bg-espresso text-cream py-[104px] max-sm:py-[64px]" id="avis">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
         <ScrollReveal className="grid grid-cols-[0.9fr_1.1fr] gap-[42px] items-end mb-11 max-md:grid-cols-1">
@@ -58,21 +58,31 @@ export default function Reviews({ dict }: Props) {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
+        {/* Desktop/tablet grid */}
+        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-sm:hidden">
           {r.items.map((item, i) => (
             <ScrollReveal key={item.author} delay={i * 0.08}>
               <article className="flex flex-col justify-between min-h-[280px] h-full p-6 border border-cream/[0.14] rounded-lg bg-cream/[0.06] hover:bg-cream/[0.09] hover:-translate-y-[2px] hover:border-cream/[0.22] transition-all duration-200">
                 <div>
-                  <div className="text-gold-soft tracking-[0.08em] text-[14px]" aria-label="5 étoiles">
-                    ★★★★★
-                  </div>
+                  <div className="text-gold-soft tracking-[0.08em] text-[14px]" aria-label="5 étoiles">★★★★★</div>
                   <p className="text-cream/[0.84] text-[17px] mt-4 mb-4 leading-relaxed">{item.text}</p>
                 </div>
-                <strong className="text-gold-soft text-[13px] tracking-[0.12em] uppercase">
-                  {item.author}
-                </strong>
+                <strong className="text-gold-soft text-[13px] tracking-[0.12em] uppercase">{item.author}</strong>
               </article>
             </ScrollReveal>
+          ))}
+        </div>
+
+        {/* Mobile: swipe carousel */}
+        <div className="hidden max-sm:flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-5 px-5 pb-4 no-scrollbar">
+          {r.items.map((item) => (
+            <article key={item.author} className="snap-start shrink-0 w-[84vw] flex flex-col justify-between p-6 border border-cream/[0.14] rounded-xl bg-cream/[0.06]">
+              <div>
+                <div className="text-gold-soft tracking-[0.08em] text-[14px]" aria-label="5 étoiles">★★★★★</div>
+                <p className="text-cream/[0.84] text-[17px] mt-4 mb-5 leading-relaxed">{item.text}</p>
+              </div>
+              <strong className="text-gold-soft text-[13px] tracking-[0.12em] uppercase">{item.author}</strong>
+            </article>
           ))}
         </div>
 

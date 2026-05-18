@@ -8,7 +8,7 @@ export default function FinalCta({ dict }: Props) {
   const c = dict.cta;
 
   return (
-    <section className="text-cream bg-ink py-[90px] text-center">
+    <section className="text-cream bg-ink py-[90px] max-sm:py-[60px] text-center">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
         <ScrollReveal>
           <div className="inline-flex items-center gap-[10px] text-gold-soft text-[12px] font-[800] tracking-[0.18em] uppercase before:content-[''] before:w-[34px] before:h-px before:bg-current mb-5">

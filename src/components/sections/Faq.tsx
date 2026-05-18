@@ -57,7 +57,7 @@ export default function Faq({ dict }: Props) {
   const f = dict.faq;
 
   return (
-    <section className="bg-cream py-[120px]">
+    <section className="bg-cream py-[120px] max-sm:py-[64px]">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-[0.8fr_1.2fr] gap-14 max-md:grid-cols-1">
 
         <ScrollReveal>

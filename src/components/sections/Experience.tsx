@@ -8,7 +8,7 @@ export default function Experience({ dict }: Props) {
   const e = dict.experience;
 
   return (
-    <section className="bg-cream py-[104px]" id="experience">
+    <section className="bg-cream py-[104px] max-sm:py-[64px]" id="experience">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-[0.85fr_1.15fr] gap-[54px] items-center max-md:grid-cols-1">
 
         {/* Stacked images */}

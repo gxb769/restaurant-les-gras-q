@@ -5,7 +5,7 @@ type Props = { dict: Dictionary };
 export default function QuoteBreak({ dict }: Props) {
   return (
     <section
-      className="relative py-[130px] overflow-hidden text-cream text-center isolate"
+      className="relative py-[130px] max-sm:py-[80px] overflow-hidden text-cream text-center isolate"
       style={{
         backgroundImage: "url('/assets/ambiance-resto.jpg')",
         backgroundSize: "cover",
