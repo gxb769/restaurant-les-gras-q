@@ -91,7 +91,8 @@ export default function Contact({ dict }: Props) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Ouvrir l'itinéraire vers le restaurant dans Google Maps"
-                className="flex-1 min-h-[230px] mt-[18px] rounded-lg overflow-hidden bg-[linear-gradient(135deg,rgba(31,45,41,0.94),rgba(120,60,69,0.74)),url('/assets/village.jpg')] bg-center bg-cover grid items-end p-6 hover:-translate-y-[2px] hover:shadow-[0_22px_60px_rgba(0,0,0,0.24)] transition-all duration-[200ms]"
+                className="flex-1 min-h-[230px] mt-[18px] rounded-lg overflow-hidden bg-center bg-cover grid items-end p-6 hover:-translate-y-[2px] hover:shadow-[0_22px_60px_rgba(0,0,0,0.24)] transition-all duration-[200ms]"
+                style={{ backgroundImage: "linear-gradient(135deg,rgba(31,45,41,0.94),rgba(120,60,69,0.74)),url('/assets/village.jpg')" }}
               >
                 <div>
                   <span className="text-cream/[0.72] text-[13px]">{c.mapLabel}</span>

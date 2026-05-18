@@ -14,8 +14,12 @@ export default function Hero({ dict }: Props) {
     >
       {/* Background image with slow zoom */}
       <div
-        className="absolute inset-0 -z-30 bg-[url('/assets/hero-restaurant.jpg')] bg-cover bg-[55%_center] max-sm:bg-[40%_center]"
-        style={{ animation: "hero-settle 1800ms ease-out both" }}
+        className="absolute inset-0 -z-30 bg-cover"
+        style={{
+          backgroundImage: "url('/assets/hero-restaurant.jpg')",
+          backgroundPosition: "55% center",
+          animation: "hero-settle 1800ms ease-out both",
+        }}
         role="img"
         aria-label="Salle du restaurant Les Gras Q"
       />

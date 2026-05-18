@@ -1,13 +1,11 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 type Props = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  /** "up" (default) slides from below; "none" fades only */
   direction?: "up" | "none";
 };
 
@@ -17,16 +15,13 @@ export default function ScrollReveal({
   delay = 0,
   direction = "up",
 }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-72px 0px" });
-
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: direction === "up" ? 28 : 0 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
+      initial={{ opacity: 0, y: direction === "up" ? 24 : 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px 0px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
