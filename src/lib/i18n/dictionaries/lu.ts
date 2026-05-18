@@ -1,0 +1,198 @@
+import type { Dictionary } from "./fr";
+
+const lu: Dictionary = {
+  meta: {
+    title: "Restaurant Les Gras Q – Traditionell Kichen zu Cons-la-Grandville",
+    description:
+      "Restaurant Les Gras Q zu Cons-la-Grandville. Traditionell franséisch Kichen, frësch Produiten, Terrasse, Wäinkeller a Reservatiounen.",
+  },
+  nav: {
+    home: "Heem",
+    experience: "D'Erfahrung",
+    menu: "Kaart",
+    gallery: "Galerie",
+    story: "Geschicht",
+    reviews: "Bewäertungen",
+    access: "Zougang & Auer",
+    reserve: "Reservéieren",
+  },
+  hero: {
+    eyebrow: "Traditionell franséisch Kichen",
+    title: "Restaurant Les Gras Q",
+    text: "Zu Cons-la-Grandville kultivéieren Christelle, Gérald an hiert Team eng generéis Hëmkichen, frësch Produiten an d'Konscht vun engem wierklech gudde Moment um Dësch.",
+    callBtn: "Uruffe fir ze reservéieren",
+    menuBtn: "Kaart kucken",
+    panelLabel: "Vum Haus",
+    panelTitle: "Einfach, frësch, gemittlech.",
+    panelText: "Eis Kaart wiesselt all zwee Méint fir d'Jahreszeiten an d'Aarbecht vum Kach Thomas ervirzehiewen.",
+  },
+  quick: {
+    addressLabel: "Adress",
+    addressValue: "32 Rue de Longwy, 54870",
+    todayLabel: "Haut",
+    todayText: "Mëttags- a Owesservice je no Dag",
+    moodLabel: "Ambiance",
+    moodText: "Terrasse, Wäinkeller, frësch Produiten",
+  },
+  experience: {
+    eyebrow: "D'Erfahrung",
+    title: "E Duerf-Restaurant mat der Séil vun engem grousse Iessen.",
+    p1: "Verbréngt en Owend ronderëm eng villsäiteg, traditionell franséisch Kichen, an engem gemittleche Sall oder op der Terrasse bei schéinem Wieder.",
+    p2: "D'Prioritéit bleift kloer: Einfachheet, Gemittlechkeet a Qualitéit vu frëschen Produiten fir eng éierlech, kloer a generéis Kichen.",
+    quote: '„Mir wënschen Iech eng agreabel Zäit…"',
+  },
+  team: {
+    eyebrow: "D'Equipe",
+    title: "Gesiichter, ee Haus.",
+    text: "Christelle a Gérald suergen fir de Wëllkomm, Thomas gëtt den Rhythmus an der Kichen, an dat ganzt Team schaffe ronderëm eng einfach Iddi: en echten, häerzlechen a reegelméissege Dësch ze servéieren.",
+    members: [
+      { name: "Christelle", role: "Accueil a Sënn fir Detail" },
+      { name: "Gérald", role: "Haus a Gemittlechkeet" },
+      { name: "Thomas", role: "Kichen a Jahreszeiten" },
+    ],
+  },
+  menu: {
+    eyebrow: "Lieweg Kaart",
+    title: "D'Signaturen",
+    text: "Eng Auswiel inspiréiert vun de Spezialitéite vum Haus: franséisch Kichen, Wäinkeller fir de glasweise Service, Desserten a Virschléi no den Arrivagen.",
+    tabs: {
+      all: "Alles",
+      starters: "Viräissen",
+      mains: "Haaptgäng",
+      desserts: "Desserten",
+      wine: "Wäin",
+    },
+    dishes: [
+      {
+        label: "Virschlag",
+        title: "Gebrade frësche Wolfsbarsch",
+        text: "En präzisen, saisonale Plat am Geescht vum Haus.",
+        category: "mains",
+        image: "/assets/filet-bar.jpg",
+      },
+      {
+        label: "Wäinkeller",
+        title: "Ausgesicht Gläser",
+        text: "E Wäinkeller fir d'Iessen ouni onnéideg Zeremoniell ze begleeden.",
+        category: "wine",
+        image: "/assets/cave-vin.jpg",
+      },
+      {
+        label: "Haus",
+        title: "Erneiert Kaart",
+        text: "De Kach Thomas entwéckelt d'Gericher all zwee Méint weidér.",
+        category: "mains",
+        image: "/assets/salle.jpg",
+      },
+    ],
+  },
+  features: [
+    { title: "Haus", text: "Frësch Produiten a traditionell Kichen" },
+    { title: "Terrasse", text: "E Baussenareal fir mëll Owender" },
+    { title: "Privat", text: "Privat Eventer a Groupsmomenter" },
+    { title: "Praktesch", text: "Wi-Fi, Mathuelen, Déieren erlaabt" },
+  ],
+  moment: {
+    eyebrow: "Aktuell Kaart",
+    title: "D'Kaart, ouni de PDF opzemaachen.",
+    text: "Eng Versioun direkt um Telefon liisbar, inspiréiert vun de Spezialitéiten an dem aktuellen Geescht vum Haus. De vollständige PDF bleift fir Detailer disponibel.",
+    button: "Vollständege PDF opmaachen",
+    items: [
+      { name: "Hausgemachte Foie gras", description: "Eng charaktervoll Virspeise am traditionelle Geescht vum Haus.", category: "Viräissen" },
+      { name: "Gebrade frësche Wolfsbarsch", description: "Saisonale Virschlag, präzis Garung a Bäilagen no de Arrivagen.", category: "Virschlag" },
+      { name: "Hausgemachten Dessert", description: "Eng séiss Note fir dat Iessen ofzeschléissen, no der aktueller Kaart z'entdecken.", category: "Dessert" },
+      { name: "Wäinbegleedung glasweise", description: "De Wäinkeller erlaabt e zum Plat passende Glas ze wielen.", category: "Wäin" },
+    ],
+  },
+  gallery: {
+    eyebrow: "Galerie",
+    title: "Ier Dir Plaz huelt",
+    text: "E puer Biller vum Restaurant a senger Ëmgéigend: d'Terrasse, de Buerf, de Wäinkeller, d'Assietten an déi Atmosphär, wou een gär zréckkommt.",
+    tiles: ["Terrasse", "Wäinkeller", "Virschlag", "Eise Buerf", "Accueil"],
+  },
+  story: {
+    eyebrow: "D'Geschicht",
+    title: "E Numm, dee de Buerf dréit.",
+    p1: "Am 19. Joerhonnert haten d'Gerber um Uffer vun der Chiers d'Gewunnecht, hir fetteg Hänn un der Réckseelt vun hire Liiderhosen ofzewidderen.",
+    p2: "Dëse Spëtznumm fir d'Duerfleit ass eng Hommage ginn: Les Gras Q, eng Adress verbonnen mat hirem Terrain an deenen, déi se geprägt hunn.",
+    timeline: [
+      { date: "19. Joerhonnert", text: "D'Gerber prägen d'Volksgeschicht vu Cons-la-Grandville." },
+      { date: "Haut", text: "Christelle a Gérald empfänken Gäscht ronderëm traditionell Kichen." },
+      { date: "Saison", text: "D'Kaart wiesselt reegelméisseg am Rhythmus vun de Produiten an de Wënsch." },
+    ],
+  },
+  reviews: {
+    eyebrow: "Clientebewäertungen",
+    title: "Wat ee behält.",
+    text: "Kuerz, nëtzlech Réckmelungen, déi sech op dat konzentréieren, wat bei engem Restaurant wichteg ass: Accueil, Assiett, Reegelméissegkeet an de Wonsch zréckzekommen.",
+    items: [
+      { text: '„Ganz agreabelen Ort, ganz gutt Iessen. Top Service, ganz sympathescht Personal."', author: "Seb Seb" },
+      { text: "\"D'Gericher si räichhalteg a vu gudder Qualitéit.\"", author: "Thierry Henrion" },
+      { text: '„Ganz flott Restaurant: Kichen vu gudder Qualitéit, sympathesche Service, modernes Decor, einfache Parking."', author: "Laurent Trevisanut" },
+    ],
+    source: "Ausschnitter aus ëffentlechen Bewäertungen. Beobachten Google-Note: 4,4/5.",
+    sourceLink: "Sluurpy",
+  },
+  visit: {
+    eyebrow: "Reservatioun",
+    title: "Zougang & Auer",
+    text: "Fir ze reservéieren, rufft direkt am Restaurant un. D'Haus akzeptéiert déi üblech Bezuelungsaarten a bitt eng zougänglech, gemittlech Adress.",
+  },
+  hours: {
+    title: "Auer",
+    closed: "Zou",
+    days: [
+      { name: "Méindeg", hours: null },
+      { name: "Dënschdeg", hours: "12:00–14:30 / 19:00–22:00" },
+      { name: "Mëttwoch", hours: "12:00–14:30 / 19:00–22:00" },
+      { name: "Donneschdeg", hours: "12:00–14:30" },
+      { name: "Freideg", hours: "12:00–14:30 / 19:00–23:00" },
+      { name: "Samschdeg", hours: "12:00–14:30 / 19:00–23:00" },
+      { name: "Sonndeg", hours: "12:00–15:30" },
+    ],
+  },
+  contact: {
+    title: "Kontakt",
+    services: ["Rollstullgerecht", "Terrasse", "Privat Eventer", "Mathuelen", "Gratis Wi-Fi", "Déieren erlaabt"],
+    mapLabel: "Itinéraire opmaachen",
+  },
+  private: {
+    eyebrow: "Gruppen & Eventer",
+    title: "En Iessen ze organiséieren?",
+    text: "Fir e Gebuertsdag, en Teamiessen, en Familljentësch oder e privaten Moment, ass et am einfachsten d'Maison unzeruffen fir de Virschlag unzepassen.",
+    button: "Projet diskutéieren",
+    points: [
+      "Gruppenessen a privat Eventer",
+      "Méiglechkeet, d'Menü am Viraus ze diskutéieren",
+      "Gemittleche Sall a Terrasse je no Wieder",
+      "Direkte Kontakt mam Restaurant",
+    ],
+  },
+  faq: {
+    eyebrow: "Nëtzlech Froen",
+    title: "Virum Reservéieren.",
+    text: "Schnell Äntwerte fir d'Sich ze vermeiden. Fir speziell Fäll bleift en Uruff am effizientsten.",
+    items: [
+      { q: "Muss ech reservéieren?", a: "Jo, eng Reservatioun gëtt empfohlen, besonnesch am Weekend a fir Gruppen." },
+      { q: "Ass de Restaurant rollstullgerecht?", a: "Jo, d'Etablissement gëtt un, en ugepassten Zougang ze bidden." },
+      { q: "Si Déieren erlaabt?", a: "Jo, Déieren si erlaabt." },
+      { q: "Ass Mathuele méiglech?", a: "Jo, de Mathueleservice gëtt erwähnt. Rufft un fir d'aktuell Verfügbarkeet ze confirméieren." },
+    ],
+  },
+  cta: {
+    eyebrow: "Bis geschwënn",
+    title: "En einfachen, éierleche Dësch, gutt genuch fir zur Gewunnecht ze ginn.",
+    text: "Reservéiert Äert nächst Mëttegiessen, Owesiessen oder Terrasse-Moment direkt per Telefon.",
+    button: "Elo reservéieren",
+  },
+  footer: {
+    owner: "Restaurant Les Gras Q — Herr a Madame Collignon",
+    address: "32 Rue de Longwy, 54870 Cons-la-Grandville",
+    note: "Websäit erstallt fir Les Gras Q.",
+  },
+  mobile: {
+    call: "Restaurant uruffen",
+  },
+};
+
+export default lu;
