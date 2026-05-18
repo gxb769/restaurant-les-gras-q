@@ -140,12 +140,12 @@ const lu: Dictionary = {
     title: "Wat ee behält.",
     text: "Kuerz, nëtzlech Réckmelungen, déi sech op dat konzentréieren, wat bei engem Restaurant wichteg ass: Accueil, Assiett, Reegelméissegkeet an de Wonsch zréckzekommen.",
     items: [
-      { text: '„Ganz agreabelen Ort, ganz gutt Iessen. Top Service, ganz sympathescht Personal."', author: "Seb Seb" },
-      { text: "\"D'Gericher si räichhalteg a vu gudder Qualitéit.\"", author: "Thierry Henrion" },
-      { text: '„Ganz flott Restaurant: Kichen vu gudder Qualitéit, sympathesche Service, modernes Decor, einfache Parking."', author: "Laurent Trevisanut" },
+      { text: "« Très belle découverte, on a très bien mangé, le cadre est joli, la serveuse agréable. »", author: "Léa" },
+      { text: "« Avec ma chérie, nous avons choisi ce restaurant pour son anniversaire… Très bien mangé, très bien reçu. »", author: "Maxence Battaglia" },
+      { text: "« L'accueil est chaleureux, le cadre est sympathique, la cuisine est excellente. »", author: "Evelyne W.P" },
     ],
-    source: "Ausschnitter aus ëffentlechen Bewäertungen. Beobachten Google-Note: 4,4/5.",
-    sourceLink: "Sluurpy",
+    source: "Verifizéiert Bewäertungen vu Google a Sluurpy.",
+    sourceLink: "All Bewäertungen",
   },
   visit: {
     eyebrow: "Reservatioun",

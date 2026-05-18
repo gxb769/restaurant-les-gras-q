@@ -140,12 +140,12 @@ const en: Dictionary = {
     title: "What stays with you.",
     text: "Short, useful notes focused on what matters in a restaurant: the welcome, the plate, consistency and the wish to return.",
     items: [
-      { text: "\"Very pleasant place, very good food. Great service, very friendly staff.\"", author: "Seb Seb" },
-      { text: "\"The dishes are generous and high quality.\"", author: "Thierry Henrion" },
-      { text: "\"Very nice restaurant: quality cuisine, friendly service, stylish decor, easy parking.\"", author: "Laurent Trevisanut" },
+      { text: "\"We came to this restaurant by accident and got amazing traditional food, served with modern flair. The hosts were patient and kind.\"", author: "Clara Bocchino" },
+      { text: "« Très belle découverte, on a très bien mangé, le cadre est joli, la serveuse agréable. »", author: "Léa" },
+      { text: "« L'accueil est chaleureux, le cadre est sympathique, la cuisine est excellente. »", author: "Evelyne W.P" },
     ],
-    source: "Excerpts from public reviews. Observed Google rating: 4.4/5.",
-    sourceLink: "Sluurpy",
+    source: "Verified reviews from Google and Sluurpy.",
+    sourceLink: "See all reviews",
   },
   visit: {
     eyebrow: "Booking",

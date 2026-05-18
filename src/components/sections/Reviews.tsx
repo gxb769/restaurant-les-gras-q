@@ -36,7 +36,7 @@ export default function Reviews({ dict }: Props) {
                 </div>
                 <p className="text-cream/[0.55] text-[13px] mt-[6px] m-0 leading-tight">
                   Note Google<br />
-                  <span className="text-cream/[0.35]">80+ avis vérifiés</span>
+                  <span className="text-cream/[0.35]">480+ avis vérifiés</span>
                 </p>
               </div>
               <div className="w-px h-12 bg-cream/[0.10] max-sm:hidden" aria-hidden="true" />

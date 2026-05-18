@@ -140,12 +140,12 @@ const de: Dictionary = {
     title: "Was im Gedächtnis bleibt.",
     text: "Kurze, nützliche Rückmeldungen, die sich auf das Wesentliche konzentrieren: Empfang, Teller, Beständigkeit und Lust wiederzukommen.",
     items: [
-      { text: '„Sehr angenehmer Ort, sehr gutes Essen. Toller Service, sehr sympathisches Personal."', author: "Seb Seb" },
-      { text: '„Die Gerichte sind reichhaltig und qualitativ."', author: "Thierry Henrion" },
-      { text: '„Sehr schönes Restaurant: hochwertige Küche, sympathischer Service, modernes Dekor, einfaches Parken."', author: "Laurent Trevisanut" },
+      { text: "« Très belle découverte, on a très bien mangé, le cadre est joli, la serveuse agréable. »", author: "Léa" },
+      { text: "« Avec ma chérie, nous avons choisi ce restaurant pour son anniversaire… Très bien mangé, très bien reçu. »", author: "Maxence Battaglia" },
+      { text: "« L'accueil est chaleureux, le cadre est sympathique, la cuisine est excellente. »", author: "Evelyne W.P" },
     ],
-    source: "Auszüge aus öffentlichen Bewertungen. Beobachtete Google-Note: 4,4/5.",
-    sourceLink: "Sluurpy",
+    source: "Verifizierte Bewertungen von Google und Sluurpy.",
+    sourceLink: "Alle Bewertungen",
   },
   visit: {
     eyebrow: "Reservierung",

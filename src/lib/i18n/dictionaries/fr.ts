@@ -155,12 +155,12 @@ const fr = {
     title: "Ce que l'on retient.",
     text: "Des retours courts, utiles, centrés sur ce qui compte pour un restaurant : accueil, assiette, régularité et envie de revenir.",
     items: [
-      { text: "« Lieu très agréable, cuisine très bonne. Service top, personnel très sympathique. »", author: "Seb Seb" },
-      { text: "« Les plats sont copieux et de qualité. »", author: "Thierry Henrion" },
-      { text: "« Très chouette restaurant : cuisine de belle qualité, service sympathique, décor branché, parking facile. »", author: "Laurent Trevisanut" },
+      { text: "« Très belle découverte, on a très bien mangé, le cadre est joli, la serveuse agréable. »", author: "Léa" },
+      { text: "« Avec ma chérie, nous avons choisi ce restaurant pour son anniversaire… Très bien mangé, très bien reçu. »", author: "Maxence Battaglia" },
+      { text: "« L'accueil est chaleureux, le cadre est sympathique, la cuisine est excellente. »", author: "Evelyne W.P" },
     ],
-    source: "Extraits d'avis publics. Note Google observée : 4,4/5.",
-    sourceLink: "Sluurpy",
+    source: "Avis vérifiés issus de Google et Sluurpy.",
+    sourceLink: "Voir tous les avis",
   },
   visit: {
     eyebrow: "Réservation",
