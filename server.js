@@ -6,11 +6,10 @@ const { execSync } = require("child_process");
 const PORT = parseInt(process.env.PORT || "3000", 10);
 const DIST = path.join(__dirname, "dist");
 
-// Build if dist/ is missing (Hostinger sometimes skips the build step)
-if (!fs.existsSync(DIST)) {
-  console.log("dist/ not found — running build...");
-  execSync("npm run build", { stdio: "inherit", cwd: __dirname });
-}
+// Always rebuild so each new deployment serves fresh code.
+// (dist/ is gitignored — git pull brings new source but leaves old dist/ intact)
+console.log("Building...");
+execSync("npm run build", { stdio: "inherit", cwd: __dirname });
 
 console.log("Serving", DIST, "on port", PORT);
 
