@@ -7,14 +7,14 @@ import Hero from "@/components/sections/Hero";
 import Experience from "@/components/sections/Experience";
 import Team from "@/components/sections/Team";
 import MenuSection from "@/components/sections/MenuSection";
+import Gallery from "@/components/sections/Gallery";
 import Story from "@/components/sections/Story";
 import Reviews from "@/components/sections/Reviews";
 import Contact from "@/components/sections/Contact";
 import PrivateEvents from "@/components/sections/PrivateEvents";
 import Faq from "@/components/sections/Faq";
 import FinalCta from "@/components/sections/FinalCta";
-
-const PHONE = "+33382256951";
+import { PHONE } from "@/lib/constants";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -52,6 +52,7 @@ const jsonLd = {
     bestRating: "5",
     ratingCount: "80",
   },
+  hasMenu: "https://restaurant-les-gras-q.fr/fr#menu",
 };
 
 export default async function Page({
@@ -78,6 +79,7 @@ export default async function Page({
         <Experience dict={dict} />
         <Team dict={dict} />
         <MenuSection dict={dict} />
+        <Gallery dict={dict} />
         <Story dict={dict} />
         <Reviews dict={dict} />
         <Contact dict={dict} />
@@ -86,10 +88,11 @@ export default async function Page({
         <FinalCta dict={dict} />
       </main>
 
-      {/* Mobile sticky CTA */}
+      {/* Mobile sticky call button */}
       <a
         href={`tel:${PHONE}`}
-        className="fixed left-[14px] right-[14px] bottom-[14px] z-[80] sm:hidden flex items-center justify-center min-h-[54px] rounded-full text-[#211812] bg-gradient-to-r from-[#fff0c7] to-gold shadow-[0_18px_50px_rgba(0,0,0,0.28)] text-[13px] font-[900] tracking-[0.08em] uppercase"
+        aria-label={dict.mobile.call}
+        className="fixed left-[14px] right-[14px] bottom-[14px] z-[80] sm:hidden flex items-center justify-center min-h-[54px] rounded-full text-[#211812] bg-gradient-to-r from-[#fff0c7] to-gold shadow-[0_18px_50px_rgba(0,0,0,0.3)] text-[13px] font-[900] tracking-[0.08em] uppercase"
       >
         {dict.mobile.call}
       </a>

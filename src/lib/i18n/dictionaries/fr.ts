@@ -200,6 +200,18 @@ const fr = {
     text: "Réservez votre prochain déjeuner, dîner ou moment en terrasse directement par téléphone.",
     button: "Réserver maintenant",
   },
+  fullMenu: {
+    eyebrow: "Carte complète",
+    title: "Ce que nous servons",
+    note: "Carte susceptible d'évoluer selon les saisons et les arrivages. Prix TTC, service compris.",
+    labels: {
+      formules: "Formules",
+      entrees: "Entrées",
+      plats: "Plats",
+      desserts: "Desserts",
+      boissons: "Boissons",
+    },
+  },
   footer: {
     owner: "Restaurant Les Gras Q — M et Mme Collignon",
     address: "32 Rue de Longwy, 54870 Cons-la-Grandville",

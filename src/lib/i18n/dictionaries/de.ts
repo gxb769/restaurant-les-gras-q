@@ -185,6 +185,18 @@ const de: Dictionary = {
     text: "Reservieren Sie Ihr nächstes Mittag-, Abendessen oder Ihren Terrassenmoment direkt per Telefon.",
     button: "Jetzt reservieren",
   },
+  fullMenu: {
+    eyebrow: "Vollständige Speisekarte",
+    title: "Was wir servieren",
+    note: "Die Karte kann je nach Saison variieren. Preise inkl. MwSt. und Service.",
+    labels: {
+      formules: "Menüs",
+      entrees: "Vorspeisen",
+      plats: "Hauptgänge",
+      desserts: "Desserts",
+      boissons: "Getränke",
+    },
+  },
   footer: {
     owner: "Restaurant Les Gras Q — Herr und Frau Collignon",
     address: "32 Rue de Longwy, 54870 Cons-la-Grandville",
