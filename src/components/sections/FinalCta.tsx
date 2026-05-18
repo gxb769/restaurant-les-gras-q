@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { PHONE } from "@/lib/constants";
+import { PHONE, THEFORK_URL } from "@/lib/constants";
 
 type Props = { dict: Dictionary };
 
@@ -20,12 +20,22 @@ export default function FinalCta({ dict }: Props) {
           <p className="max-w-[560px] mx-auto mt-[22px] mb-[34px] text-cream/[0.72] text-[18px] leading-relaxed">
             {c.text}
           </p>
-          <a
-            href={`tel:${PHONE}`}
-            className="inline-flex items-center justify-center min-h-[52px] px-7 py-[14px] rounded-full text-[14px] font-[800] tracking-[0.05em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold border border-white/20 transition-all duration-[200ms] hover:-translate-y-[3px] hover:shadow-[0_20px_50px_rgba(196,160,93,0.38)] active:translate-y-0"
-          >
-            {c.button}
-          </a>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a
+              href={`tel:${PHONE}`}
+              className="inline-flex items-center justify-center min-h-[52px] px-7 py-[14px] rounded-full text-[14px] font-[800] tracking-[0.05em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold border border-white/20 transition-all duration-[200ms] hover:-translate-y-[3px] hover:shadow-[0_20px_50px_rgba(196,160,93,0.38)] active:translate-y-0"
+            >
+              {c.button}
+            </a>
+            <a
+              href={THEFORK_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 justify-center min-h-[52px] px-7 py-[14px] rounded-full text-[14px] font-[800] tracking-[0.05em] uppercase text-cream border border-cream/[0.28] bg-cream/[0.07] backdrop-blur-sm transition-all duration-[200ms] hover:-translate-y-[2px] hover:bg-cream/[0.14] hover:border-cream/[0.40] hover:shadow-[0_16px_36px_rgba(0,0,0,0.20)] active:translate-y-0"
+            >
+              Réserver via TheFork
+            </a>
+          </div>
         </ScrollReveal>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { SLUURPY_URL } from "@/lib/constants";
+import { SLUURPY_URL, MAPS_URL } from "@/lib/constants";
 
 type Props = { dict: Dictionary };
 
@@ -21,6 +21,41 @@ export default function Reviews({ dict }: Props) {
             </h2>
           </div>
           <p className="text-cream/[0.72] text-[17px] m-0 max-w-[610px]">{r.text}</p>
+        </ScrollReveal>
+
+        {/* Google rating showcase */}
+        <ScrollReveal className="mb-8">
+          <div className="flex items-center justify-between gap-6 p-6 border border-cream/[0.10] rounded-2xl bg-cream/[0.05] max-sm:flex-col max-sm:text-center max-sm:gap-5">
+            <div className="flex items-center gap-5 max-sm:flex-col max-sm:items-center max-sm:gap-3">
+              <span className="font-serif text-cream font-bold text-[76px] leading-none tracking-tight">
+                4,4
+              </span>
+              <div>
+                <div className="text-gold-soft text-[20px] leading-none tracking-[0.08em]" aria-label="4,4 étoiles sur 5">
+                  ★★★★<span className="opacity-40">★</span>
+                </div>
+                <p className="text-cream/[0.55] text-[13px] mt-[6px] m-0 leading-tight">
+                  Note Google<br />
+                  <span className="text-cream/[0.35]">80+ avis vérifiés</span>
+                </p>
+              </div>
+              <div className="w-px h-12 bg-cream/[0.10] max-sm:hidden" aria-hidden="true" />
+              <p className="text-cream/[0.52] text-[13px] max-w-[260px] leading-relaxed m-0 max-sm:hidden">
+                Note observée sur plusieurs plateformes publiques, dont Google.
+              </p>
+            </div>
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="shrink-0 inline-flex items-center gap-2 min-h-[42px] px-5 py-[10px] rounded-full border border-cream/[0.22] text-cream/[0.80] text-[13px] font-[700] tracking-[0.04em] hover:bg-cream/[0.10] hover:border-cream/[0.36] hover:-translate-y-[2px] transition-all duration-150"
+            >
+              Laisser un avis
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </div>
         </ScrollReveal>
 
         <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">

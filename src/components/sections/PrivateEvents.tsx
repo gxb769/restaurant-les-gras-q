@@ -34,10 +34,16 @@ export default function PrivateEvents({ dict }: Props) {
             {p.points.map((point, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 py-[16px] border-t border-ink/[0.1] first:border-t-0 text-ink/[0.74]"
+                className="flex items-start gap-5 py-5 border-t border-ink/[0.08] first:border-t-0 group"
               >
-                <span className="mt-[3px] shrink-0 w-[6px] h-[6px] rounded-full bg-gold" aria-hidden="true" />
-                {point}
+                <span className="shrink-0 w-[34px] h-[34px] rounded-full border border-gold/30 bg-gold/[0.06] flex items-center justify-center mt-[1px]" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2.5 7.5L5.5 10.5L11.5 3.5" stroke="#C4A05D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+                <span className="text-espresso/[0.78] text-[16px] leading-relaxed font-[500] pt-[6px]">
+                  {point}
+                </span>
               </div>
             ))}
           </div>
