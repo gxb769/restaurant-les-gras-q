@@ -53,7 +53,17 @@ const server = http.createServer((req, res) => {
   }
 
   const ext = path.extname(found).toLowerCase();
-  res.writeHead(200, { "Content-Type": MIME[ext] || "application/octet-stream" });
+  const isHashed = /\.[a-f0-9]{6,}\.(js|css)$/.test(found);
+  const cacheControl = isHashed
+    ? "public, max-age=31536000, immutable"
+    : ext === ".html"
+    ? "no-cache, must-revalidate"
+    : "public, max-age=3600";
+
+  res.writeHead(200, {
+    "Content-Type": MIME[ext] || "application/octet-stream",
+    "Cache-Control": cacheControl,
+  });
   res.end(fs.readFileSync(found));
 });
 
