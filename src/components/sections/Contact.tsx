@@ -85,21 +85,28 @@ export default function Contact({ dict }: Props) {
                 ))}
               </div>
 
-              {/* Map card */}
+              {/* Map embarquée */}
+              <div className="flex-1 mt-[18px] rounded-lg overflow-hidden min-h-[230px]">
+                <iframe
+                  src="https://maps.google.com/maps?q=49.4859435,5.705279&z=16&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: "230px", display: "block" }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localisation du restaurant Les Gras Q"
+                />
+              </div>
               <a
                 href={MAPS_URL}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Ouvrir l'itinéraire vers le restaurant dans Google Maps"
-                className="flex-1 min-h-[230px] mt-[18px] rounded-lg overflow-hidden bg-center bg-cover grid items-end p-6 hover:-translate-y-[2px] hover:shadow-[0_22px_60px_rgba(0,0,0,0.24)] transition-all duration-[200ms]"
-                style={{ backgroundImage: "linear-gradient(135deg,rgba(31,45,41,0.94),rgba(120,60,69,0.74)),url('/assets/village.jpg')" }}
+                className="mt-3 flex items-center justify-center gap-2 min-h-[42px] px-4 rounded-lg bg-cream/[0.08] text-cream/[0.72] border border-cream/[0.08] hover:bg-cream/[0.14] hover:border-gold-soft/[0.3] transition-all duration-[180ms] text-[13px] font-[700]"
               >
-                <div>
-                  <span className="text-cream/[0.72] text-[13px]">{c.mapLabel}</span>
-                  <strong className="block font-serif text-cream text-[34px] leading-none mt-1">
-                    Cons-la-Grandville
-                  </strong>
-                </div>
+                {c.mapLabel}
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                  <path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </a>
             </div>
           </ScrollReveal>

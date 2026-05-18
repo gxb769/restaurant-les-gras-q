@@ -4,7 +4,6 @@ import type { Locale } from "@/lib/i18n/getDictionary";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import Signatures from "@/components/sections/Signatures";
 import Experience from "@/components/sections/Experience";
 import Team from "@/components/sections/Team";
 import MenuSection from "@/components/sections/MenuSection";
@@ -78,7 +77,6 @@ export default async function Page({
 
       <main>
         <Hero dict={dict} />
-        <Signatures dict={dict} />
         <Experience dict={dict} />
         <Team dict={dict} />
         <MenuSection dict={dict} />
