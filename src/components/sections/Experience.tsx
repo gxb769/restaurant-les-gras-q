@@ -12,7 +12,7 @@ export default function Experience({ dict }: Props) {
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-[0.85fr_1.15fr] gap-[54px] items-center max-md:grid-cols-1">
 
         {/* Stacked images */}
-        <ScrollReveal className="relative min-h-[560px] max-sm:min-h-[430px]">
+        <ScrollReveal className="relative min-h-[560px] max-md:aspect-[4/3] max-md:min-h-0">
           <div className="absolute w-[74%] h-[430px] left-0 top-0 rounded-lg overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)] group max-sm:h-[320px]">
             <Image
               src="/assets/equipe.jpg"
@@ -43,7 +43,7 @@ export default function Experience({ dict }: Props) {
           </h2>
           <p className="text-ink/[0.72] text-[18px] mb-[18px]">{e.p1}</p>
           <p className="text-ink/[0.72] text-[18px] mb-0">{e.p2}</p>
-          <blockquote className="mt-[30px] pl-[22px] border-l-2 border-gold font-serif text-espresso text-[28px] leading-[1.14] max-w-[520px] m-0">
+          <blockquote className="mt-[30px] pl-[22px] border-l-2 border-gold font-serif italic font-[300] text-espresso/80 text-[clamp(22px,2.2vw,30px)] leading-[1.18] max-w-[520px] m-0">
             {e.quote}
           </blockquote>
         </ScrollReveal>

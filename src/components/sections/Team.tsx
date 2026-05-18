@@ -11,7 +11,7 @@ export default function Team({ dict }: Props) {
     <section className="bg-paper py-[104px]">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-2 gap-11 items-center max-md:grid-cols-1">
 
-        <ScrollReveal className="relative min-h-[520px] rounded-lg overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">
+        <ScrollReveal className="relative min-h-[520px] max-md:min-h-0 max-md:aspect-[4/3] rounded-lg overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">
           <Image
             src="/assets/equipe.jpg"
             alt="L'équipe du restaurant Les Gras Q — Christelle, Gérald et Thomas"

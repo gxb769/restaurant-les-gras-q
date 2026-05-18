@@ -40,7 +40,9 @@ export default function Gallery({ dict }: Props) {
               className={[
                 "relative overflow-hidden rounded-lg group bg-ink",
                 p.span ?? "",
-                i === 0 ? "" : "h-[280px] max-md:h-[220px] max-sm:h-[260px]",
+                i === 0
+                  ? "max-sm:h-[320px] max-md:h-[460px]"
+                  : "h-[280px] max-md:h-[220px] max-sm:h-[240px]",
               ].join(" ")}
             >
               <Image

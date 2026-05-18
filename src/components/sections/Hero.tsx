@@ -46,7 +46,7 @@ export default function Hero({ dict }: Props) {
 
           {/* Title */}
           <h1
-            className="font-serif font-bold leading-[0.90] mt-5 text-[clamp(64px,11vw,156px)] max-sm:text-[clamp(58px,18vw,156px)]"
+            className="font-serif font-[500] leading-[0.90] mt-5 text-[clamp(64px,11vw,156px)] max-sm:text-[clamp(54px,17vw,156px)]"
             style={{ animation: "fade-up 800ms 200ms ease-out both" }}
           >
             Restaurant<br />Les Gras Q
@@ -54,7 +54,7 @@ export default function Hero({ dict }: Props) {
 
           {/* Tagline */}
           <p
-            className="mt-5 text-gold-soft/90 text-[clamp(15px,1.5vw,18px)] font-[500] italic tracking-[0.03em]"
+            className="mt-5 text-gold-soft/90 text-[clamp(15px,1.5vw,19px)] font-[300] italic tracking-[0.04em] font-serif"
             style={{ animation: "fade-up 700ms 320ms ease-out both" }}
           >
             Cuisine française généreuse &amp; raffinée

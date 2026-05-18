@@ -20,7 +20,7 @@ export default function QuoteBreak({ dict }: Props) {
 
       <div className="w-[min(820px,calc(100%-40px))] mx-auto">
         <span className="block w-[48px] h-px bg-gold-soft mx-auto mb-8 opacity-50" aria-hidden="true" />
-        <blockquote className="font-serif text-cream font-bold leading-[1.08] text-[clamp(30px,4.5vw,62px)] m-0">
+        <blockquote className="font-serif text-cream font-[300] italic leading-[1.10] text-[clamp(24px,4.5vw,60px)] m-0">
           &ldquo;{dict.cta.title}&rdquo;
         </blockquote>
         <span className="block w-[48px] h-px bg-gold-soft mx-auto mt-8 opacity-50" aria-hidden="true" />

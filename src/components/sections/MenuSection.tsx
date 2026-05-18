@@ -86,7 +86,7 @@ export default function MenuSection({ dict }: Props) {
                   >
                     <span
                       aria-hidden="true"
-                      className="absolute top-1/2 -translate-y-1/2 right-2 font-serif text-cream/[0.04] text-[200px] leading-none font-bold select-none pointer-events-none"
+                      className="absolute top-1/2 -translate-y-1/2 right-2 font-serif text-cream/[0.04] text-[200px] leading-none font-bold select-none pointer-events-none max-md:hidden"
                     >
                       {num}
                     </span>
