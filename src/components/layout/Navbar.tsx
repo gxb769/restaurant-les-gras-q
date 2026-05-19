@@ -142,23 +142,23 @@ export default function Navbar({ dict, lang }: Props) {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-            className="md:hidden flex flex-col justify-center items-center w-[42px] h-[42px] gap-[5px] border border-cream/[0.16] rounded-full bg-cream/[0.07] hover:bg-cream/[0.12] transition-colors duration-150"
+            className="md:hidden flex flex-col justify-center items-center w-[44px] h-[44px] gap-[5px] border border-gold-soft/30 rounded-full bg-ink/70 hover:bg-ink/90 transition-colors duration-150"
           >
             <span
               className={[
-                "block w-[17px] h-[2px] rounded-full bg-cream origin-center transition-all duration-[200ms]",
+                "block w-[18px] h-[2px] rounded-full bg-gold-soft origin-center transition-all duration-[200ms]",
                 open ? "translate-y-[7px] rotate-45" : "",
               ].join(" ")}
             />
             <span
               className={[
-                "block w-[17px] h-[2px] rounded-full bg-cream origin-center transition-all duration-[200ms]",
+                "block w-[18px] h-[2px] rounded-full bg-gold-soft origin-center transition-all duration-[200ms]",
                 open ? "opacity-0 scale-x-0" : "",
               ].join(" ")}
             />
             <span
               className={[
-                "block w-[17px] h-[2px] rounded-full bg-cream origin-center transition-all duration-[200ms]",
+                "block w-[18px] h-[2px] rounded-full bg-gold-soft origin-center transition-all duration-[200ms]",
                 open ? "-translate-y-[7px] -rotate-45" : "",
               ].join(" ")}
             />
@@ -176,7 +176,7 @@ export default function Navbar({ dict, lang }: Props) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.97 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-[calc(100%+10px)] left-3 right-3 md:hidden grid gap-[5px] p-[10px] border border-cream/[0.16] rounded-[18px] bg-ink/[0.94] backdrop-blur-[20px] shadow-[0_22px_70px_rgba(0,0,0,0.36)] pointer-events-auto"
+            className="absolute top-[calc(100%+10px)] left-3 right-3 md:hidden grid gap-[5px] p-[10px] border border-gold-soft/20 rounded-[18px] bg-[#0f1013] shadow-[0_22px_70px_rgba(0,0,0,0.5)] pointer-events-auto"
           >
             {links.map((l) => (
               <a
