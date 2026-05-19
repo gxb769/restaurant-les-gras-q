@@ -231,7 +231,8 @@ const fr = {
     note: "Site réalisé pour Les Gras Q.",
   },
   mobile: {
-    call: "Appeler le restaurant",
+    call: "Appeler",
+    fork: "Réserver en ligne",
   },
 };
 

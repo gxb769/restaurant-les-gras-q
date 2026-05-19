@@ -30,7 +30,8 @@ export default function Team({ dict }: Props) {
           </h2>
           <p className="text-ink/[0.72] text-[18px] mb-6">{t.text}</p>
 
-          <div className="grid grid-cols-3 gap-3 mt-6 max-sm:grid-cols-1">
+          {/* Desktop: 3-column grid */}
+          <div className="grid grid-cols-3 gap-3 mt-6 max-sm:hidden">
             {t.members.map((m) => (
               <div
                 key={m.name}
@@ -40,6 +41,23 @@ export default function Team({ dict }: Props) {
                   {m.name}
                 </strong>
                 <span className="block mt-[10px] text-ink/[0.68] text-[14px]">
+                  {m.role}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile: horizontal scroll carousel */}
+          <div className="hidden max-sm:flex overflow-x-auto snap-x snap-mandatory gap-3 -mx-5 px-5 pb-3 mt-6 no-scrollbar">
+            {t.members.map((m) => (
+              <div
+                key={m.name}
+                className="snap-start shrink-0 w-[72vw] p-6 border border-ink/[0.1] rounded-xl bg-cream/[0.72]"
+              >
+                <strong className="block font-serif text-espresso text-[34px] leading-none">
+                  {m.name}
+                </strong>
+                <span className="block mt-3 text-ink/[0.68] text-[14px] leading-snug">
                   {m.role}
                 </span>
               </div>

@@ -103,11 +103,11 @@ export default function Navbar({ dict, lang }: Props) {
 
         {/* Right tools */}
         <div className="flex items-center gap-2 shrink-0">
-          {/* Lang switcher */}
+          {/* Lang switcher — desktop only */}
           <div
             role="group"
             aria-label="Langue"
-            className="flex items-center p-[3px] border border-cream/[0.16] rounded-full bg-cream/[0.07]"
+            className="hidden sm:flex items-center p-[3px] border border-cream/[0.16] rounded-full bg-cream/[0.07]"
           >
             {LOCALES.map(({ code, label }) => (
               <Link
@@ -183,7 +183,7 @@ export default function Navbar({ dict, lang }: Props) {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="w-full px-[14px] py-3 rounded-full text-[13px] font-[800] text-cream/[0.78] hover:bg-cream/[0.1] hover:text-cream transition-colors duration-[150ms]"
+                className="w-full px-[14px] py-[13px] rounded-full text-[14px] font-[800] text-cream/[0.78] hover:bg-cream/[0.1] hover:text-cream transition-colors duration-[150ms]"
               >
                 {l.label}
               </a>
@@ -191,10 +191,30 @@ export default function Navbar({ dict, lang }: Props) {
             <a
               href={`tel:${PHONE}`}
               onClick={() => setOpen(false)}
-              className="mt-1 flex items-center justify-center min-h-[46px] px-5 rounded-full text-[13px] font-[800] tracking-[0.05em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold"
+              className="mt-1 flex items-center justify-center min-h-[50px] px-5 rounded-full text-[13px] font-[800] tracking-[0.05em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold"
             >
               {dict.reserve}
             </a>
+            {/* Lang switcher inside mobile menu */}
+            <div className="flex items-center gap-[3px] mt-1 pt-3 border-t border-cream/[0.08] px-1">
+              {LOCALES.map(({ code, label }) => (
+                <Link
+                  key={code}
+                  href={`/${code}`}
+                  onClick={() => setOpen(false)}
+                  aria-label={`Langue : ${label}`}
+                  aria-current={lang === code ? "true" : undefined}
+                  className={[
+                    "flex-1 py-[10px] rounded-xl text-[12px] font-[800] text-center transition-all duration-[180ms]",
+                    lang === code
+                      ? "bg-gold-soft/[0.14] text-gold-soft"
+                      : "text-cream/[0.40] hover:text-cream/70 hover:bg-cream/[0.06]",
+                  ].join(" ")}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

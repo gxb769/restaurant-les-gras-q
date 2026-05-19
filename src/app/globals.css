@@ -36,6 +36,13 @@ html {
   scroll-padding-top: 88px; /* accounts for fixed navbar height */
 }
 
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 72px;
+    scroll-padding-bottom: 80px; /* accounts for mobile bottom bar */
+  }
+}
+
 body {
   margin: 0;
   background: var(--color-cream);

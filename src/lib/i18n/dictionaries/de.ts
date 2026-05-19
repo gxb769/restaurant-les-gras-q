@@ -140,9 +140,9 @@ const de: Dictionary = {
     title: "Was im Gedächtnis bleibt.",
     text: "Kurze, nützliche Rückmeldungen, die sich auf das Wesentliche konzentrieren: Empfang, Teller, Beständigkeit und Lust wiederzukommen.",
     items: [
-      { text: "« Très belle découverte, on a très bien mangé, le cadre est joli, la serveuse agréable. »", author: "Léa" },
-      { text: "« Avec ma chérie, nous avons choisi ce restaurant pour son anniversaire… Très bien mangé, très bien reçu. »", author: "Maxence Battaglia" },
-      { text: "« L'accueil est chaleureux, le cadre est sympathique, la cuisine est excellente. »", author: "Evelyne W.P" },
+      { text: "\"Eine tolle Entdeckung — wir haben sehr gut gegessen, das Ambiente ist schön und die Kellnerin war sehr freundlich.\"", author: "Léa" },
+      { text: "\"Mit meiner Liebsten haben wir dieses Restaurant für ihren Geburtstag gewählt… Hervorragend gegessen, sehr herzlich empfangen.\"", author: "Maxence Battaglia" },
+      { text: "\"Der Empfang ist herzlich, die Atmosphäre angenehm und die Küche ist ausgezeichnet. Wir kommen wieder.\"", author: "Evelyne W.P" },
     ],
     source: "Verifizierte Bewertungen von Google und Sluurpy.",
     sourceLink: "Alle Bewertungen",
@@ -216,7 +216,8 @@ const de: Dictionary = {
     note: "Website erstellt für Les Gras Q.",
   },
   mobile: {
-    call: "Restaurant anrufen",
+    call: "Anrufen",
+    fork: "Online reservieren",
   },
 };
 

@@ -16,6 +16,7 @@ import Faq from "@/components/sections/Faq";
 import FinalCta from "@/components/sections/FinalCta";
 import QuoteBreak from "@/components/sections/QuoteBreak";
 import { PHONE } from "@/lib/constants";
+import MobileBottomBar from "@/components/ui/MobileBottomBar";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -51,7 +52,7 @@ const jsonLd = {
     "@type": "AggregateRating",
     ratingValue: "4.4",
     bestRating: "5",
-    ratingCount: "80",
+    ratingCount: "480",
   },
   hasMenu: "https://restaurant-les-gras-q.fr/fr#menu",
 };
@@ -90,14 +91,7 @@ export default async function Page({
         <FinalCta dict={dict} />
       </main>
 
-      {/* Mobile sticky call button */}
-      <a
-        href={`tel:${PHONE}`}
-        aria-label={dict.mobile.call}
-        className="fixed left-[14px] right-[14px] bottom-[14px] z-[80] sm:hidden flex items-center justify-center min-h-[54px] rounded-full text-[#211812] bg-gradient-to-r from-[#fff0c7] to-gold shadow-[0_18px_50px_rgba(0,0,0,0.3)] text-[13px] font-[900] tracking-[0.08em] uppercase"
-      >
-        {dict.mobile.call}
-      </a>
+      <MobileBottomBar callLabel={dict.mobile.call} forkLabel={dict.mobile.fork} />
 
       <Footer dict={dict} />
     </>

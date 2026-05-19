@@ -141,8 +141,8 @@ const en: Dictionary = {
     text: "Short, useful notes focused on what matters in a restaurant: the welcome, the plate, consistency and the wish to return.",
     items: [
       { text: "\"We came to this restaurant by accident and got amazing traditional food, served with modern flair. The hosts were patient and kind.\"", author: "Clara Bocchino" },
-      { text: "« Très belle découverte, on a très bien mangé, le cadre est joli, la serveuse agréable. »", author: "Léa" },
-      { text: "« L'accueil est chaleureux, le cadre est sympathique, la cuisine est excellente. »", author: "Evelyne W.P" },
+      { text: "\"What a lovely find — we ate really well, the setting is beautiful and the waitress was very friendly.\"", author: "Léa" },
+      { text: "\"The welcome is warm, the atmosphere pleasant, and the food is excellent. We'll definitely be back.\"", author: "Evelyne W.P" },
     ],
     source: "Verified reviews from Google and Sluurpy.",
     sourceLink: "See all reviews",
@@ -216,7 +216,8 @@ const en: Dictionary = {
     note: "Website created for Les Gras Q.",
   },
   mobile: {
-    call: "Call the restaurant",
+    call: "Call",
+    fork: "Book online",
   },
 };
 

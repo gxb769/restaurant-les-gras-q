@@ -11,7 +11,7 @@ export default function Hero({ dict }: Props) {
   return (
     <header
       id="top"
-      className="min-h-svh relative text-cream grid items-end pt-[130px] pb-14 max-sm:pb-24 isolate overflow-hidden"
+      className="min-h-svh relative text-cream grid items-end pt-[130px] pb-14 max-sm:pb-28 isolate overflow-hidden"
     >
       {/* Background image with slow zoom */}
       <div
@@ -87,7 +87,23 @@ export default function Hero({ dict }: Props) {
             </a>
           </div>
 
-          {/* Quick info strip — hidden on mobile for clean CTA focus */}
+          {/* Mobile quick info strip */}
+          <div
+            className="sm:hidden flex items-center gap-5 mt-7 text-cream/[0.52] text-[12px] font-[600]"
+            style={{ animation: "fade-up 700ms 600ms ease-out both" }}
+          >
+            <span className="flex items-center gap-[6px]">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M6.5 7.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" strokeWidth="1.2"/><path d="M6.5 1C4.015 1 2 2.965 2 5.388c0 3.362 4.5 6.612 4.5 6.612S11 8.75 11 5.388C11 2.965 8.985 1 6.5 1Z" stroke="currentColor" strokeWidth="1.2"/></svg>
+              Cons-la-Grandville
+            </span>
+            <span className="w-px h-3 bg-cream/[0.20]" aria-hidden="true" />
+            <span className="flex items-center gap-[6px]">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" strokeWidth="1.2"/><path d="M6.5 4v2.5l1.5 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+              Midi &amp; soir
+            </span>
+          </div>
+
+          {/* Quick info strip — desktop/tablet */}
           <div
             aria-label="Informations rapides"
             className="hidden sm:grid grid-cols-3 mt-12 border border-cream/[0.13] bg-cream/[0.06] backdrop-blur-[12px] rounded-xl overflow-hidden"
@@ -113,6 +129,22 @@ export default function Hero({ dict }: Props) {
           </div>
         </div>
 
+      {/* Scroll chevron — mobile only */}
+      <a
+        href="#experience"
+        aria-label="Défiler vers le contenu"
+        className="sm:hidden absolute bottom-[78px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[5px] text-cream/[0.38] hover:text-cream/60 transition-colors"
+        style={{ animation: "fade-up 800ms 900ms ease-out both" }}
+      >
+        <span className="text-[9px] font-[800] tracking-[0.18em] uppercase">Découvrir</span>
+        <svg
+          width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+          className="animate-bounce"
+        >
+          <path d="M4 7l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </a>
+
         {/* Panel */}
         <aside
           className="border border-cream/[0.16] bg-[rgba(16,17,20,0.54)] backdrop-blur-[20px] rounded-xl p-6 shadow-[0_24px_80px_rgba(16,17,20,0.32)] relative overflow-hidden before:content-[''] before:absolute before:inset-y-0 before:left-0 before:w-[3px] before:bg-gradient-to-b before:from-gold-soft before:to-wine max-md:max-w-[420px] max-sm:hidden"
@@ -124,6 +156,7 @@ export default function Hero({ dict }: Props) {
               src="/assets/dish-entree.jpg"
               alt="Plat signature du chef"
               fill
+              priority
               className="object-cover object-center"
               sizes="330px"
             />

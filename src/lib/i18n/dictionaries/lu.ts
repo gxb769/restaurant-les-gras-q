@@ -140,9 +140,9 @@ const lu: Dictionary = {
     title: "Wat ee behält.",
     text: "Kuerz, nëtzlech Réckmelungen, déi sech op dat konzentréieren, wat bei engem Restaurant wichteg ass: Accueil, Assiett, Reegelméissegkeet an de Wonsch zréckzekommen.",
     items: [
-      { text: "« Très belle découverte, on a très bien mangé, le cadre est joli, la serveuse agréable. »", author: "Léa" },
-      { text: "« Avec ma chérie, nous avons choisi ce restaurant pour son anniversaire… Très bien mangé, très bien reçu. »", author: "Maxence Battaglia" },
-      { text: "« L'accueil est chaleureux, le cadre est sympathique, la cuisine est excellente. »", author: "Evelyne W.P" },
+      { text: "\"Eng wonnerschéin Entdeckung — mir hunn exzellent giess, den Ambiente ass schéin an d'Serveuse war ganz sympathesch.\"", author: "Léa" },
+      { text: "\"Mat mengem Liebsten hu mir dëst Restaurant fir hiren Anniversaire gewielt… Ganz gutt giess, ganz häerzlech opgeholl.\"", author: "Maxence Battaglia" },
+      { text: "\"Den Accueil ass häerzlech, d'Atmosphär ass sympathesch an d'Kichen ass exzellent. Mir kommen nees.\"", author: "Evelyne W.P" },
     ],
     source: "Verifizéiert Bewäertungen vu Google a Sluurpy.",
     sourceLink: "All Bewäertungen",
@@ -216,7 +216,8 @@ const lu: Dictionary = {
     note: "Websäit erstallt fir Les Gras Q.",
   },
   mobile: {
-    call: "Restaurant uruffen",
+    call: "Uruffen",
+    fork: "Online reservéieren",
   },
 };
 

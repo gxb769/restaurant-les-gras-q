@@ -1,17 +1,19 @@
+import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 
 type Props = { dict: Dictionary };
 
 export default function QuoteBreak({ dict }: Props) {
   return (
-    <section
-      className="relative py-[130px] max-sm:py-[80px] overflow-hidden text-cream text-center isolate"
-      style={{
-        backgroundImage: "url('/assets/ambiance-resto.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center 60%",
-      }}
-    >
+    <section className="relative py-[130px] max-sm:py-[80px] overflow-hidden text-cream text-center isolate">
+      {/* Background image via Next.js Image for optimization */}
+      <Image
+        src="/assets/ambiance-resto.jpg"
+        alt=""
+        fill
+        className="object-cover object-[center_60%] -z-20"
+        sizes="100vw"
+      />
       <div className="absolute inset-0 -z-10 bg-[rgba(10,8,6,0.80)]" />
       <div
         className="absolute inset-0 -z-10"

@@ -13,10 +13,10 @@ export default function Footer({ dict }: Props) {
 
       {/* Main footer content */}
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto py-16 max-sm:py-12">
-        <div className="grid grid-cols-3 gap-12 max-lg:grid-cols-2 max-sm:grid-cols-1">
+        <div className="grid grid-cols-3 gap-12 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-10">
 
           {/* Col 1: Identity + contact */}
-          <div>
+          <div className="max-sm:order-2">
             <p className="text-gold text-[10px] font-[900] tracking-[0.22em] uppercase mb-3">Restaurant</p>
             <h2 className="font-serif text-cream text-[44px] font-bold leading-none mb-4">Les Gras Q</h2>
             <p className="text-cream/40 text-[13px] leading-[1.8] mb-6">
@@ -38,7 +38,7 @@ export default function Footer({ dict }: Props) {
           </div>
 
           {/* Col 2: Hours */}
-          <div>
+          <div className="max-sm:order-3">
             <p className="text-gold text-[10px] font-[900] tracking-[0.22em] uppercase mb-4">{h.title}</p>
             <div>
               {h.days.map((d) => (
@@ -58,7 +58,7 @@ export default function Footer({ dict }: Props) {
           </div>
 
           {/* Col 3: Reservation */}
-          <div className="flex flex-col max-lg:col-span-2 max-sm:col-span-1">
+          <div className="flex flex-col max-lg:col-span-2 max-sm:col-span-1 max-sm:order-1">
             <p className="text-gold text-[10px] font-[900] tracking-[0.22em] uppercase mb-4">
               {dict.visit.eyebrow}
             </p>
@@ -86,8 +86,8 @@ export default function Footer({ dict }: Props) {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-cream/[0.06]">
-        <div className="w-[min(1180px,calc(100%-40px))] mx-auto py-5 flex flex-wrap justify-between items-center gap-3 text-[11px] text-cream/[0.25]">
+      <div className="border-t border-cream/[0.06]" style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}>
+        <div className="w-[min(1180px,calc(100%-40px))] mx-auto py-5 max-sm:pb-[84px] flex flex-wrap justify-between items-center gap-3 text-[11px] text-cream/[0.25]">
           <span>{f.owner}</span>
           <span>{f.note}</span>
         </div>
