@@ -183,7 +183,7 @@ export default function Navbar({ dict, lang }: Props) {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="w-full px-[14px] py-[13px] rounded-full text-[14px] font-[800] text-cream/[0.78] hover:bg-cream/[0.1] hover:text-cream transition-colors duration-[150ms]"
+                className="w-full px-[14px] py-[13px] rounded-full text-[14px] font-[800] text-cream hover:bg-cream/[0.10] transition-colors duration-[150ms]"
               >
                 {l.label}
               </a>
@@ -207,8 +207,8 @@ export default function Navbar({ dict, lang }: Props) {
                   className={[
                     "flex-1 py-[10px] rounded-xl text-[12px] font-[800] text-center transition-all duration-[180ms]",
                     lang === code
-                      ? "bg-gold-soft/[0.14] text-gold-soft"
-                      : "text-cream/[0.40] hover:text-cream/70 hover:bg-cream/[0.06]",
+                      ? "bg-gold-soft/[0.18] text-gold-soft"
+                      : "text-cream/[0.65] hover:text-cream hover:bg-cream/[0.08]",
                   ].join(" ")}
                 >
                   {label}
