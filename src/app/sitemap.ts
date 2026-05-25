@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://restaurant-les-gras-q.fr";
 const LOCALES = ["fr", "en", "lu", "de"] as const;
 
