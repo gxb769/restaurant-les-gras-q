@@ -5,20 +5,16 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import Experience from "@/components/sections/Experience";
-import Team from "@/components/sections/Team";
 import MenuSection from "@/components/sections/MenuSection";
 import Gallery from "@/components/sections/Gallery";
 import Story from "@/components/sections/Story";
 import Reviews from "@/components/sections/Reviews";
 import Contact from "@/components/sections/Contact";
-import PrivateEvents from "@/components/sections/PrivateEvents";
-import Faq from "@/components/sections/Faq";
-import FinalCta from "@/components/sections/FinalCta";
-import QuoteBreak from "@/components/sections/QuoteBreak";
 import { PHONE } from "@/lib/constants";
 import MobileBottomBar from "@/components/ui/MobileBottomBar";
 
-const jsonLd = {
+// JSON-LD is static data sourced entirely from our own constants — no user input
+const jsonLdString = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: "Restaurant Les Gras Q",
@@ -54,8 +50,8 @@ const jsonLd = {
     bestRating: "5",
     ratingCount: "480",
   },
-  hasMenu: "https://restaurant-les-gras-q.fr/fr#menu",
-};
+  hasMenu: "https://restaurant-les-gras-q.fr/fr#carte",
+});
 
 export default async function Page({
   params,
@@ -69,9 +65,10 @@ export default async function Page({
 
   return (
     <>
+      {/* eslint-disable-next-line react/no-danger -- static schema.org data, no user input */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString }}
       />
 
       <Navbar dict={dict.nav} lang={lang as Locale} />
@@ -79,16 +76,11 @@ export default async function Page({
       <main>
         <Hero dict={dict} />
         <Experience dict={dict} />
-        <Team dict={dict} />
         <MenuSection dict={dict} />
         <Gallery dict={dict} />
         <Story dict={dict} />
-        <QuoteBreak dict={dict} />
         <Reviews dict={dict} />
         <Contact dict={dict} />
-        <PrivateEvents dict={dict} />
-        <Faq dict={dict} />
-        <FinalCta dict={dict} />
       </main>
 
       <MobileBottomBar callLabel={dict.mobile.call} forkLabel={dict.mobile.fork} />

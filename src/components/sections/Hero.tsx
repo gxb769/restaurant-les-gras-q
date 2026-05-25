@@ -87,6 +87,30 @@ export default function Hero({ dict }: Props) {
             </a>
           </div>
 
+          {/* Google rating badge */}
+          <div
+            className="inline-flex items-center gap-[8px] mt-5 px-[14px] py-[9px] rounded-full border border-cream/[0.16] bg-[rgba(16,17,20,0.52)] backdrop-blur-sm max-sm:w-full max-sm:justify-center"
+            style={{ animation: "fade-up 700ms 600ms ease-out both" }}
+          >
+            <span
+              className="text-gold-soft text-[13px] leading-none tracking-[0.06em]"
+              aria-hidden="true"
+            >
+              ★★★★<span className="opacity-40">★</span>
+            </span>
+            <span className="font-serif text-cream font-bold text-[17px] leading-none">
+              4,4
+            </span>
+            <span className="text-cream/[0.38] text-[12px] leading-none">/5</span>
+            <span
+              className="w-px h-[13px] bg-cream/[0.18] mx-[2px]"
+              aria-hidden="true"
+            />
+            <span className="text-cream/[0.58] text-[12px] font-[600] tracking-[0.01em]">
+              480+ avis Google
+            </span>
+          </div>
+
           {/* Mobile quick info strip */}
           <div
             className="sm:hidden flex items-center gap-5 mt-7 text-cream/[0.52] text-[12px] font-[600]"

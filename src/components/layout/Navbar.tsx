@@ -42,12 +42,30 @@ export default function Navbar({ dict, lang }: Props) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  // Fast JS smooth scroll — CSS scroll-behavior is removed to avoid sluggish native animation
+  const scrollTo = (hash: string) => {
+    const id = hash.replace("#", "");
+    const el = id === "top" ? document.body : document.getElementById(id);
+    if (!el) return;
+    const start = window.pageYOffset;
+    const target = id === "top" ? 0 : el.getBoundingClientRect().top + window.pageYOffset - 88;
+    const distance = target - start;
+    const duration = Math.min(Math.abs(distance) * 0.35, 600); // max 600ms
+    let startTime: number | null = null;
+    const ease = (t: number) => 1 - Math.pow(1 - t, 4); // ease-out-quart
+    const step = (now: number) => {
+      if (!startTime) startTime = now;
+      const t = ease(Math.min((now - startTime) / duration, 1));
+      window.scrollTo(0, start + distance * t);
+      if ((now - startTime) < duration) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
   const links = [
     { href: "#top",      label: dict.home },
-    { href: "#experience", label: dict.experience },
-    { href: "#menu",     label: dict.menu },
+    { href: "#carte",    label: dict.menu },
     { href: "#galerie",  label: dict.gallery },
-    { href: "#histoire", label: dict.story },
     { href: "#avis",     label: dict.reviews },
     { href: "#venir",    label: dict.access },
   ];
@@ -93,7 +111,7 @@ export default function Navbar({ dict, lang }: Props) {
             <a
               key={l.href}
               href={l.href}
-              onClick={() => setOpen(false)}
+              onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo(l.href); }}
               className="relative px-3 py-[10px] rounded-full text-cream/[0.78] hover:text-cream transition-colors duration-[180ms] after:absolute after:bottom-[6px] after:left-3 after:right-3 after:h-px after:bg-gold-soft after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-[220ms]"
             >
               {l.label}
@@ -182,7 +200,7 @@ export default function Navbar({ dict, lang }: Props) {
               <a
                 key={l.href}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo(l.href); }}
                 className="w-full px-[14px] py-[13px] rounded-full text-[14px] font-[800] text-cream hover:bg-cream/[0.10] transition-colors duration-[150ms]"
               >
                 {l.label}

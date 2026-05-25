@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { PHONE, PHONE_DISPLAY, EMAIL, ADDRESS, MAPS_URL } from "@/lib/constants";
+import { PHONE, PHONE_DISPLAY, EMAIL, ADDRESS, MAPS_URL, THEFORK_URL } from "@/lib/constants";
 
 type Props = { dict: Dictionary };
 
@@ -111,6 +111,37 @@ export default function Contact({ dict }: Props) {
             </div>
           </ScrollReveal>
         </div>
+        {/* ── Final CTA + Private events row ─────────────────── */}
+        <ScrollReveal className="mt-[48px] max-sm:mt-[36px]">
+          <div className="grid grid-cols-[1fr_auto] gap-6 items-center p-7 rounded-xl bg-cream/[0.07] border border-cream/[0.12] max-md:grid-cols-1 max-md:text-center">
+            <div>
+              <p className="text-gold-soft/70 text-[11px] font-[900] tracking-[0.18em] uppercase mb-[10px]">
+                {dict.cta.eyebrow}
+              </p>
+              <p className="font-serif text-cream font-[300] italic text-[clamp(20px,2.5vw,32px)] leading-[1.15]">
+                {dict.cta.title}
+              </p>
+              <p className="text-cream/[0.50] text-[13px] mt-2">{dict.private.text}</p>
+            </div>
+            <div className="flex flex-col gap-3 shrink-0 max-md:flex-row max-md:justify-center flex-wrap">
+              <a
+                href={`tel:${PHONE}`}
+                className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-full text-[13px] font-[800] tracking-[0.05em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold border border-white/20 transition-all duration-[200ms] hover:-translate-y-[2px] hover:shadow-[0_16px_40px_rgba(196,160,93,0.32)] active:translate-y-0 whitespace-nowrap"
+              >
+                {dict.cta.button}
+              </a>
+              <a
+                href={THEFORK_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-full text-[13px] font-[800] tracking-[0.05em] uppercase text-cream border border-cream/[0.25] bg-cream/[0.06] transition-all duration-[200ms] hover:-translate-y-[2px] hover:bg-cream/[0.12] active:translate-y-0 whitespace-nowrap"
+              >
+                TheFork
+              </a>
+            </div>
+          </div>
+        </ScrollReveal>
+
       </div>
     </section>
   );

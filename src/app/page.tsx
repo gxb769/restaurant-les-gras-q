@@ -1,14 +1,6 @@
-"use client";
-import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
-// Root redirect — sends visitors to /fr by default
+// Server-side redirect — sends visitors to /fr/ immediately
 export default function RootPage() {
-  useEffect(() => {
-    window.location.replace("/fr");
-  }, []);
-  return (
-    <noscript>
-      <meta httpEquiv="refresh" content="0;url=/fr" />
-    </noscript>
-  );
+  redirect("/fr");
 }

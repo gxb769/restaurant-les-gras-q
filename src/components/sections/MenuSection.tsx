@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { menuCategories } from "@/lib/menuData";
+import MenuTabs from "@/components/ui/MenuTabs";
 import { PHONE } from "@/lib/constants";
 
 type Props = { dict: Dictionary };
@@ -143,51 +143,10 @@ export default function MenuSection({ dict }: Props) {
               </a>
             </ScrollReveal>
 
-            {/* Menu list — sans photos */}
-            <div className="flex flex-col gap-10">
-              {menuCategories.map((cat, ci) => (
-                <ScrollReveal key={cat.id} delay={ci * 0.07}>
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="font-serif text-espresso/50 text-[11px] font-black tracking-[0.26em] uppercase whitespace-nowrap">
-                      {fm.labels[cat.id]}
-                    </span>
-                    <span className="flex-1 h-px bg-ink/[0.10]" />
-                  </div>
-                  <div>
-                    {cat.items.map((item, ii) => (
-                      <div
-                        key={item.name}
-                        className={[
-                          "flex justify-between items-start gap-4 py-4 group/item",
-                          "-mx-3 px-3 rounded transition-colors duration-150 hover:bg-ink/[0.02]",
-                          ii < cat.items.length - 1 ? "border-b border-ink/[0.07]" : "",
-                        ].join(" ")}
-                      >
-                        <div className="min-w-0 flex-1">
-                          {item.signature && (
-                            <span className="inline-flex items-center gap-[5px] text-[9px] font-[900] tracking-[0.16em] uppercase text-gold border border-gold/35 bg-gold/[0.07] rounded-full px-3 py-[4px] mb-2">
-                              ⭐ Signature du Chef
-                            </span>
-                          )}
-                          <p className={[
-                            "font-serif text-espresso text-[21px] leading-snug m-0 group-hover/item:text-ink transition-colors",
-                            item.signature ? "font-bold" : "",
-                          ].join(" ")}>
-                            {item.name}
-                          </p>
-                          {item.detail && (
-                            <p className="text-ink/45 text-[13px] m-0 mt-[3px] leading-snug">{item.detail}</p>
-                          )}
-                        </div>
-                        <strong className="shrink-0 text-clay font-[700] text-[15px] tabular-nums mt-1">
-                          {item.price}
-                        </strong>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
+            {/* Menu list — onglets animés par catégorie */}
+            <ScrollReveal>
+              <MenuTabs labels={fm.labels} />
+            </ScrollReveal>
 
           </div>
 
