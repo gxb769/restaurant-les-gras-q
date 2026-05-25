@@ -87,7 +87,7 @@ export default async function Page({
 
       <Navbar dict={dict.nav} lang={lang as Locale} />
 
-      <main>
+      <main id="main-content">
         <Hero dict={dict} />
         <Experience dict={dict} />
         <MenuSection dict={dict} />
@@ -99,7 +99,7 @@ export default async function Page({
 
       <MobileBottomBar callLabel={dict.mobile.call} forkLabel={dict.mobile.fork} />
 
-      <Footer dict={dict} />
+      <Footer dict={dict} lang={lang} />
     </>
   );
 }

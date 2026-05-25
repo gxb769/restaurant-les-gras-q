@@ -5,6 +5,8 @@ import { getDictionary, hasLocale, locales } from "@/lib/i18n/getDictionary";
 import "@/app/globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import Grain from "@/components/ui/Grain";
+import CookieBanner from "@/components/ui/CookieBanner";
+import Analytics from "@/components/ui/Analytics";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -50,7 +52,7 @@ export async function generateMetadata({
       description: dict.meta.description,
       locale: lang,
       type: "website",
-      images: [{ url: "/assets/hero-restaurant.jpg" }],
+      images: [{ url: "/assets/hero-restaurant.jpg", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
@@ -81,8 +83,18 @@ export default async function LangLayout({
       className={`${cormorant.variable} ${inter.variable}`}
     >
       <body>
+        {/* Skip to main content — keyboard & screen reader navigation (WCAG 2.4.1) */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-5 focus:py-3 focus:rounded-full focus:bg-gold focus:text-ink focus:text-[13px] focus:font-[800] focus:tracking-[0.04em] focus:shadow-[0_8px_24px_rgba(196,160,93,0.4)]"
+        >
+          Aller au contenu principal
+        </a>
+
         <SmoothScroll />
         <Grain />
+        <Analytics />
+        <CookieBanner />
         {children}
       </body>
     </html>

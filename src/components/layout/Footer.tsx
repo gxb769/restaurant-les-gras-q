@@ -1,9 +1,10 @@
+import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import { PHONE, PHONE_DISPLAY, EMAIL, MAPS_URL } from "@/lib/constants";
 
-type Props = { dict: Dictionary };
+type Props = { dict: Dictionary; lang: string };
 
-export default function Footer({ dict }: Props) {
+export default function Footer({ dict, lang }: Props) {
   const f = dict.footer;
   const h = dict.hours;
   const c = dict.contact;
@@ -87,9 +88,23 @@ export default function Footer({ dict }: Props) {
 
       {/* Bottom bar */}
       <div className="border-t border-cream/[0.06]" style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}>
-        <div className="w-[min(1180px,calc(100%-40px))] mx-auto py-5 max-sm:pb-[84px] flex flex-wrap justify-between items-center gap-3 text-[11px] text-cream/[0.25]">
+        <div className="w-[min(1180px,calc(100%-40px))] mx-auto py-5 max-sm:pb-[84px] flex flex-wrap justify-between items-center gap-x-6 gap-y-3 text-[11px] text-cream/[0.25]">
           <span>{f.owner}</span>
-          <span>{f.note}</span>
+          <nav aria-label="Liens légaux" className="flex items-center gap-5 flex-wrap">
+            <Link
+              href={`/${lang}/mentions-legales`}
+              className="hover:text-cream/50 transition-colors duration-150"
+            >
+              Mentions légales
+            </Link>
+            <Link
+              href={`/${lang}/politique-de-confidentialite`}
+              className="hover:text-cream/50 transition-colors duration-150"
+            >
+              Politique de confidentialité
+            </Link>
+          </nav>
+          <span className="max-sm:hidden">{f.note}</span>
         </div>
       </div>
     </footer>
