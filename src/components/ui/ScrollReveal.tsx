@@ -6,7 +6,23 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  direction?: "up" | "none";
+  /** "up" — fade + rise (default) | "clip" — clip-path wipe from bottom | "none" — fade only */
+  direction?: "up" | "clip" | "none";
+};
+
+const variants = {
+  up: {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
+  },
+  clip: {
+    hidden: { opacity: 0, clipPath: "inset(100% 0% 0% 0%)" },
+    visible: { opacity: 1, clipPath: "inset(0% 0% 0% 0%)" },
+  },
+  none: {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  },
 };
 
 export default function ScrollReveal({
@@ -18,10 +34,15 @@ export default function ScrollReveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: direction === "up" ? 24 : 0 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true, margin: "-60px 0px" }}
-      transition={{ duration: 0.45, delay, ease: [0.22, 1, 0.36, 1] }}
+      variants={variants[direction]}
+      transition={{
+        duration: direction === "clip" ? 0.6 : 0.45,
+        delay,
+        ease: direction === "clip" ? [0.16, 1, 0.3, 1] : [0.22, 1, 0.36, 1],
+      }}
     >
       {children}
     </motion.div>

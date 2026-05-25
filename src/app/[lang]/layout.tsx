@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { getDictionary, hasLocale, locales } from "@/lib/i18n/getDictionary";
 import "@/app/globals.css";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -78,7 +79,10 @@ export default async function LangLayout({
       lang={lang}
       className={`${cormorant.variable} ${inter.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

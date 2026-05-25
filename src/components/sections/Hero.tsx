@@ -1,10 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { useScroll, useTransform, motion } from "framer-motion";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import { PHONE } from "@/lib/constants";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 type Props = { dict: Dictionary };
 
 export default function Hero({ dict }: Props) {
+  const { scrollYProgress } = useScroll();
+  // Background drifts upward by 15% of its own height as the user scrolls
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const h = dict.hero;
   const q = dict.quick;
 
@@ -13,13 +20,15 @@ export default function Hero({ dict }: Props) {
       id="top"
       className="min-h-svh relative text-cream grid items-end pt-[130px] pb-14 max-sm:pb-28 isolate overflow-hidden"
     >
-      {/* Background image with slow zoom */}
-      <div
+      {/* Background image with slow zoom + parallax */}
+      <motion.div
         className="absolute inset-0 -z-30 bg-cover"
         style={{
           backgroundImage: "url('/assets/hero-restaurant.jpg')",
           backgroundPosition: "55% center",
           animation: "hero-settle 1800ms ease-out both",
+          y: bgY,
+          scale: 1.18, // extra canvas so parallax doesn't expose edges
         }}
         role="img"
         aria-label="Salle du restaurant Les Gras Q"
@@ -38,18 +47,26 @@ export default function Hero({ dict }: Props) {
         <div>
           {/* Eyebrow */}
           <div
-            className="inline-flex items-center gap-[10px] text-gold-soft text-[12px] font-[800] tracking-[0.18em] uppercase before:content-[''] before:w-[34px] before:h-px before:bg-current"
+            className="shimmer inline-flex items-center gap-[10px] text-[12px] font-[800] tracking-[0.18em] uppercase before:content-[''] before:w-[34px] before:h-px before:bg-gold-soft"
             style={{ animation: "fade-up 700ms 80ms ease-out both" }}
           >
             {h.eyebrow}
           </div>
 
-          {/* Title */}
-          <h1
-            className="font-serif font-[500] leading-[0.90] mt-5 text-[clamp(64px,11vw,156px)] max-sm:text-[clamp(54px,17vw,156px)]"
-            style={{ animation: "fade-up 800ms 200ms ease-out both" }}
-          >
-            Restaurant<br />Les Gras Q
+          {/* Title — line-by-line blur-in */}
+          <h1 className="font-serif font-[500] leading-[0.90] mt-5 text-[clamp(64px,11vw,156px)] max-sm:text-[clamp(54px,17vw,156px)]">
+            <span
+              className="block"
+              style={{ animation: "blur-in 900ms 200ms ease-out both" }}
+            >
+              Restaurant
+            </span>
+            <span
+              className="block"
+              style={{ animation: "blur-in 900ms 380ms ease-out both" }}
+            >
+              Les Gras Q
+            </span>
           </h1>
 
           {/* Tagline */}
@@ -73,18 +90,22 @@ export default function Hero({ dict }: Props) {
             className="flex flex-wrap gap-3 mt-9"
             style={{ animation: "fade-up 700ms 520ms ease-out both" }}
           >
-            <a
-              href={`tel:${PHONE}`}
-              className="inline-flex items-center justify-center min-h-[58px] px-10 py-[16px] rounded-full text-[14px] font-[900] tracking-[0.06em] uppercase text-[#211812] bg-gradient-to-br from-[#f5e4ba] to-gold shadow-[0_10px_36px_rgba(196,160,93,0.40)] transition-all duration-[200ms] hover:-translate-y-[3px] hover:shadow-[0_22px_56px_rgba(196,160,93,0.54)] active:translate-y-0 max-sm:w-full"
-            >
-              {h.callBtn}
-            </a>
-            <a
-              href="#menu"
-              className="inline-flex items-center justify-center min-h-[58px] px-8 py-[16px] rounded-full text-[14px] font-[800] tracking-[0.05em] uppercase text-cream border border-cream/[0.30] bg-cream/[0.07] backdrop-blur-sm transition-all duration-[200ms] hover:-translate-y-[2px] hover:bg-cream/[0.14] hover:border-cream/[0.40] hover:shadow-[0_16px_36px_rgba(0,0,0,0.20)] active:translate-y-0 max-sm:w-full"
-            >
-              {h.menuBtn}
-            </a>
+            <MagneticButton strength={0.25}>
+              <a
+                href={`tel:${PHONE}`}
+                className="inline-flex items-center justify-center min-h-[58px] px-10 py-[16px] rounded-full text-[14px] font-[900] tracking-[0.06em] uppercase text-[#211812] bg-gradient-to-br from-[#f5e4ba] to-gold shadow-[0_10px_36px_rgba(196,160,93,0.40)] transition-all duration-[200ms] hover:-translate-y-[3px] hover:shadow-[0_22px_56px_rgba(196,160,93,0.54)] active:translate-y-0 max-sm:w-full"
+              >
+                {h.callBtn}
+              </a>
+            </MagneticButton>
+            <MagneticButton strength={0.25}>
+              <a
+                href="#menu"
+                className="inline-flex items-center justify-center min-h-[58px] px-8 py-[16px] rounded-full text-[14px] font-[800] tracking-[0.05em] uppercase text-cream border border-cream/[0.30] bg-cream/[0.07] backdrop-blur-sm transition-all duration-[200ms] hover:-translate-y-[2px] hover:bg-cream/[0.14] hover:border-cream/[0.40] hover:shadow-[0_16px_36px_rgba(0,0,0,0.20)] active:translate-y-0 max-sm:w-full"
+              >
+                {h.menuBtn}
+              </a>
+            </MagneticButton>
           </div>
 
           {/* Google rating badge */}

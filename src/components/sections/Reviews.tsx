@@ -1,5 +1,8 @@
+"use client";
+
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { SLUURPY_URL, MAPS_URL } from "@/lib/constants";
 
 type Props = { dict: Dictionary };
@@ -27,16 +30,20 @@ export default function Reviews({ dict }: Props) {
         <ScrollReveal className="mb-8">
           <div className="flex items-center justify-between gap-6 p-6 border border-cream/[0.10] rounded-2xl bg-cream/[0.05] max-sm:flex-col max-sm:text-center max-sm:gap-5">
             <div className="flex items-center gap-5 max-sm:flex-col max-sm:items-center max-sm:gap-3">
-              <span className="font-serif text-cream font-bold text-[76px] leading-none tracking-tight">
-                4,4
-              </span>
+              <AnimatedCounter
+                to={4.4}
+                decimals={1}
+                className="font-serif text-cream font-bold text-[76px] leading-none tracking-tight"
+              />
               <div>
                 <div className="text-gold-soft text-[20px] leading-none tracking-[0.08em]" aria-label="4,4 étoiles sur 5">
                   ★★★★<span className="opacity-40">★</span>
                 </div>
                 <p className="text-cream/[0.55] text-[13px] mt-[6px] m-0 leading-tight">
                   Note Google<br />
-                  <span className="text-cream/[0.35]">480+ avis vérifiés</span>
+                  <span className="text-cream/[0.35]">
+                    <AnimatedCounter to={480} className="inline" />+ avis vérifiés
+                  </span>
                 </p>
               </div>
               <div className="w-px h-12 bg-cream/[0.10] max-sm:hidden" aria-hidden="true" />

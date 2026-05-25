@@ -88,6 +88,31 @@ figure {
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
+/* Gold shimmer on eyebrow labels */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-soft) 30%,
+    #fff9e8 50%,
+    var(--color-gold-soft) 70%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Blur-in reveal for hero heading words */
+@keyframes blur-in {
+  from { opacity: 0; filter: blur(14px); transform: translateY(10px); }
+  to   { opacity: 1; filter: blur(0px);  transform: translateY(0);    }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 1ms !important;

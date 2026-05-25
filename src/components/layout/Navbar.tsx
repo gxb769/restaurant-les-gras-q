@@ -42,17 +42,28 @@ export default function Navbar({ dict, lang }: Props) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Fast JS smooth scroll — CSS scroll-behavior is removed to avoid sluggish native animation
+  // Prefer Lenis (smooth-scroll provider) when available; otherwise fall back to custom JS ease-out-quart
   const scrollTo = (hash: string) => {
     const id = hash.replace("#", "");
+    const lenis = (window as Window & { __lenis?: { scrollTo: (target: string | number | HTMLElement, opts?: Record<string, unknown>) => void } }).__lenis;
+    if (lenis) {
+      if (id === "top") {
+        lenis.scrollTo(0, { duration: 1.1 });
+      } else {
+        const el = document.getElementById(id);
+        if (el) lenis.scrollTo(el, { offset: -88, duration: 1.1 });
+      }
+      return;
+    }
+    // Fallback: custom ease-out-quart scroll
     const el = id === "top" ? document.body : document.getElementById(id);
     if (!el) return;
     const start = window.pageYOffset;
     const target = id === "top" ? 0 : el.getBoundingClientRect().top + window.pageYOffset - 88;
     const distance = target - start;
-    const duration = Math.min(Math.abs(distance) * 0.35, 600); // max 600ms
+    const duration = Math.min(Math.abs(distance) * 0.35, 600);
     let startTime: number | null = null;
-    const ease = (t: number) => 1 - Math.pow(1 - t, 4); // ease-out-quart
+    const ease = (t: number) => 1 - Math.pow(1 - t, 4);
     const step = (now: number) => {
       if (!startTime) startTime = now;
       const t = ease(Math.min((now - startTime) / duration, 1));
