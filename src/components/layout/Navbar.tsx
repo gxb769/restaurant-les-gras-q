@@ -101,7 +101,7 @@ export default function Navbar({ dict, lang }: Props) {
         {/* Brand */}
         <Link
           href={`/${lang}#top`}
-          className="flex items-center gap-3 min-w-0 shrink-0 group"
+          className="flex items-center gap-3 min-w-0 shrink-0 group min-h-[44px]"
           aria-label="Restaurant Les Gras Q — Accueil"
         >
           <Image

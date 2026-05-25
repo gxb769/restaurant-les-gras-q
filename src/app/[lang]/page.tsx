@@ -14,21 +14,29 @@ import { PHONE } from "@/lib/constants";
 import MobileBottomBar from "@/components/ui/MobileBottomBar";
 
 // JSON-LD is static data sourced entirely from our own constants — no user input
+const SITE_URL = "https://restaurant-les-gras-q.fr";
+
 const jsonLdString = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Restaurant",
+  "@id": `${SITE_URL}/#restaurant`,
   name: "Restaurant Les Gras Q",
-  image: "/assets/hero-restaurant.jpg",
+  image: [
+    `${SITE_URL}/assets/hero-restaurant.jpg`,
+    `${SITE_URL}/assets/salle.jpg`,
+    `${SITE_URL}/assets/dish-entree.jpg`,
+  ],
   telephone: PHONE,
   email: "lesgrasq@orange.fr",
-  servesCuisine: "Cuisine française traditionnelle",
+  servesCuisine: ["Cuisine française", "Cuisine traditionnelle"],
   priceRange: "€€",
-  url: "https://restaurant-les-gras-q.fr",
+  url: SITE_URL,
   address: {
     "@type": "PostalAddress",
     streetAddress: "32 Rue de Longwy",
     postalCode: "54870",
     addressLocality: "Cons-la-Grandville",
+    addressRegion: "Meurthe-et-Moselle",
     addressCountry: "FR",
   },
   geo: {
@@ -48,9 +56,15 @@ const jsonLdString = JSON.stringify({
     "@type": "AggregateRating",
     ratingValue: "4.4",
     bestRating: "5",
+    worstRating: "1",
     ratingCount: "480",
   },
-  hasMenu: "https://restaurant-les-gras-q.fr/fr#carte",
+  hasMenu: `${SITE_URL}/fr#carte`,
+  sameAs: [
+    "https://www.google.com/maps/place/Restaurant+Les+Gras+Q",
+  ],
+  currenciesAccepted: "EUR",
+  paymentAccepted: "Cash, Credit Card",
 });
 
 export default async function Page({

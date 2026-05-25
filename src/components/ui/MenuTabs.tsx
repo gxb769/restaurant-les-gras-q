@@ -52,7 +52,7 @@ export default function MenuTabs({ labels }: Props) {
             aria-selected={active === id}
             onClick={() => changeTab(id)}
             className={[
-              "relative shrink-0 pb-3 px-[14px] text-[12px] font-[800] tracking-[0.10em] uppercase",
+              "relative shrink-0 inline-flex items-end min-h-[44px] pb-[10px] px-[14px] text-[12px] font-[800] tracking-[0.10em] uppercase",
               "transition-colors duration-150 whitespace-nowrap focus-visible:outline-none",
               active === id
                 ? "text-espresso"
