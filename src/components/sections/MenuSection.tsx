@@ -29,8 +29,10 @@ export default function MenuSection({ dict }: Props) {
         {/* Header */}
         <div className="w-[min(1180px,calc(100%-40px))] mx-auto pt-[104px] pb-16 max-sm:pt-[64px] max-sm:pb-10">
           <ScrollReveal>
-            <div className="inline-flex items-center gap-[10px] text-gold-soft text-[12px] font-[800] tracking-[0.18em] uppercase before:content-[''] before:w-[34px] before:h-px before:bg-current mb-5">
-              Signatures du Chef
+            <div className="flex items-baseline gap-[12px] mb-5">
+              <span className="font-serif text-gold-soft/50 text-[13px] font-[300] italic">01</span>
+              <span className="w-6 h-px bg-gold-soft/30 self-center shrink-0" aria-hidden="true" />
+              <span className="text-gold-soft text-[11px] font-[900] tracking-[0.20em] uppercase">Signatures du Chef</span>
             </div>
             <h2 className="font-serif text-cream font-bold leading-[0.92] text-[clamp(52px,7vw,100px)] m-0">
               {m.title}

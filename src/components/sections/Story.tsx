@@ -25,15 +25,23 @@ export default function Story({ dict }: Props) {
           </span>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.12}>
-          <div className="inline-flex items-center gap-[10px] text-gold text-[12px] font-[800] tracking-[0.18em] uppercase before:content-[''] before:w-[34px] before:h-px before:bg-current mb-5">
-            {s.eyebrow}
-          </div>
-          <h2 className="font-serif text-espresso font-bold leading-[0.94] text-[clamp(48px,7vw,86px)] mb-[22px]">
-            {s.title}
-          </h2>
-          <p className="text-ink/[0.72] text-[18px] mb-[18px]">{s.p1}</p>
-          <p className="text-ink/[0.72] text-[18px] mb-0">{s.p2}</p>
+        <div>
+          <ScrollReveal delay={0.12}>
+            <div className="flex items-baseline gap-[12px] mb-5">
+              <span className="font-serif text-gold/50 text-[13px] font-[300] italic">03</span>
+              <span className="w-6 h-px bg-gold/30 self-center shrink-0" aria-hidden="true" />
+              <span className="text-gold text-[11px] font-[900] tracking-[0.20em] uppercase">{s.eyebrow}</span>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="clip" delay={0.18}>
+            <h2 className="font-serif text-espresso font-bold leading-[0.94] text-[clamp(48px,7vw,86px)] mb-[22px]">
+              {s.title}
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.24}>
+            <p className="text-ink/[0.72] text-[18px] mb-[18px]">{s.p1}</p>
+            <p className="text-ink/[0.72] text-[18px] mb-0">{s.p2}</p>
+          </ScrollReveal>
 
           <div className="mt-[30px] grid gap-[14px]">
             {s.timeline.map((t) => (
@@ -48,7 +56,7 @@ export default function Story({ dict }: Props) {
               </div>
             ))}
           </div>
-        </ScrollReveal>
+        </div>
       </div>
     </section>
   );

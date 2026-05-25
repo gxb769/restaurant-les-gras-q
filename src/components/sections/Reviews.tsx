@@ -14,17 +14,25 @@ export default function Reviews({ dict }: Props) {
     <section className="bg-espresso text-cream py-[104px] max-sm:py-[64px]" id="avis">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
-        <ScrollReveal className="grid grid-cols-[0.9fr_1.1fr] gap-[42px] items-end mb-11 max-md:grid-cols-1">
+        <div className="grid grid-cols-[0.9fr_1.1fr] gap-[42px] items-end mb-11 max-md:grid-cols-1">
           <div>
-            <div className="inline-flex items-center gap-[10px] text-gold-soft text-[12px] font-[800] tracking-[0.18em] uppercase before:content-[''] before:w-[34px] before:h-px before:bg-current mb-3">
-              {r.eyebrow}
-            </div>
-            <h2 className="font-serif text-cream font-bold leading-[0.94] text-[clamp(48px,7vw,88px)]">
-              {r.title}
-            </h2>
+            <ScrollReveal>
+              <div className="flex items-baseline gap-[12px] mb-3">
+                <span className="font-serif text-gold-soft/50 text-[13px] font-[300] italic">04</span>
+                <span className="w-6 h-px bg-gold-soft/30 self-center shrink-0" aria-hidden="true" />
+                <span className="text-gold-soft text-[11px] font-[900] tracking-[0.20em] uppercase">{r.eyebrow}</span>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="clip" delay={0.08}>
+              <h2 className="font-serif text-cream font-bold leading-[0.94] text-[clamp(48px,7vw,88px)]">
+                {r.title}
+              </h2>
+            </ScrollReveal>
           </div>
-          <p className="text-cream/[0.72] text-[17px] m-0 max-w-[610px]">{r.text}</p>
-        </ScrollReveal>
+          <ScrollReveal delay={0.14}>
+            <p className="text-cream/[0.72] text-[17px] m-0 max-w-[610px]">{r.text}</p>
+          </ScrollReveal>
+        </div>
 
         {/* Google rating showcase */}
         <ScrollReveal className="mb-8">

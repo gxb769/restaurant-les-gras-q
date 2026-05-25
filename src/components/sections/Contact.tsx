@@ -15,8 +15,10 @@ export default function Contact({ dict }: Props) {
 
         <ScrollReveal className="grid grid-cols-[0.9fr_1.1fr] gap-[42px] items-end mb-11 max-md:grid-cols-1">
           <div>
-            <div className="inline-flex items-center gap-[10px] text-gold-soft text-[12px] font-[800] tracking-[0.18em] uppercase before:content-[''] before:w-[34px] before:h-px before:bg-current mb-3">
-              {v.eyebrow}
+            <div className="flex items-baseline gap-[12px] mb-3">
+              <span className="font-serif text-gold-soft/50 text-[13px] font-[300] italic">05</span>
+              <span className="w-6 h-px bg-gold-soft/30 self-center shrink-0" aria-hidden="true" />
+              <span className="text-gold-soft text-[11px] font-[900] tracking-[0.20em] uppercase">{v.eyebrow}</span>
             </div>
             <h2 className="font-serif text-cream font-bold leading-[0.94] text-[clamp(48px,7vw,88px)]">
               {v.title}

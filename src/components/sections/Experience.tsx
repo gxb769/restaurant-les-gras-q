@@ -61,12 +61,16 @@ export default function Experience({ dict }: Props) {
           </ScrollReveal>
 
           {/* Copy */}
-          <ScrollReveal delay={0.08}>
-            <h2 className="font-serif text-espresso font-bold leading-[0.94] text-[clamp(44px,6vw,80px)] mb-6">
-              {e.title}
-            </h2>
-            <p className="text-ink/[0.72] text-[18px] mb-[18px]">{e.p1}</p>
-            <p className="text-ink/[0.72] text-[18px] mb-0">{e.p2}</p>
+          <div>
+            <ScrollReveal direction="clip" delay={0.08}>
+              <h2 className="font-serif text-espresso font-bold leading-[0.94] text-[clamp(44px,6vw,80px)] mb-6">
+                {e.title}
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.18}>
+              <p className="text-ink/[0.72] text-[18px] mb-[18px]">{e.p1}</p>
+              <p className="text-ink/[0.72] text-[18px] mb-0">{e.p2}</p>
+            </ScrollReveal>
 
             {/* Team — inline, no cards */}
             <div className="mt-[36px] pt-[28px] border-t border-ink/[0.10]">
@@ -85,7 +89,7 @@ export default function Experience({ dict }: Props) {
                 ))}
               </div>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </div>
     </section>
