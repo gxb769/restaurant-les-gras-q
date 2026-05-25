@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useScroll, useTransform, motion } from "framer-motion";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import { PHONE } from "@/lib/constants";
 import MagneticButton from "@/components/ui/MagneticButton";
@@ -9,9 +8,6 @@ import MagneticButton from "@/components/ui/MagneticButton";
 type Props = { dict: Dictionary };
 
 export default function Hero({ dict }: Props) {
-  const { scrollYProgress } = useScroll();
-  // Background drifts upward by 15% of its own height as the user scrolls
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const h = dict.hero;
   const q = dict.quick;
 
@@ -21,9 +17,9 @@ export default function Hero({ dict }: Props) {
       className="min-h-svh relative text-cream grid items-end pt-[130px] pb-14 max-sm:pb-28 isolate overflow-hidden"
     >
       {/* Background image — Next/Image for LCP priority preload */}
-      <motion.div
+      <div
         className="absolute inset-0 -z-30 overflow-hidden"
-        style={{ y: bgY, scale: 1.18, animation: "hero-settle 1800ms ease-out both" }}
+        style={{ animation: "hero-settle 1800ms ease-out both" }}
         aria-hidden="true"
       >
         <Image
@@ -35,7 +31,7 @@ export default function Hero({ dict }: Props) {
           className="object-cover object-[55%_center]"
           sizes="100vw"
         />
-      </motion.div>
+      </div>
 
       {/* Overlay 1 — left gradient for text contrast */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-r from-[rgba(16,17,20,0.97)] via-[rgba(16,17,20,0.74)] to-[rgba(16,17,20,0.18)]" />

@@ -32,7 +32,7 @@
 }
 
 html {
-  /* scroll-behavior handled by JS for controlled speed */
+  scroll-behavior: smooth;
   scroll-padding-top: 88px; /* accounts for fixed navbar height */
 }
 

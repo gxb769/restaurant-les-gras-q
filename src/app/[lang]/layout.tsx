@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { getDictionary, hasLocale, locales } from "@/lib/i18n/getDictionary";
 import "@/app/globals.css";
-import SmoothScroll from "@/components/ui/SmoothScroll";
 import Grain from "@/components/ui/Grain";
 import CookieBanner from "@/components/ui/CookieBanner";
 import Analytics from "@/components/ui/Analytics";
@@ -91,7 +90,6 @@ export default async function LangLayout({
           Aller au contenu principal
         </a>
 
-        <SmoothScroll />
         <Grain />
         <Analytics />
         <CookieBanner />

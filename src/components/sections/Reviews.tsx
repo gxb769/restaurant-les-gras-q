@@ -11,7 +11,10 @@ export default function Reviews({ dict }: Props) {
   const r = dict.reviews;
 
   return (
-    <section className="bg-espresso text-cream py-[104px] max-sm:py-[64px]" id="avis">
+    <section className="bg-espresso text-cream" id="avis">
+      {/* Gradient bridge: previous cream section → espresso */}
+      <div className="h-20 bg-gradient-to-b from-cream to-espresso" aria-hidden="true" />
+      <div className="py-[84px] max-sm:py-[52px]">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
         <div className="grid grid-cols-[0.9fr_1.1fr] gap-[42px] items-end mb-11 max-md:grid-cols-1">
@@ -112,6 +115,7 @@ export default function Reviews({ dict }: Props) {
             {r.sourceLink}
           </a>
         </p>
+      </div>
       </div>
     </section>
   );

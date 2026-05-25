@@ -3,6 +3,7 @@
   "configurations": [
     {
       "name": "Les Gras Q Dev",
+      "cwd": "/Users/gabin/restaurant-les-gras-q",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--", "--port", "3001"],
       "port": 3001,

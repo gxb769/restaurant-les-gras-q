@@ -21,6 +21,9 @@ export default function MenuSection({ dict }: Props) {
   return (
     <section id="menu">
 
+      {/* Gradient bridge: previous cream section → espresso */}
+      <div className="h-20 bg-gradient-to-b from-cream to-espresso" aria-hidden="true" />
+
       {/* ══════════════════════════════
           SIGNATURES — fond sombre
       ══════════════════════════════ */}
@@ -122,6 +125,9 @@ export default function MenuSection({ dict }: Props) {
           <span className="flex-1 h-px bg-cream/[0.08]" />
         </div>
       </div>
+
+      {/* Gradient bridge: espresso → cream */}
+      <div className="h-20 bg-gradient-to-b from-espresso to-cream" aria-hidden="true" />
 
       {/* ══════════════════════════════
           CARTE COMPLÈTE — fond crème
