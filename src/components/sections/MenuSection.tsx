@@ -102,7 +102,7 @@ export default function MenuSection({ dict }: Props) {
                     <h3 className="font-serif text-cream font-bold leading-[0.96] text-[clamp(34px,3.4vw,58px)] m-0 mb-5">
                       {dish.title}
                     </h3>
-                    <p className="text-cream/[0.58] text-[17px] leading-relaxed m-0 mb-8 max-w-[420px]">
+                    <p className="text-cream/[0.76] text-[17px] leading-relaxed m-0 mb-8 max-w-[420px]">
                       {dish.text}
                     </p>
                     <span className="font-serif text-gold-soft text-[34px] font-bold leading-none">

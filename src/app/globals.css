@@ -2,17 +2,17 @@
 
 @theme inline {
   /* Brand palette */
-  --color-ink:       #101114;
-  --color-espresso:  #191a1a;
-  --color-cocoa:     #1f2d29;
-  --color-cream:     #f7f4ed;
-  --color-paper:     #ebe8dd;
-  --color-linen:     #d8decd;
-  --color-gold:      #c4a05d;
-  --color-gold-soft: #ead8a8;
-  --color-clay:      #b65d4f;
-  --color-moss:      #647b5f;
-  --color-wine:      #783c45;
+  --color-ink:       #0e0c0a;
+  --color-espresso:  #151009;
+  --color-cocoa:     #1c2820;
+  --color-cream:     #f6f2e8;
+  --color-paper:     #ede8d8;
+  --color-linen:     #d5d9c4;
+  --color-gold:      #c0891e;
+  --color-gold-soft: #e4c05e;
+  --color-clay:      #b05244;
+  --color-moss:      #5c7155;
+  --color-wine:      #6e3340;
 
   /* Typography */
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;

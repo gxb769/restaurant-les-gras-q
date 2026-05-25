@@ -87,7 +87,7 @@ export default function Gallery({ dict }: Props) {
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.18} className="max-w-[440px]">
-              <p className="text-ink/[0.58] text-[16px] leading-relaxed m-0">{g.text}</p>
+              <p className="text-ink/[0.72] text-[16px] leading-relaxed m-0">{g.text}</p>
             </ScrollReveal>
           </div>
         </div>
