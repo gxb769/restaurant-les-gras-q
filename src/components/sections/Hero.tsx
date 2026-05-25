@@ -20,19 +20,22 @@ export default function Hero({ dict }: Props) {
       id="top"
       className="min-h-svh relative text-cream grid items-end pt-[130px] pb-14 max-sm:pb-28 isolate overflow-hidden"
     >
-      {/* Background image with slow zoom + parallax */}
+      {/* Background image — Next/Image for LCP priority preload */}
       <motion.div
-        className="absolute inset-0 -z-30 bg-cover"
-        style={{
-          backgroundImage: "url('/assets/hero-restaurant.jpg')",
-          backgroundPosition: "55% center",
-          animation: "hero-settle 1800ms ease-out both",
-          y: bgY,
-          scale: 1.18, // extra canvas so parallax doesn't expose edges
-        }}
-        role="img"
-        aria-label="Salle du restaurant Les Gras Q"
-      />
+        className="absolute inset-0 -z-30 overflow-hidden"
+        style={{ y: bgY, scale: 1.18, animation: "hero-settle 1800ms ease-out both" }}
+        aria-hidden="true"
+      >
+        <Image
+          src="/assets/hero-restaurant.jpg"
+          alt="Salle du restaurant Les Gras Q"
+          fill
+          priority
+          fetchPriority="high"
+          className="object-cover object-[55%_center]"
+          sizes="100vw"
+        />
+      </motion.div>
 
       {/* Overlay 1 — left gradient for text contrast */}
       <div className="absolute inset-0 -z-20 bg-gradient-to-r from-[rgba(16,17,20,0.97)] via-[rgba(16,17,20,0.74)] to-[rgba(16,17,20,0.18)]" />

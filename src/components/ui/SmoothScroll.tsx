@@ -11,10 +11,11 @@ import Lenis from "lenis";
 export default function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // expo out
+      duration: 0.68,
+      easing: (t) => 1 - Math.pow(1 - t, 3), // cubic-out — snappy, not floaty
       smoothWheel: true,
-      touchMultiplier: 2,
+      wheelMultiplier: 1.15,
+      touchMultiplier: 1.6,
     });
 
     // Expose globally so Navbar can call lenis.scrollTo()
