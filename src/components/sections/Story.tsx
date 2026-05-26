@@ -8,7 +8,21 @@ export default function Story({ dict }: Props) {
   const s = dict.story;
 
   return (
-    <section className="bg-cream py-[104px] max-sm:py-[64px]" id="histoire">
+    <section className="bg-cream py-[104px] max-sm:py-[64px] relative overflow-hidden" id="histoire">
+      {/* village.jpg en filigrane — texture organique derrière le fond crème */}
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
+        <Image
+          src="/assets/village.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[rgba(244,241,231,0.93)]" />
+      </div>
+      {/* Vignette latérale douce */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_120%_100%_at_50%_50%,transparent_40%,rgba(244,241,231,0.6)_100%)]" aria-hidden="true" />
+
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-2 gap-[52px] items-center max-md:grid-cols-1">
 
         <ScrollReveal direction="image" className="relative min-h-[620px] max-md:min-h-0 max-md:aspect-[3/2] rounded-lg overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">

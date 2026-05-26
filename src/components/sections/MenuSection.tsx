@@ -27,7 +27,9 @@ export default function MenuSection({ dict }: Props) {
       {/* ══════════════════════════════
           SIGNATURES — fond sombre
       ══════════════════════════════ */}
-      <div className="bg-espresso">
+      <div className="bg-espresso relative overflow-hidden">
+        {/* Lumière or centrale — profondeur de scène */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_30%,rgba(201,168,76,0.05),transparent)] pointer-events-none" aria-hidden="true" />
 
         {/* Header */}
         <div className="w-[min(1180px,calc(100%-40px))] mx-auto pt-[104px] pb-16 max-sm:pt-[64px] max-sm:pb-10">

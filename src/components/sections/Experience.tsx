@@ -9,7 +9,9 @@ export default function Experience({ dict }: Props) {
   const t = dict.team;
 
   return (
-    <section className="bg-cream py-[104px] max-sm:py-[64px]" id="experience">
+    <section className="bg-cream py-[104px] max-sm:py-[64px] relative overflow-hidden" id="experience">
+      {/* Dégradé or subtil en haut — touche premium */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(201,168,76,0.07),transparent)] pointer-events-none" aria-hidden="true" />
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
         {/* Opening pull-quote — full width, no eyebrow */}

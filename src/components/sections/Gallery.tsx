@@ -67,7 +67,9 @@ export default function Gallery({ dict }: Props) {
   const next  = () => setLightboxIndex((i) => (i !== null && i < photos.length - 1 ? i + 1 : i));
 
   return (
-    <section id="galerie" className="bg-cream py-[104px] max-sm:py-[60px]">
+    <section id="galerie" className="bg-cream py-[104px] max-sm:py-[60px] relative overflow-hidden">
+      {/* Dégradé chaud en bas à gauche — casse la platitude */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_0%_100%,rgba(201,168,76,0.05),transparent)] pointer-events-none" aria-hidden="true" />
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
         {/* Header */}
