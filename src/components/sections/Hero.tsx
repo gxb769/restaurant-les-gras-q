@@ -53,7 +53,7 @@ export default function Hero({ dict }: Props) {
           </div>
 
           {/* Title — line-by-line blur-in */}
-          <h1 className="font-serif font-[500] leading-[0.90] mt-5 text-[clamp(64px,11vw,156px)] max-sm:text-[clamp(54px,17vw,156px)]">
+          <h1 className="font-serif font-[700] leading-[0.88] tracking-[-0.02em] mt-5 text-[clamp(68px,11.5vw,164px)] max-sm:text-[clamp(58px,17vw,164px)]">
             <span
               className="block"
               style={{ animation: "blur-in 900ms 200ms ease-out both" }}

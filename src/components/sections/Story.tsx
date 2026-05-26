@@ -11,7 +11,7 @@ export default function Story({ dict }: Props) {
     <section className="bg-cream py-[104px] max-sm:py-[64px]" id="histoire">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto grid grid-cols-2 gap-[52px] items-center max-md:grid-cols-1">
 
-        <ScrollReveal className="relative min-h-[620px] max-md:min-h-0 max-md:aspect-[3/2] rounded-lg overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">
+        <ScrollReveal direction="image" className="relative min-h-[620px] max-md:min-h-0 max-md:aspect-[3/2] rounded-lg overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">
           <Image
             src="/assets/village.jpg"
             alt="Château de Cons-la-Grandville, village du restaurant Les Gras Q"
@@ -34,7 +34,7 @@ export default function Story({ dict }: Props) {
             </div>
           </ScrollReveal>
           <ScrollReveal direction="clip" delay={0.18}>
-            <h2 className="font-serif text-espresso font-bold leading-[0.94] text-[clamp(48px,7vw,86px)] mb-[22px]">
+            <h2 className="font-serif text-espresso font-bold leading-[0.90] tracking-[-0.015em] text-[clamp(52px,7.5vw,96px)] mb-[22px]">
               {s.title}
             </h2>
           </ScrollReveal>

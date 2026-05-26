@@ -82,7 +82,7 @@ export default function Gallery({ dict }: Props) {
 
           <div className="grid grid-cols-[1fr_auto] gap-10 items-end max-md:grid-cols-1 max-md:gap-4">
             <ScrollReveal direction="clip" delay={0.08}>
-              <h2 className="font-serif text-espresso font-bold leading-[0.94] text-[clamp(52px,7vw,96px)] m-0">
+              <h2 className="font-serif text-espresso font-bold leading-[0.90] tracking-[-0.015em] text-[clamp(56px,8vw,108px)] m-0">
                 {g.title}
               </h2>
             </ScrollReveal>

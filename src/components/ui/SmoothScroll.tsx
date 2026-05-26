@@ -4,32 +4,39 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 
 /**
- * Initialises Lenis smooth scroll globally.
- * Mounted once inside the root layout — no wrapper div needed.
- * Also patches navbar anchor clicks so they use lenis.scrollTo().
+ * Lenis smooth scroll — cinematic config.
+ * duration 1.4 + expo-out easing = lourd et naturel, pas floaty.
+ * wheelMultiplier 0.85 = roue souris douce mais pas lente.
+ * touch désactivé = la vitesse touch reste native (pas de lag mobile).
  */
 export default function SmoothScroll() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.68,
-      easing: (t) => 1 - Math.pow(1 - t, 3), // cubic-out — snappy, not floaty
+      duration: 1.4,
+      // expo out — accélération immédiate, décélération très progressive
+      easing: (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      wheelMultiplier: 1.15,
-      touchMultiplier: 1.6,
+      wheelMultiplier: 0.85,
+      touchMultiplier: 0,   // touch reste 100% natif (pas de lag iOS)
     });
+
+    // Supprime le scroll-behavior: smooth du CSS pour laisser Lenis gérer
+    document.documentElement.style.setProperty("scroll-behavior", "auto");
 
     // Expose globally so Navbar can call lenis.scrollTo()
     (window as Window & { __lenis?: Lenis }).__lenis = lenis;
 
+    let id: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      id = requestAnimationFrame(raf);
     }
-    const id = requestAnimationFrame(raf);
+    id = requestAnimationFrame(raf);
 
     return () => {
       cancelAnimationFrame(id);
       lenis.destroy();
+      document.documentElement.style.removeProperty("scroll-behavior");
       delete (window as Window & { __lenis?: Lenis }).__lenis;
     };
   }, []);

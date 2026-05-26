@@ -37,7 +37,9 @@ export default function MenuSection({ dict }: Props) {
               <span className="w-6 h-px bg-gold-soft/30 self-center shrink-0" aria-hidden="true" />
               <span className="text-gold-soft text-[11px] font-[900] tracking-[0.20em] uppercase">Signatures du Chef</span>
             </div>
-            <h2 className="font-serif text-cream font-bold leading-[0.92] text-[clamp(52px,7vw,100px)] m-0">
+          </ScrollReveal>
+          <ScrollReveal direction="clip" delay={0.08}>
+            <h2 className="font-serif text-cream font-bold leading-[0.90] tracking-[-0.015em] text-[clamp(56px,8vw,110px)] m-0">
               {m.title}
             </h2>
           </ScrollReveal>

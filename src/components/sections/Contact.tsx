@@ -24,7 +24,7 @@ export default function Contact({ dict }: Props) {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="clip" delay={0.08}>
-              <h2 className="font-serif text-cream font-bold leading-[0.94] text-[clamp(48px,7vw,88px)]">
+              <h2 className="font-serif text-cream font-bold leading-[0.90] tracking-[-0.015em] text-[clamp(52px,7.5vw,96px)]">
                 {v.title}
               </h2>
             </ScrollReveal>

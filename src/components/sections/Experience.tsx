@@ -13,8 +13,8 @@ export default function Experience({ dict }: Props) {
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
         {/* Opening pull-quote — full width, no eyebrow */}
-        <ScrollReveal className="mb-[72px] max-md:mb-[48px]">
-          <p className="font-serif text-espresso italic font-[300] leading-[1.08] text-[clamp(28px,4vw,52px)] max-w-[820px]">
+        <ScrollReveal direction="clip" className="mb-[72px] max-md:mb-[48px]">
+          <p className="font-serif text-espresso italic font-[300] leading-[1.06] tracking-[-0.01em] text-[clamp(30px,4.5vw,58px)] max-w-[860px]">
             &ldquo;{e.quote.replace(/«\s?|»/g, "").replace(/"/g, "")}&rdquo;
           </p>
         </ScrollReveal>
@@ -63,7 +63,7 @@ export default function Experience({ dict }: Props) {
           {/* Copy */}
           <div>
             <ScrollReveal direction="clip" delay={0.08}>
-              <h2 className="font-serif text-espresso font-bold leading-[0.94] text-[clamp(44px,6vw,80px)] mb-6">
+              <h2 className="font-serif text-espresso font-bold leading-[0.90] tracking-[-0.015em] text-[clamp(48px,6.5vw,90px)] mb-6">
                 {e.title}
               </h2>
             </ScrollReveal>

@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Brand palette */
-  --color-ink:       #0e0c0a;
-  --color-espresso:  #151009;
-  --color-cocoa:     #1c2820;
-  --color-cream:     #f6f2e8;
-  --color-paper:     #ede8d8;
-  --color-linen:     #d5d9c4;
-  --color-gold:      #c0891e;
-  --color-gold-soft: #e4c05e;
-  --color-clay:      #b05244;
-  --color-moss:      #5c7155;
-  --color-wine:      #6e3340;
+  /* Brand palette — gastronomique (NOMA / Guy Savoy register) */
+  --color-ink:       #0c0a07;
+  --color-espresso:  #0f0d0a;
+  --color-cocoa:     #1a2520;
+  --color-cream:     #f4f1e7;
+  --color-paper:     #eae6d4;
+  --color-linen:     #d2d5bf;
+  --color-gold:      #c9a84c;   /* champagne gold — classique, pas amber */
+  --color-gold-soft: #e8d285;   /* pale gold champagne */
+  --color-clay:      #a84e41;
+  --color-moss:      #586e52;
+  --color-wine:      #6a3040;
 
   /* Typography */
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
