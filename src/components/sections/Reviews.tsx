@@ -21,7 +21,7 @@ export default function Reviews({ dict }: Props) {
           <div>
             <ScrollReveal>
               <div className="flex items-baseline gap-[12px] mb-3">
-                <span className="font-serif text-gold-soft/50 text-[13px] font-[300] italic">04</span>
+                <span className="font-serif text-gold-soft/50 text-[13px] font-[300] italic">02</span>
                 <span className="w-6 h-px bg-gold-soft/30 self-center shrink-0" aria-hidden="true" />
                 <span className="text-gold-soft text-[11px] font-[900] tracking-[0.20em] uppercase">{r.eyebrow}</span>
               </div>

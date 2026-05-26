@@ -7,7 +7,10 @@ import Hero from "@/components/sections/Hero";
 import Experience from "@/components/sections/Experience";
 import MenuSection from "@/components/sections/MenuSection";
 import Gallery from "@/components/sections/Gallery";
+import QuoteBreak from "@/components/sections/QuoteBreak";
 import Reviews from "@/components/sections/Reviews";
+import PrivateEvents from "@/components/sections/PrivateEvents";
+import FinalCta from "@/components/sections/FinalCta";
 import Contact from "@/components/sections/Contact";
 import { PHONE } from "@/lib/constants";
 import MobileBottomBar from "@/components/ui/MobileBottomBar";
@@ -183,7 +186,10 @@ export default async function Page({
         <Experience dict={dict} />
         <MenuSection dict={dict} />
         <Gallery dict={dict} />
+        <QuoteBreak dict={dict} />
         <Reviews dict={dict} />
+        <PrivateEvents dict={dict} />
+        <FinalCta dict={dict} />
         <Contact dict={dict} />
       </main>
 
