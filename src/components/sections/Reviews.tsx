@@ -76,16 +76,16 @@ export default function Reviews({ dict }: Props) {
           </div>
         </ScrollReveal>
 
-        {/* Desktop/tablet grid */}
-        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-sm:hidden">
+        {/* Desktop/tablet grid — 2 cols + dernier full-width si impair */}
+        <div className="grid grid-cols-2 gap-4 max-sm:hidden md:grid-cols-3">
           {r.items.map((item, i) => (
-            <ScrollReveal key={item.author} delay={i * 0.08}>
-              <article className="flex flex-col justify-between min-h-[280px] h-full p-6 border border-cream/[0.14] rounded-lg bg-cream/[0.06] hover:bg-cream/[0.09] hover:-translate-y-[2px] hover:border-cream/[0.22] transition-all duration-200">
+            <ScrollReveal key={item.author} delay={i * 0.06}>
+              <article className="flex flex-col justify-between min-h-[220px] h-full p-6 border border-cream/[0.14] rounded-lg bg-cream/[0.06] hover:bg-cream/[0.09] hover:-translate-y-[2px] hover:border-cream/[0.22] transition-all duration-200">
                 <div>
-                  <div className="text-gold-soft tracking-[0.08em] text-[14px]" aria-label="5 étoiles">★★★★★</div>
-                  <p className="text-cream/[0.84] text-[17px] mt-4 mb-4 leading-relaxed">{item.text}</p>
+                  <div className="text-gold-soft tracking-[0.08em] text-[13px]" aria-label="5 étoiles">★★★★★</div>
+                  <p className="text-cream/[0.84] text-[16px] mt-3 mb-4 leading-relaxed">{item.text}</p>
                 </div>
-                <strong className="text-gold-soft text-[13px] tracking-[0.12em] uppercase">{item.author}</strong>
+                <strong className="text-gold-soft text-[12px] tracking-[0.12em] uppercase">{item.author}</strong>
               </article>
             </ScrollReveal>
           ))}

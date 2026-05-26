@@ -28,7 +28,7 @@ export default function Hero({ dict }: Props) {
           fill
           priority
           fetchPriority="high"
-          className="object-cover object-[55%_center]"
+          className="object-cover object-[28%_center]"
           sizes="100vw"
         />
       </div>
@@ -97,14 +97,15 @@ export default function Hero({ dict }: Props) {
                 {h.callBtn}
               </a>
             </MagneticButton>
-            <MagneticButton strength={0.25}>
-              <a
-                href="#menu"
-                className="inline-flex items-center justify-center min-h-[58px] px-8 py-[16px] rounded-full text-[14px] font-[800] tracking-[0.05em] uppercase text-cream border border-cream/[0.30] bg-cream/[0.07] backdrop-blur-sm transition-all duration-[200ms] hover:-translate-y-[2px] hover:bg-cream/[0.14] hover:border-cream/[0.40] hover:shadow-[0_16px_36px_rgba(0,0,0,0.20)] active:translate-y-0 max-sm:w-full"
-              >
-                {h.menuBtn}
-              </a>
-            </MagneticButton>
+            <a
+              href="#menu"
+              className="inline-flex items-center gap-[8px] min-h-[58px] px-2 text-[13px] font-[700] tracking-[0.08em] uppercase text-cream/60 hover:text-cream/90 transition-colors duration-200 max-sm:justify-center max-sm:w-full"
+            >
+              {h.menuBtn}
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
           </div>
 
           {/* Google rating badge */}

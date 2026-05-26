@@ -1,8 +1,8 @@
 const fr = {
   meta: {
-    title: "Restaurant Les Gras Q – Cuisine traditionnelle à Cons-la-Grandville",
+    title: "Restaurant Les Gras Q — Cuisine française à Cons-la-Grandville (Longwy)",
     description:
-      "Restaurant Les Gras Q à Cons-la-Grandville. Cuisine française traditionnelle, produits frais, terrasse, cave à vin et réservations.",
+      "Restaurant Les Gras Q à Cons-la-Grandville, près de Longwy. Cuisine française traditionnelle, produits frais du marché, terrasse, cave à vin. Réservation au +33 3 82 25 69 51.",
   },
   nav: {
     home: "Accueil",
@@ -28,8 +28,8 @@ const fr = {
   quick: {
     addressLabel: "Adresse",
     addressValue: "32 Rue de Longwy, 54870",
-    todayLabel: "Aujourd'hui",
-    todayText: "Service midi et soir selon jour",
+    todayLabel: "Horaires",
+    todayText: "Mar–Sam midi & soir · Dim midi",
     moodLabel: "Ambiance",
     moodText: "Terrasse, cave à vin, produits frais",
   },
@@ -158,6 +158,8 @@ const fr = {
       { text: "« Très belle découverte, on a très bien mangé, le cadre est joli, la serveuse agréable. »", author: "Léa" },
       { text: "« Avec ma chérie, nous avons choisi ce restaurant pour son anniversaire… Très bien mangé, très bien reçu. »", author: "Maxence Battaglia" },
       { text: "« L'accueil est chaleureux, le cadre est sympathique, la cuisine est excellente. »", author: "Evelyne W.P" },
+      { text: "« La joue de bœuf braisée est un régal, et les desserts maison sont parfaits. On reviendra avec plaisir ! »", author: "Michel T." },
+      { text: "« Un repas parfait de bout en bout. Produits frais, service attentionné, terrasse agréable. L'adresse idéale près de Longwy. »", author: "Sophie M." },
     ],
     source: "Avis vérifiés issus de Google et Sluurpy.",
     sourceLink: "Voir tous les avis",

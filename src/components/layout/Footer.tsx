@@ -36,6 +36,50 @@ export default function Footer({ dict, lang }: Props) {
             >
               {EMAIL}
             </a>
+
+            {/* Réseaux sociaux */}
+            <div className="flex items-center gap-4 mt-6">
+              {[
+                {
+                  label: "Instagram",
+                  href: "https://www.instagram.com/lesgrasq/",
+                  icon: (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0" fill="currentColor" strokeWidth="2.5"/>
+                    </svg>
+                  ),
+                },
+                {
+                  label: "Facebook",
+                  href: "https://www.facebook.com/lesgrasq/",
+                  icon: (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                  ),
+                },
+                {
+                  label: "TripAdvisor",
+                  href: "https://www.tripadvisor.fr/Restaurant_Review-g2341428-d8126804-Reviews-Les_Gras_Q-Cons_la_Grandville_Meurthe_et_Moselle_Grand_Est.html",
+                  icon: (
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.33 0 2.6.31 3.73.86L14 7.5C13.38 7.19 12.71 7 12 7s-1.38.19-2 .5L8.27 5.86C9.4 5.31 10.67 5 12 5zm-5.5 7a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0zm8.5 2.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-3-4.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5z"/>
+                    </svg>
+                  ),
+                },
+              ].map(({ label, href, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="text-cream/30 hover:text-gold-soft transition-colors duration-200"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Col 2: Hours */}
@@ -104,7 +148,17 @@ export default function Footer({ dict, lang }: Props) {
               Politique de confidentialité
             </Link>
           </nav>
-          <span className="max-sm:hidden">{f.note}</span>
+          <span className="max-sm:hidden">
+            Réalisé par{" "}
+            <a
+              href="https://lumio.studio"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-cream/50 underline underline-offset-[3px] transition-colors duration-150"
+            >
+              Lumio Studio
+            </a>
+          </span>
         </div>
       </div>
     </footer>

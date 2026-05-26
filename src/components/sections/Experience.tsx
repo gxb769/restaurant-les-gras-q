@@ -13,8 +13,8 @@ export default function Experience({ dict }: Props) {
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
         {/* Opening pull-quote — full width, no eyebrow */}
-        <ScrollReveal direction="clip" className="mb-[72px] max-md:mb-[48px]">
-          <p className="font-serif text-espresso italic font-[300] leading-[1.06] tracking-[-0.01em] text-[clamp(30px,4.5vw,58px)] max-w-[860px]">
+        <ScrollReveal direction="up" className="mb-[56px] max-md:mb-[36px]">
+          <p className="font-serif text-espresso italic font-[300] leading-[1.06] tracking-[-0.01em] text-[clamp(28px,4vw,54px)] max-w-[820px] [text-wrap:balance]">
             &ldquo;{e.quote.replace(/«\s?|»/g, "").replace(/"/g, "")}&rdquo;
           </p>
         </ScrollReveal>
