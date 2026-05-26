@@ -43,7 +43,7 @@ export default function MenuTabs({ labels }: Props) {
       <div
         role="tablist"
         aria-label="Catégories du menu"
-        className="flex items-end gap-0 border-b border-ink/[0.08] mb-8 overflow-x-auto no-scrollbar"
+        className="flex items-end gap-0 border-b border-cream/[0.10] mb-8 overflow-x-auto no-scrollbar"
       >
         {ORDER.map((id) => (
           <button
@@ -55,8 +55,8 @@ export default function MenuTabs({ labels }: Props) {
               "relative shrink-0 inline-flex items-end min-h-[44px] pb-[10px] px-[14px] text-[12px] font-[800] tracking-[0.10em] uppercase",
               "transition-colors duration-150 whitespace-nowrap focus-visible:outline-none",
               active === id
-                ? "text-espresso"
-                : "text-ink/[0.38] hover:text-ink/[0.65]",
+                ? "text-cream"
+                : "text-cream/[0.35] hover:text-cream/[0.65]",
             ].join(" ")}
           >
             {labels[id]}
@@ -90,9 +90,9 @@ export default function MenuTabs({ labels }: Props) {
                 className={[
                   "flex justify-between items-start gap-4 py-4 group/item",
                   "-mx-3 px-3 rounded transition-colors duration-150",
-                  "hover:bg-ink/[0.02]",
+                  "hover:bg-cream/[0.04]",
                   ii < category.items.length - 1
-                    ? "border-b border-ink/[0.07]"
+                    ? "border-b border-cream/[0.07]"
                     : "",
                 ].join(" ")}
               >
@@ -104,15 +104,15 @@ export default function MenuTabs({ labels }: Props) {
                   )}
                   <p
                     className={[
-                      "font-serif text-espresso text-[21px] leading-snug m-0",
-                      "group-hover/item:text-ink transition-colors",
+                      "font-serif text-cream text-[21px] leading-snug m-0",
+                      "group-hover/item:text-cream transition-colors",
                       item.signature ? "font-bold" : "",
                     ].join(" ")}
                   >
                     {item.name}
                   </p>
                   {item.detail && (
-                    <p className="text-ink/45 text-[13px] m-0 mt-[3px] leading-snug">
+                    <p className="text-cream/45 text-[13px] m-0 mt-[3px] leading-snug">
                       {item.detail}
                     </p>
                   )}

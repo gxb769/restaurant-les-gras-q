@@ -11,7 +11,6 @@ const en: Dictionary = {
     experience: "Experience",
     menu: "Menu",
     gallery: "Gallery",
-    story: "History",
     reviews: "Reviews",
     access: "Access & hours",
     reserve: "Book",

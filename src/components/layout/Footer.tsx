@@ -10,7 +10,7 @@ export default function Footer({ dict, lang }: Props) {
   const c = dict.contact;
 
   return (
-    <footer className="bg-espresso text-cream">
+    <footer className="text-cream border-t border-cream/[0.06]">
 
       {/* Main footer content */}
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto py-16 max-sm:py-12">

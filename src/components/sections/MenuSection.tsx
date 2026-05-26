@@ -21,15 +21,12 @@ export default function MenuSection({ dict }: Props) {
   return (
     <section id="menu">
 
-      {/* Gradient bridge: previous cream section → espresso */}
-      <div className="h-20 bg-gradient-to-b from-cream to-espresso" aria-hidden="true" />
-
       {/* ══════════════════════════════
-          SIGNATURES — fond sombre
+          SIGNATURES — Plats emblématiques
       ══════════════════════════════ */}
-      <div className="bg-espresso relative overflow-hidden">
+      <div className="relative overflow-hidden">
         {/* Lumière or centrale — profondeur de scène */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_30%,rgba(201,168,76,0.05),transparent)] pointer-events-none" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_30%,rgba(201,168,76,0.10),transparent)] pointer-events-none" aria-hidden="true" />
 
         {/* Header */}
         <div className="w-[min(1180px,calc(100%-40px))] mx-auto pt-[104px] pb-16 max-sm:pt-[64px] max-sm:pb-10">
@@ -130,23 +127,20 @@ export default function MenuSection({ dict }: Props) {
         </div>
       </div>
 
-      {/* Gradient bridge: espresso → cream */}
-      <div className="h-20 bg-gradient-to-b from-espresso to-cream" aria-hidden="true" />
-
       {/* ══════════════════════════════
-          CARTE COMPLÈTE — fond crème
+          CARTE COMPLÈTE — menu consulter
       ══════════════════════════════ */}
-      <div className="bg-cream py-[80px] max-sm:py-[52px]">
+      <div className="py-[80px] max-sm:py-[52px] border-t border-cream/[0.06]">
         <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
           <div className="grid grid-cols-[1fr_1.2fr] gap-[60px] items-start max-md:grid-cols-1">
 
             {/* Sticky title */}
             <ScrollReveal className="sticky top-[100px] max-md:static">
-              <h2 className="font-serif text-espresso font-bold leading-[0.92] text-[clamp(48px,6vw,82px)] mb-5">
+              <h2 className="font-serif text-cream font-bold leading-[0.92] text-[clamp(48px,6vw,82px)] mb-5">
                 {fm.title}
               </h2>
-              <p className="text-ink/50 text-[14px] leading-relaxed italic mb-8">{fm.note}</p>
+              <p className="text-cream/50 text-[14px] leading-relaxed italic mb-8">{fm.note}</p>
               <a
                 href={`tel:${PHONE}`}
                 className="inline-flex items-center justify-center min-h-[52px] px-7 py-[14px] rounded-full text-[14px] font-[900] tracking-[0.05em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold shadow-[0_8px_30px_rgba(196,160,93,0.25)] transition-all duration-[200ms] hover:-translate-y-[3px] hover:shadow-[0_20px_50px_rgba(196,160,93,0.40)] active:translate-y-0 max-sm:w-full"
@@ -163,7 +157,7 @@ export default function MenuSection({ dict }: Props) {
           </div>
 
           {/* Trust strip */}
-          <div className="grid grid-cols-4 border-t border-b border-ink/[0.08] mt-16 max-sm:grid-cols-2">
+          <div className="grid grid-cols-4 border-t border-b border-cream/[0.08] mt-16 max-sm:grid-cols-2">
             {dict.features.map((f, i) => (
               <div
                 key={i}
@@ -171,13 +165,13 @@ export default function MenuSection({ dict }: Props) {
                   "flex flex-col justify-center min-h-[112px] px-7 py-5",
                   "border-r border-ink/[0.08] last:border-r-0",
                   "max-sm:border-b max-sm:[&:nth-child(2)]:border-r-0 max-sm:last:border-b-0",
-                  "hover:bg-ink/[0.02] transition-colors duration-150",
+                  "hover:bg-cream/[0.03] transition-colors duration-150",
                 ].join(" ")}
               >
                 <strong className="block font-serif text-gold text-[19px] leading-tight mb-2">
                   {f.title}
                 </strong>
-                <span className="text-ink/55 text-[13px] leading-snug">{f.text}</span>
+                <span className="text-cream/55 text-[13px] leading-snug">{f.text}</span>
               </div>
             ))}
           </div>

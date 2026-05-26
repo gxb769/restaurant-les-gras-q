@@ -9,7 +9,6 @@ const fr = {
     experience: "L'expérience",
     menu: "Carte",
     gallery: "Galerie",
-    story: "Histoire",
     reviews: "Avis",
     access: "Accès & horaires",
     reserve: "Réserver",
@@ -137,7 +136,7 @@ const fr = {
     eyebrow: "Galerie",
     title: "Avant de passer à table",
     text: "Quelques images de la maison et de son environnement : la terrasse, le village, la cave, les assiettes et cette atmosphère de restaurant où l'on revient volontiers.",
-    tiles: ["Terrasse", "Cave à vin", "Suggestion", "Notre village", "Accueil"],
+    tiles: ["Joue de bœuf braisée", "Mise en bouche", "Bar de ligne", "Dessert maison", "La salle", "Terrasse estivale", "Christelle & Gérald", "Cave à vins", "Château de Cons", "Restaurant"],
   },
   story: {
     eyebrow: "L'histoire",

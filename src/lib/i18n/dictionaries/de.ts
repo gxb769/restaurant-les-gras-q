@@ -11,7 +11,6 @@ const de: Dictionary = {
     experience: "Erlebnis",
     menu: "Speisekarte",
     gallery: "Galerie",
-    story: "Geschichte",
     reviews: "Bewertungen",
     access: "Anfahrt & Öffnungszeiten",
     reserve: "Reservieren",

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { PHONE, PHONE_DISPLAY, EMAIL, ADDRESS, MAPS_URL, THEFORK_URL } from "@/lib/constants";
@@ -11,20 +10,9 @@ export default function Contact({ dict }: Props) {
   const v = dict.visit;
 
   return (
-    <section className="text-cream bg-cocoa py-[104px] pb-0 max-sm:py-[64px] relative overflow-hidden" id="venir">
-      {/* cave-vin.jpg en filigrane — ambiance chaleureuse sous le fond sombre */}
-      <div className="absolute inset-0 -z-10" aria-hidden="true">
-        <Image
-          src="/assets/cave-vin.jpg"
-          alt=""
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[rgba(26,37,32,0.88)]" />
-      </div>
-      {/* Vignette radiale — profondeur centrale */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(10,15,12,0.5),transparent)]" aria-hidden="true" />
+    <section className="text-cream py-[104px] pb-0 max-sm:py-[64px] relative overflow-hidden border-t border-cream/[0.05]" id="venir">
+      {/* Warm gold glow — halo final de page */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_0%,rgba(201,168,76,0.07),transparent)] pointer-events-none" aria-hidden="true" />
 
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 

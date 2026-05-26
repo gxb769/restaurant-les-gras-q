@@ -9,14 +9,14 @@ export default function Experience({ dict }: Props) {
   const t = dict.team;
 
   return (
-    <section className="bg-cream py-[104px] max-sm:py-[64px] relative overflow-hidden" id="experience">
-      {/* Dégradé or subtil en haut — touche premium */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(201,168,76,0.07),transparent)] pointer-events-none" aria-hidden="true" />
+    <section className="py-[104px] max-sm:py-[64px] relative overflow-hidden" id="experience">
+      {/* Radial gold glow — halo premium en haut de section */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,rgba(201,168,76,0.09),transparent)] pointer-events-none" aria-hidden="true" />
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 
         {/* Opening pull-quote — full width, no eyebrow */}
         <ScrollReveal direction="up" className="mb-[56px] max-md:mb-[36px]">
-          <p className="font-serif text-espresso italic font-[300] leading-[1.06] tracking-[-0.01em] text-[clamp(28px,4vw,54px)] max-w-[820px] [text-wrap:balance]">
+          <p className="font-serif text-cream italic font-[300] leading-[1.06] tracking-[-0.01em] text-[clamp(28px,4vw,54px)] max-w-[820px] [text-wrap:balance]">
             &ldquo;{e.quote.replace(/«\s?|»/g, "").replace(/"/g, "")}&rdquo;
           </p>
         </ScrollReveal>
@@ -35,7 +35,7 @@ export default function Experience({ dict }: Props) {
                 sizes="(max-width: 768px) 60vw, 35vw"
               />
             </div>
-            <div className="absolute w-[58%] h-[310px] right-0 bottom-0 rounded-lg overflow-hidden border-[10px] border-cream shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">
+            <div className="absolute w-[58%] h-[310px] right-0 bottom-0 rounded-lg overflow-hidden border-[10px] border-[#0a0807] shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">
               <Image
                 src="/assets/terrasse.jpg"
                 alt="Terrasse du restaurant Les Gras Q"
@@ -65,27 +65,27 @@ export default function Experience({ dict }: Props) {
           {/* Copy */}
           <div>
             <ScrollReveal direction="clip" delay={0.08}>
-              <h2 className="font-serif text-espresso font-bold leading-[0.90] tracking-[-0.015em] text-[clamp(48px,6.5vw,90px)] mb-6">
+              <h2 className="font-serif text-cream font-bold leading-[0.90] tracking-[-0.015em] text-[clamp(48px,6.5vw,90px)] mb-6">
                 {e.title}
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.18}>
-              <p className="text-ink/[0.72] text-[18px] mb-[18px]">{e.p1}</p>
-              <p className="text-ink/[0.72] text-[18px] mb-0">{e.p2}</p>
+              <p className="text-cream/[0.72] text-[18px] mb-[18px]">{e.p1}</p>
+              <p className="text-cream/[0.72] text-[18px] mb-0">{e.p2}</p>
             </ScrollReveal>
 
             {/* Team — inline, no cards */}
-            <div className="mt-[36px] pt-[28px] border-t border-ink/[0.10]">
-              <p className="text-ink/[0.42] text-[11px] font-[900] tracking-[0.18em] uppercase mb-[14px]">
+            <div className="mt-[36px] pt-[28px] border-t border-cream/[0.10]">
+              <p className="text-cream/[0.42] text-[11px] font-[900] tracking-[0.18em] uppercase mb-[14px]">
                 {t.eyebrow}
               </p>
               <div className="flex items-center gap-[28px] flex-wrap">
                 {t.members.map((m, i) => (
                   <div key={m.name} className="flex items-center gap-[16px]">
-                    {i > 0 && <span className="w-px h-8 bg-ink/[0.12]" aria-hidden="true" />}
+                    {i > 0 && <span className="w-px h-8 bg-cream/[0.12]" aria-hidden="true" />}
                     <div>
-                      <strong className="block font-serif text-espresso text-[22px] leading-none">{m.name}</strong>
-                      <span className="block text-ink/[0.50] text-[12px] mt-[4px]">{m.role}</span>
+                      <strong className="block font-serif text-cream text-[22px] leading-none">{m.name}</strong>
+                      <span className="block text-cream/[0.50] text-[12px] mt-[4px]">{m.role}</span>
                     </div>
                   </div>
                 ))}

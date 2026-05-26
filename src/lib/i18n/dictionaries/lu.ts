@@ -11,7 +11,6 @@ const lu: Dictionary = {
     experience: "D'Erfahrung",
     menu: "Kaart",
     gallery: "Galerie",
-    story: "Geschicht",
     reviews: "Bewäertungen",
     access: "Zougang & Auer",
     reserve: "Reservéieren",

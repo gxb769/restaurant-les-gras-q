@@ -91,6 +91,11 @@ export default async function LangLayout({
           Aller au contenu principal
         </a>
 
+        {/* Ambient dark canvas — single warm-dark tone with drifting gold orbs */}
+        <div aria-hidden="true" className="fixed inset-0 -z-10 overflow-hidden pointer-events-none select-none">
+          <div className="ambient-orb-1" />
+          <div className="ambient-orb-2" />
+        </div>
         <SmoothScroll />
         <Grain />
         <Analytics />

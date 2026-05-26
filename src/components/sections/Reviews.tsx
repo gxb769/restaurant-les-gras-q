@@ -11,12 +11,9 @@ export default function Reviews({ dict }: Props) {
   const r = dict.reviews;
 
   return (
-    <section className="bg-espresso text-cream relative overflow-hidden" id="avis">
-      {/* Vignette radiale — lumière centrale, bords sombres */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(201,168,76,0.04),transparent)] pointer-events-none" aria-hidden="true" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_100%,rgba(5,4,3,0.4),transparent)] pointer-events-none" aria-hidden="true" />
-      {/* Gradient bridge: previous cream section → espresso */}
-      <div className="h-20 bg-gradient-to-b from-cream to-espresso" aria-hidden="true" />
+    <section className="text-cream relative overflow-hidden border-t border-cream/[0.05]" id="avis">
+      {/* Ambient gold glow centrale */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_30%,rgba(201,168,76,0.05),transparent)] pointer-events-none" aria-hidden="true" />
       <div className="py-[84px] max-sm:py-[52px]">
       <div className="w-[min(1180px,calc(100%-40px))] mx-auto">
 

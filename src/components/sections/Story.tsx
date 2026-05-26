@@ -18,7 +18,7 @@ export default function Story({ dict }: Props) {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[rgba(244,241,231,0.93)]" />
+        <div className="absolute inset-0 bg-[rgba(244,241,231,0.84)]" />
       </div>
       {/* Vignette latérale douce */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_120%_100%_at_50%_50%,transparent_40%,rgba(244,241,231,0.6)_100%)]" aria-hidden="true" />
