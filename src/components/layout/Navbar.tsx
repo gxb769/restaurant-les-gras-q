@@ -42,20 +42,9 @@ export default function Navbar({ dict, lang }: Props) {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Prefer Lenis (smooth-scroll provider) when available; otherwise fall back to custom JS ease-out-quart
+  // Custom ease-out-quart scroll — respects navbar offset
   const scrollTo = (hash: string) => {
     const id = hash.replace("#", "");
-    const lenis = (window as Window & { __lenis?: { scrollTo: (target: string | number | HTMLElement, opts?: Record<string, unknown>) => void } }).__lenis;
-    if (lenis) {
-      if (id === "top") {
-        lenis.scrollTo(0, { duration: 1.1 });
-      } else {
-        const el = document.getElementById(id);
-        if (el) lenis.scrollTo(el, { offset: -88, duration: 1.1 });
-      }
-      return;
-    }
-    // Fallback: custom ease-out-quart scroll
     const el = id === "top" ? document.body : document.getElementById(id);
     if (!el) return;
     const start = window.pageYOffset;
