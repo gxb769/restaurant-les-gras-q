@@ -71,7 +71,7 @@ export default function MenuTabs({ labels }: Props) {
       </div>
 
       {/* ── Tab content ─────────────────────────────────── */}
-      <div role="tabpanel" style={{ minHeight: 260 }}>
+      <div role="tabpanel" style={{ minHeight: 260, overflow: 'hidden' }}>
         <AnimatePresence mode="wait" custom={dir}>
           <motion.div
             key={active}
