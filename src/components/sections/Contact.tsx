@@ -170,14 +170,14 @@ export default function Contact({ dict }: Props) {
           {/* Top gradient fade from section bg into map */}
           <div
             className="absolute inset-x-0 top-0 h-[60px] pointer-events-none"
-            style={{ background: "linear-gradient(to bottom, #1f2d29, transparent)" }}
+            style={{ background: "linear-gradient(to bottom, #0a0807, transparent)" }}
           />
         </div>
         <a
           href={MAPS_URL}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center justify-center gap-2 min-h-[48px] bg-cocoa/90 text-cream/[0.60] text-[13px] font-[700] tracking-[0.04em] hover:text-gold-soft hover:bg-cocoa transition-all duration-[180ms]"
+          className="flex items-center justify-center gap-2 min-h-[48px] bg-[rgba(10,8,7,0.80)] text-cream/[0.60] text-[13px] font-[700] tracking-[0.04em] hover:text-gold-soft hover:bg-[rgba(10,8,7,0.95)] transition-all duration-[180ms]"
         >
           {c.mapLabel}
           <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
