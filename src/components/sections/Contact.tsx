@@ -159,7 +159,7 @@ export default function Contact({ dict }: Props) {
       <ScrollReveal className="mt-[52px] max-sm:mt-[36px]">
         <div className="relative w-full h-[320px] max-sm:h-[220px] overflow-hidden">
           <iframe
-            src="https://maps.google.com/maps?q=49.4859435,5.705279&z=16&output=embed"
+            src="https://maps.google.com/maps?q=Les+Gras+Q,+32+Rue+de+Longwy,+54870+Cons-la-Grandville&z=16&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, display: "block" }}
