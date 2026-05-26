@@ -61,13 +61,11 @@ export default function MenuTabs({ labels }: Props) {
           >
             {labels[id]}
 
-            {active === id && (
-              <motion.span
-                layoutId="menu-tab-underline"
-                className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gold rounded-full"
-                transition={{ type: "spring", stiffness: 420, damping: 34 }}
-              />
-            )}
+            <span
+              className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-gold rounded-full transition-opacity duration-150"
+              style={{ opacity: active === id ? 1 : 0 }}
+              aria-hidden="true"
+            />
           </button>
         ))}
       </div>

@@ -106,6 +106,17 @@ export default async function PolitiqueConfidentialite({
           <p className="text-ink/35 text-[13px] pt-6 border-t border-ink/[0.08]">
             Dernière mise à jour : mai 2026
           </p>
+          <p className="text-ink/30 text-[12px]">
+            Site réalisé par{" "}
+            <a
+              href="https://lumio.studio"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-[3px] hover:text-ink/55 transition-colors duration-150"
+            >
+              LUMIO — Gabin Delachenal
+            </a>
+          </p>
         </div>
       </div>
     </main>

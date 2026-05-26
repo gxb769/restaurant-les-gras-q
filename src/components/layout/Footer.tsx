@@ -148,7 +148,7 @@ export default function Footer({ dict, lang }: Props) {
               Politique de confidentialité
             </Link>
           </nav>
-          <span className="max-sm:hidden">
+          <span>
             Réalisé par{" "}
             <a
               href="https://lumio.studio"
@@ -156,7 +156,7 @@ export default function Footer({ dict, lang }: Props) {
               rel="noreferrer"
               className="hover:text-cream/50 underline underline-offset-[3px] transition-colors duration-150"
             >
-              Lumio Studio
+              LUMIO — Gabin Delachenal
             </a>
           </span>
         </div>

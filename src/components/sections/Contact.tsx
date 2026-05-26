@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { PHONE, PHONE_DISPLAY, EMAIL, ADDRESS, MAPS_URL, THEFORK_URL } from "@/lib/constants";
+import { PHONE, PHONE_DISPLAY, EMAIL, ADDRESS, MAPS_URL } from "@/lib/constants";
 
 type Props = { dict: Dictionary };
 
@@ -128,14 +128,6 @@ export default function Contact({ dict }: Props) {
                   className="flex items-center justify-center min-h-[50px] px-6 rounded-full text-[13px] font-[800] tracking-[0.05em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold border border-white/20 transition-all duration-[200ms] hover:-translate-y-[2px] hover:shadow-[0_16px_40px_rgba(196,160,93,0.32)] active:translate-y-0"
                 >
                   {dict.cta.button}
-                </a>
-                <a
-                  href={THEFORK_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center min-h-[50px] px-6 rounded-full text-[13px] font-[800] tracking-[0.05em] uppercase text-cream border border-cream/[0.22] bg-cream/[0.06] transition-all duration-[200ms] hover:-translate-y-[2px] hover:bg-cream/[0.12] active:translate-y-0"
-                >
-                  TheFork
                 </a>
               </div>
             </div>
