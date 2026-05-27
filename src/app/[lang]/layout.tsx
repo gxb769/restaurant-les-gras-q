@@ -47,7 +47,7 @@ export async function generateMetadata({
       canonical: `/${lang}`,
       languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])),
     },
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://restaurant-les-gras-q.fr"),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://restaurant-les-gras-q.fr"),
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
