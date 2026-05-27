@@ -218,6 +218,12 @@ const de: Dictionary = {
     call: "Anrufen",
     fork: "Online reservieren",
   },
+  cookie: {
+    text: "Diese Website verwendet Analyse-Cookies (Google Analytics), um das Publikum zu messen und Ihre Erfahrung zu verbessern. Es werden keine persönlichen Daten verkauft.",
+    privacy: "Datenschutzrichtlinie",
+    accept: "Akzeptieren",
+    refuse: "Ablehnen",
+  },
 };
 
 export default de;

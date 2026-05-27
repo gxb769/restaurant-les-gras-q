@@ -77,6 +77,7 @@ export default async function LangLayout({
 }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
+  const dict = await getDictionary(lang);
 
   return (
     <html
@@ -101,7 +102,7 @@ export default async function LangLayout({
         <SmoothScroll />
         <Grain />
         <Analytics />
-        <CookieBanner />
+        <CookieBanner lang={lang} strings={dict.cookie} />
         {children}
       </body>
     </html>

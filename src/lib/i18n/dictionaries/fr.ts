@@ -235,6 +235,12 @@ const fr = {
     call: "Appeler",
     fork: "Réserver en ligne",
   },
+  cookie: {
+    text: "Ce site utilise des cookies analytiques (Google Analytics) pour mesurer l'audience et améliorer votre expérience. Aucune donnée personnelle n'est revendue.",
+    privacy: "Politique de confidentialité",
+    accept: "Accepter",
+    refuse: "Refuser",
+  },
 };
 
 export default fr;

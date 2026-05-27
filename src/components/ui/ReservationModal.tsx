@@ -15,7 +15,7 @@ import { PHONE, PHONE_DISPLAY } from "@/lib/constants";
 // prefixed variables are available client-side — they are inlined at build time.
 // ─────────────────────────────────────────────────────────────────────────────
 const FORMSPREE_ENDPOINT = `https://formspree.io/f/${
-  process.env.NEXT_PUBLIC_FORMSPREE_ID ?? ""
+  process.env.NEXT_PUBLIC_FORMSPREE_ID || ""
 }`;
 
 type Step = "form" | "sending" | "success" | "error";

@@ -3,14 +3,26 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+interface CookieStrings {
+  text: string;
+  privacy: string;
+  accept: string;
+  refuse: string;
+}
+
+interface Props {
+  lang: string;
+  strings: CookieStrings;
+}
+
 /**
- * RGPD-compliant cookie consent banner.
+ * RGPD-compliant cookie consent banner — fully multilingual (FR/EN/LU/DE).
  * - Appears on first visit (no stored consent)
  * - Stores "accepted" | "refused" in localStorage under "cookie_consent"
  * - Dispatches a "cookie-consent" CustomEvent so Analytics.tsx can react
  * - Mobile: slides up from bottom | Desktop: card in bottom-right corner
  */
-export default function CookieBanner() {
+export default function CookieBanner({ lang, strings }: Props) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -33,7 +45,7 @@ export default function CookieBanner() {
       {visible && (
         <motion.div
           role="dialog"
-          aria-label="Gestion des cookies"
+          aria-label={strings.text}
           aria-live="polite"
           initial={{ y: 24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -45,15 +57,15 @@ export default function CookieBanner() {
           <span className="block w-8 h-[3px] rounded-full bg-gradient-to-r from-gold-soft to-gold mb-4" aria-hidden="true" />
 
           <p className="text-cream/[0.82] text-[13px] leading-relaxed mb-4">
-            Ce site utilise des cookies analytiques (Google Analytics) pour mesurer l&apos;audience et améliorer votre expérience. Aucune donnée personnelle n&apos;est revendue.
+            {strings.text}
           </p>
 
           <p className="mb-4">
             <a
-              href="/fr/politique-de-confidentialite"
+              href={`/${lang}/politique-de-confidentialite`}
               className="text-gold-soft/70 text-[12px] underline underline-offset-[3px] hover:text-gold-soft transition-colors duration-150"
             >
-              Politique de confidentialité
+              {strings.privacy}
             </a>
           </p>
 
@@ -63,14 +75,14 @@ export default function CookieBanner() {
               onClick={() => handle("accepted")}
               className="flex-1 min-h-[42px] rounded-full text-[12px] font-[800] tracking-[0.05em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold transition-all duration-[180ms] hover:-translate-y-[1px] hover:shadow-[0_10px_28px_rgba(196,160,93,0.35)] active:translate-y-0"
             >
-              Accepter
+              {strings.accept}
             </button>
             <button
               type="button"
               onClick={() => handle("refused")}
               className="flex-1 min-h-[42px] rounded-full text-[12px] font-[800] tracking-[0.05em] uppercase text-cream/60 border border-cream/[0.18] bg-cream/[0.05] hover:bg-cream/[0.10] hover:text-cream/80 transition-all duration-[180ms]"
             >
-              Refuser
+              {strings.refuse}
             </button>
           </div>
         </motion.div>

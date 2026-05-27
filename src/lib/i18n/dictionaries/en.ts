@@ -218,6 +218,12 @@ const en: Dictionary = {
     call: "Call",
     fork: "Book online",
   },
+  cookie: {
+    text: "This site uses analytical cookies (Google Analytics) to measure audience and improve your experience. No personal data is sold.",
+    privacy: "Privacy Policy",
+    accept: "Accept",
+    refuse: "Decline",
+  },
 };
 
 export default en;

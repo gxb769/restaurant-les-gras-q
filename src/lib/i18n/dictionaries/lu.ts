@@ -214,9 +214,15 @@ const lu: Dictionary = {
     address: "32 Rue de Longwy, 54870 Cons-la-Grandville",
     note: "Websäit erstallt fir Les Gras Q.",
   },
-  mobile: {
+    mobile: {
     call: "Uruffen",
     fork: "Online reservéieren",
+  },
+  cookie: {
+    text: "Dës Säit benotzt analytesch Cookies (Google Analytics) fir d'Publikum ze moossen an Är Erfarung ze verbesseren. Keng perséinlech Donnéeë ginn verkaaft.",
+    privacy: "Dateschutzpolitik",
+    accept: "Akzeptéieren",
+    refuse: "Ofleenen",
   },
 };
 
