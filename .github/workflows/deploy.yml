@@ -27,25 +27,14 @@ jobs:
           NEXT_PUBLIC_SITE_URL: https://restaurant-les-gras-q.fr
           NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
 
-      - name: Install lftp
-        run: sudo apt-get install -y lftp
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass rsync
 
-      - name: Deploy via FTP
+      - name: Deploy via SFTP
         env:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          printf '%s\n' \
-            'set ftp:ssl-allow yes' \
-            'set ftp:ssl-force no' \
-            'set ssl:verify-certificate no' \
-            'set net:timeout 30' \
-            'set net:max-retries 3' \
-            'set ftp:passive-mode yes' \
-            'open 213.130.145.210' \
-            > /tmp/lftp_cmd.lftp
-          printf 'user u800689494.gxb %s\n' "$FTP_PASSWORD" >> /tmp/lftp_cmd.lftp
-          printf '%s\n' \
-            'mirror -R --delete ./out/ /home/u800689494/domains/papayawhip-peafowl-285432.hostingersite.com/public_html/' \
-            'bye' \
-            >> /tmp/lftp_cmd.lftp
-          lftp -f /tmp/lftp_cmd.lftp
+          sshpass -p "$FTP_PASSWORD" rsync -avz --delete \
+            -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p 22" \
+            ./out/ \
+            u800689494.gxb@213.130.145.210:/home/u800689494/domains/papayawhip-peafowl-285432.hostingersite.com/public_html/
