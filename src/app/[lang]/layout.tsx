@@ -25,7 +25,8 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "700", "800"],
   variable: "--font-inter",
-  display: "swap",
+  // "optional" like Cormorant — prevents font-swap from triggering a LCP re-paint
+  display: "optional",
 });
 
 export const viewport: Viewport = {
@@ -88,6 +89,23 @@ export default async function LangLayout({
       lang={lang}
       className={`${cormorant.variable} ${inter.variable}`}
     >
+      <head>
+        {/* Preload LCP images — browser starts fetching before parsing <picture> */}
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/dish-boeuf-mobile.webp"
+          type="image/webp"
+          media="(max-width: 640px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/dish-boeuf.webp"
+          type="image/webp"
+          media="(min-width: 641px)"
+        />
+      </head>
       <body>
         {/* Skip to main content — keyboard & screen reader navigation (WCAG 2.4.1) */}
         <a

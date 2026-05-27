@@ -25,14 +25,21 @@ export default function Hero({ dict }: Props) {
             animation: "hero-settle 1800ms ease-out both",
           }}
         >
-          {/* WebP served first (40% smaller), JPEG as fallback */}
+          {/* Responsive WebP — 32KB mobile / 69KB desktop vs 116KB JPEG original */}
           <picture style={{ position: "absolute", inset: 0 }}>
+            {/* Mobile ≤640px: smaller crop, half the bytes */}
+            <source
+              type="image/webp"
+              media="(max-width: 640px)"
+              srcSet="/assets/dish-boeuf-mobile.webp"
+            />
+            {/* Desktop: full-resolution WebP */}
             <source type="image/webp" srcSet="/assets/dish-boeuf.webp" />
             <img
               src="/assets/dish-boeuf.jpg"
               alt="Plat signature du restaurant Les Gras Q"
               fetchPriority="high"
-              decoding="async"
+              decoding="sync"
               style={{
                 position: "absolute",
                 inset: 0,
