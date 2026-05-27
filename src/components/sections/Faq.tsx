@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -24,31 +23,29 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         className="w-full px-6 py-[20px] text-left text-espresso font-[700] text-[15px] flex justify-between items-center gap-4 select-none transition-colors duration-150 hover:bg-ink/[0.02]"
       >
         <span className={open ? "text-espresso" : "text-espresso/90"}>{q}</span>
-        <motion.span
-          animate={{ rotate: open ? 45 : 0 }}
-          transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+        {/* Pure CSS rotate — no Framer Motion */}
+        <span
+          style={{ transform: open ? "rotate(45deg)" : "rotate(0deg)", transition: "transform 0.22s cubic-bezier(0.22,1,0.36,1)" }}
           className="shrink-0 w-[28px] h-[28px] rounded-full border border-gold/30 flex items-center justify-center text-[18px] leading-none text-gold bg-gold/[0.04] flex-shrink-0"
+          aria-hidden="true"
         >
           +
-        </motion.span>
+        </span>
       </button>
 
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            key="answer"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            style={{ overflow: "hidden" }}
-          >
-            <p className="px-6 pb-6 pt-0 m-0 text-ink/[0.62] text-[14px] leading-relaxed border-t border-ink/[0.05]">
-              <span className="block pt-4">{a}</span>
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* CSS max-height accordion — no AnimatePresence */}
+      <div
+        style={{
+          maxHeight: open ? "400px" : "0px",
+          opacity: open ? 1 : 0,
+          overflow: "hidden",
+          transition: "max-height 0.32s cubic-bezier(0.22,1,0.36,1), opacity 0.28s ease",
+        }}
+      >
+        <p className="px-6 pb-6 pt-0 m-0 text-ink/[0.62] text-[14px] leading-relaxed border-t border-ink/[0.05]">
+          <span className="block pt-4">{a}</span>
+        </p>
+      </div>
     </div>
   );
 }
