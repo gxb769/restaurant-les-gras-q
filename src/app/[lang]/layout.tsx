@@ -7,6 +7,7 @@ import Grain from "@/components/ui/Grain";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import CookieBanner from "@/components/ui/CookieBanner";
 import Analytics from "@/components/ui/Analytics";
+import PageTransition from "@/components/ui/PageTransition";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -96,6 +97,7 @@ export default async function LangLayout({
           <div className="ambient-orb-1" />
           <div className="ambient-orb-2" />
         </div>
+        <PageTransition />
         <SmoothScroll />
         <Grain />
         <Analytics />

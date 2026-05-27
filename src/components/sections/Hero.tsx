@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useScroll, useTransform, motion } from "framer-motion";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import { PHONE } from "@/lib/constants";
 import MagneticButton from "@/components/ui/MagneticButton";
@@ -10,27 +11,39 @@ type Props = { dict: Dictionary };
 export default function Hero({ dict }: Props) {
   const h = dict.hero;
   const q = dict.quick;
+  const { scrollY } = useScroll();
+  // Shift bg image up by 18% over the first 700px of scroll — classic parallax depth
+  const bgY = useTransform(scrollY, [0, 700], ["0%", "18%"]);
 
   return (
     <header
       id="top"
       className="min-h-svh relative text-cream flex flex-col justify-end pt-[130px] pb-16 max-sm:pb-28 isolate overflow-hidden"
     >
-      {/* Background — appetizing dish photo, LCP-priority */}
+      {/* Background — appetizing dish photo, LCP-priority, parallax on scroll */}
       <div
         className="absolute inset-0 -z-30 overflow-hidden"
-        style={{ animation: "hero-settle 1800ms ease-out both" }}
         aria-hidden="true"
       >
-        <Image
-          src="/assets/dish-boeuf.jpg"
-          alt="Plat signature du restaurant Les Gras Q"
-          fill
-          priority
-          fetchPriority="high"
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+        {/* Extra headroom (-15% inset) so parallax shift never shows white edges */}
+        <motion.div
+          className="absolute"
+          style={{
+            inset: "-15%",
+            y: bgY,
+            animation: "hero-settle 1800ms ease-out both",
+          }}
+        >
+          <Image
+            src="/assets/dish-boeuf.jpg"
+            alt="Plat signature du restaurant Les Gras Q"
+            fill
+            priority
+            fetchPriority="high"
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </motion.div>
       </div>
 
       {/* Overlays — cinematic grounding for the dish photo */}

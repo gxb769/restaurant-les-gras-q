@@ -1,15 +1,21 @@
+"use client";
+
+import { useState } from "react";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { PHONE, PHONE_DISPLAY, EMAIL, ADDRESS, MAPS_URL } from "@/lib/constants";
+import ReservationModal from "@/components/ui/ReservationModal";
 
 type Props = { dict: Dictionary };
 
 export default function Contact({ dict }: Props) {
+  const [modalOpen, setModalOpen] = useState(false);
   const h = dict.hours;
   const c = dict.contact;
   const v = dict.visit;
 
   return (
+    <>
     <section className="text-cream py-[104px] pb-0 max-sm:py-[64px] relative overflow-hidden border-t border-cream/[0.05]" id="venir">
       {/* Warm gold glow — halo final de page */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_0%,rgba(201,168,76,0.07),transparent)] pointer-events-none" aria-hidden="true" />
@@ -129,6 +135,17 @@ export default function Contact({ dict }: Props) {
                 >
                   {dict.cta.button}
                 </a>
+                <button
+                  onClick={() => setModalOpen(true)}
+                  className="flex items-center justify-center gap-2 min-h-[50px] px-6 rounded-full text-[13px] font-[800] tracking-[0.05em] uppercase text-cream border border-gold/[0.30] bg-gold/[0.07] transition-all duration-[200ms] hover:-translate-y-[2px] hover:bg-gold/[0.13] hover:border-gold/[0.50] active:translate-y-0"
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <rect x="1" y="2.5" width="12" height="10" rx="2" stroke="currentColor" strokeWidth="1.3"/>
+                    <path d="M5 1v3M9 1v3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                    <path d="M1 6h12" stroke="currentColor" strokeWidth="1.3"/>
+                  </svg>
+                  Réserver en ligne
+                </button>
               </div>
             </div>
           </ScrollReveal>
@@ -179,5 +196,8 @@ export default function Contact({ dict }: Props) {
       </ScrollReveal>
 
     </section>
+
+    <ReservationModal open={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
   );
 }
