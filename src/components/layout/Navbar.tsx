@@ -97,11 +97,11 @@ export default function Navbar({ dict, lang }: Props) {
           <Link
             href={`/${lang}#top`}
             className="flex items-center gap-3 min-w-0 shrink-0 group min-h-[44px]"
-            aria-label="Restaurant Les Gras Q — Accueil"
           >
             <Image
               src="/assets/logo-gras-q.jpg"
-              alt="Logo Restaurant Les Gras Q"
+              alt=""
+              aria-hidden="true"
               width={38}
               height={38}
               className="rounded-full object-cover border border-gold-soft/55 shadow-[0_0_0_4px_rgba(234,216,168,0.08)] transition-transform duration-200 group-hover:scale-105"
@@ -109,6 +109,7 @@ export default function Navbar({ dict, lang }: Props) {
             <span className="font-serif text-[22px] font-bold whitespace-nowrap leading-none">
               Les Gras Q
             </span>
+            <span className="sr-only">— Accueil</span>
           </Link>
 
           {/* Desktop links */}

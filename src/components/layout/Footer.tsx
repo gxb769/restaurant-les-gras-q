@@ -20,7 +20,7 @@ export default function Footer({ dict, lang }: Props) {
           <div className="max-sm:order-2">
             <p className="text-gold text-[10px] font-[900] tracking-[0.22em] uppercase mb-3">Restaurant</p>
             <h2 className="font-serif text-cream text-[44px] font-bold leading-none mb-4">Les Gras Q</h2>
-            <p className="text-cream/40 text-[13px] leading-[1.8] mb-6">
+            <p className="text-cream/60 text-[13px] leading-[1.8] mb-6">
               Cuisine française traditionnelle<br />
               {f.address}
             </p>
@@ -32,7 +32,7 @@ export default function Footer({ dict, lang }: Props) {
             </a>
             <a
               href={`mailto:${EMAIL}`}
-              className="text-cream/35 hover:text-cream/65 text-[13px] transition-colors duration-150"
+              className="text-cream/60 hover:text-cream/80 text-[13px] transition-colors duration-150"
             >
               {EMAIL}
             </a>
@@ -74,7 +74,7 @@ export default function Footer({ dict, lang }: Props) {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="text-cream/30 hover:text-gold-soft transition-colors duration-200"
+                  className="text-cream/55 hover:text-gold-soft transition-colors duration-200"
                 >
                   {icon}
                 </a>
@@ -91,10 +91,10 @@ export default function Footer({ dict, lang }: Props) {
                   key={d.name}
                   className="flex justify-between gap-4 py-[9px] border-b border-cream/[0.06] last:border-b-0"
                 >
-                  <span className={d.hours ? "text-cream/65 text-[13px]" : "text-cream/22 text-[13px]"}>
+                  <span className={d.hours ? "text-cream/80 text-[13px]" : "text-cream/55 text-[13px]"}>
                     {d.name}
                   </span>
-                  <span className={d.hours ? "text-cream/40 text-[12px] tabular-nums" : "text-cream/22 text-[12px] italic"}>
+                  <span className={d.hours ? "text-cream/60 text-[12px] tabular-nums" : "text-cream/55 text-[12px] italic"}>
                     {d.hours ?? h.closed}
                   </span>
                 </div>
@@ -107,7 +107,7 @@ export default function Footer({ dict, lang }: Props) {
             <p className="text-gold text-[10px] font-[900] tracking-[0.22em] uppercase mb-4">
               {dict.visit.eyebrow}
             </p>
-            <p className="text-cream/40 text-[13px] leading-[1.8] mb-8 flex-1">
+            <p className="text-cream/60 text-[13px] leading-[1.8] mb-8 flex-1">
               {dict.cta.text}
             </p>
             <div className="flex flex-col gap-3 max-sm:flex-row max-sm:flex-wrap">
@@ -121,7 +121,7 @@ export default function Footer({ dict, lang }: Props) {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full text-[12px] font-[700] tracking-[0.05em] uppercase text-cream/45 border border-cream/[0.12] hover:text-cream/70 hover:border-cream/22 transition-all duration-[200ms]"
+                className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full text-[12px] font-[700] tracking-[0.05em] uppercase text-cream/65 border border-cream/[0.20] hover:text-cream/85 hover:border-cream/35 transition-all duration-[200ms]"
               >
                 {c.mapLabel}
               </a>
@@ -132,7 +132,7 @@ export default function Footer({ dict, lang }: Props) {
 
       {/* Bottom bar */}
       <div className="border-t border-cream/[0.06]" style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}>
-        <div className="w-[min(1180px,calc(100%-40px))] mx-auto py-5 max-sm:pb-[84px] flex flex-wrap justify-between items-center gap-x-6 gap-y-3 text-[11px] text-cream/[0.25]">
+        <div className="w-[min(1180px,calc(100%-40px))] mx-auto py-5 max-sm:pb-[84px] flex flex-wrap justify-between items-center gap-x-6 gap-y-3 text-[11px] text-cream/[0.58]">
           <span>{f.owner}</span>
           <nav aria-label="Liens légaux" className="flex items-center gap-5 flex-wrap">
             <Link

@@ -48,7 +48,7 @@ function PhotoTile({
       />
       <Image
         src={photo.src}
-        alt={photo.alt}
+        alt=""
         fill
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
         style={{ objectPosition: photo.pos }}
@@ -143,7 +143,7 @@ export default function Gallery({ dict }: Props) {
               className="snap-start shrink-0 w-[80vw] h-[280px] relative rounded-xl overflow-hidden bg-[#141210] cursor-zoom-in"
             >
               <Image
-                src={p.src} alt={p.alt} fill
+                src={p.src} alt="" fill
                 className="object-cover"
                 style={{ objectPosition: p.pos }}
                 sizes="80vw"

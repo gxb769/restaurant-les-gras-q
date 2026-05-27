@@ -175,11 +175,11 @@ export default function Hero({ dict }: Props) {
       {/* Scroll chevron — mobile */}
       <a
         href="#experience"
-        aria-label="Défiler vers le contenu"
         className="sm:hidden absolute bottom-[54px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[5px] text-cream/[0.38] hover:text-cream/60 transition-colors"
         style={{ animation: "fade-up 800ms 900ms ease-out both" }}
       >
         <span className="text-[9px] font-[800] tracking-[0.18em] uppercase">Découvrir</span>
+        <span className="sr-only">— défiler vers le contenu</span>
         <svg
           width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"
           className="animate-bounce"
