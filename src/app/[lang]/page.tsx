@@ -180,9 +180,10 @@ export default async function Page({
 
   return (
     <>
-      {/* LCP image preloads: React 18 hoists these <link> tags to <head> from RSC.
-          Browser fetches hero image before HTML parse completes → faster LCP.
-          Responsive media queries ensure mobile (32KB) vs desktop (70KB). */}
+      {/* LCP image preloads — React 18 hoists RSC <link> tags to <head>.
+          Without these, the browser can't start fetching the hero image until
+          it parses the <picture> element deep in the HTML body → slower LCP.
+          Responsive: mobile gets 32KB WebP, desktop gets 70KB WebP. */}
       <link rel="preload" as="image" href="/assets/dish-boeuf-mobile.webp" media="(max-width: 640px)" />
       <link rel="preload" as="image" href="/assets/dish-boeuf.webp" media="(min-width: 641px)" />
 

@@ -58,7 +58,7 @@ export default function Hero({ dict }: Props) {
       <div className="absolute inset-0 -z-20 bg-gradient-to-t from-[rgba(10,8,7,0.97)] via-[rgba(10,8,7,0.22)] to-[rgba(10,8,7,0.50)]" />
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(ellipse_110%_60%_at_50%_100%,rgba(10,8,7,0.45),transparent)]" />
 
-      <div className="w-[min(1180px,calc(100%-40px))] mx-auto w-full">
+      <div className="w-full max-w-[1180px] mx-auto px-5 sm:px-8">
 
         {/* Eyebrow */}
         <div
