@@ -16,7 +16,9 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
-  display: "swap",
+  // "optional" prevents late font-swap from updating LCP — font is preloaded and
+  // applied only if it loads during the initial render window; cached on next visit.
+  display: "optional",
 });
 
 const inter = Inter({
