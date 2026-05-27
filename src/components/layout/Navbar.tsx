@@ -143,9 +143,10 @@ export default function Navbar({ dict, lang }: Props) {
                   className={[
                     "min-w-[36px] h-8 rounded-full text-[12px] font-[800] text-center leading-8 transition-all duration-[180ms]",
                     lang === code
-                      ? "bg-gold-soft text-ink shadow-sm"
+                      ? "bg-gold-soft shadow-sm"
                       : "text-cream/70 hover:text-cream hover:bg-cream/[0.08]",
                   ].join(" ")}
+                  style={lang === code ? { color: "#211812" } : undefined}
                 >
                   {label}
                 </Link>
