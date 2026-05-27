@@ -27,6 +27,16 @@ jobs:
           NEXT_PUBLIC_SITE_URL: https://restaurant-les-gras-q.fr
           NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
 
+      - name: Test FTP credentials with curl
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          echo "Testing FTP connection..."
+          curl -v --max-time 10 \
+            --user "u800689494:${FTP_PASSWORD}" \
+            "ftp://213.130.145.210/" \
+            --list-only 2>&1 | grep -E "^[<>*]" | head -20
+
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
