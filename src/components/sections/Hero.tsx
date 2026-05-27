@@ -39,7 +39,7 @@ export default function Hero({ dict }: Props) {
               src="/assets/dish-boeuf.jpg"
               alt="Plat signature du restaurant Les Gras Q"
               fetchPriority="high"
-              decoding="sync"
+              decoding="async"
               style={{
                 position: "absolute",
                 inset: 0,

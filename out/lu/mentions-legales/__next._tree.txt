@@ -2,6 +2,4 @@
 :HL["/_next/static/media/01e4147cff8141ee-s.p.10ked.7w885.g.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/8bd76523131fa0fc-s.p.0jox806dnq5~c.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/assets/dish-boeuf-mobile.webp","image",{"type":"image/webp","media":"(max-width: 640px)"}]
-:HL["/assets/dish-boeuf.webp","image",{"type":"image/webp","media":"(min-width: 641px)"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"lang","param":{"type":"d","key":"lu","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"mentions-legales","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"stBh_os0u-lCfL4DHH_08"}
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"lang","param":{"type":"d","key":"lu","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"mentions-legales","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"DxFUGm6S2s-fTfcGnyIqC"}
