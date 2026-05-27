@@ -14,7 +14,7 @@ export default function FinalCta({ dict }: Props) {
           <div className="inline-flex items-center gap-[10px] text-gold-soft text-[12px] font-[800] tracking-[0.18em] uppercase before:content-[''] before:w-[34px] before:h-px before:bg-current mb-5">
             {c.eyebrow}
           </div>
-          <h2 className="font-serif font-[500] italic leading-[0.96] text-[clamp(36px,7vw,100px)] max-w-[900px] mx-auto">
+          <h2 className="font-serif font-[600] italic leading-[0.96] text-[clamp(36px,7vw,100px)] max-w-[900px] mx-auto">
             {c.title}
           </h2>
           <p className="max-w-[560px] mx-auto mt-[22px] mb-[34px] text-cream/[0.72] text-[18px] leading-relaxed">

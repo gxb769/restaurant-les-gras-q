@@ -5,13 +5,15 @@ import { getDictionary, hasLocale, locales } from "@/lib/i18n/getDictionary";
 import "@/app/globals.css";
 import Grain from "@/components/ui/Grain";
 import SmoothScroll from "@/components/ui/SmoothScroll";
-import CookieBanner from "@/components/ui/CookieBanner";
 import Analytics from "@/components/ui/Analytics";
 import PageTransition from "@/components/ui/PageTransition";
 
+import CookieBanner from "@/components/ui/CookieBannerClient";
+
+// 6 font files instead of 14 — removed weight 500 (→ 600) and trimmed Inter
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "500", "600", "700"],
+  weight: ["300", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
   display: "swap",
@@ -19,7 +21,7 @@ const cormorant = Cormorant_Garamond({
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700", "800"],
   variable: "--font-inter",
   display: "swap",
 });
