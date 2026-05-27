@@ -4,4 +4,4 @@
 :HL["/_next/static/media/8bd76523131fa0fc-s.p.0jox806dnq5~c.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/assets/dish-boeuf-mobile.webp","image",{"media":"(max-width: 640px)"}]
 :HL["/assets/dish-boeuf.webp","image",{"media":"(min-width: 641px)"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"lang","param":{"type":"d","key":"lu","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"6MR055_DdZlZ4q52M3iKj"}
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"lang","param":{"type":"d","key":"lu","siblings":null},"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"Ntg5csjpEfya-GN6WrZ9n"}
