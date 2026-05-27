@@ -4,7 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import GalleryLightbox from "@/components/ui/GalleryLightbox";
+import dynamic from "next/dynamic";
+// GalleryLightbox charge des animations complexes — lazy load car toujours sous le fold
+const GalleryLightbox = dynamic(() => import("@/components/ui/GalleryLightbox"), { ssr: false });
 
 type Props = { dict: Dictionary };
 

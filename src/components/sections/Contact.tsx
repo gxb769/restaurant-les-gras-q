@@ -4,7 +4,9 @@ import { useState } from "react";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { PHONE, PHONE_DISPLAY, EMAIL, ADDRESS, MAPS_URL } from "@/lib/constants";
-import ReservationModal from "@/components/ui/ReservationModal";
+import dynamic from "next/dynamic";
+// ReservationModal contient Framer Motion + logique Formspree — chargé seulement au clic
+const ReservationModal = dynamic(() => import("@/components/ui/ReservationModal"), { ssr: false });
 
 type Props = { dict: Dictionary };
 
