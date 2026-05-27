@@ -4,8 +4,19 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { PHONE, PHONE_DISPLAY } from "@/lib/constants";
 
-// ─── Formspree endpoint — replace XXXXXXXX with the real form ID after signup ───
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xpwzgakq";
+// ─── Formspree endpoint ──────────────────────────────────────────────────────
+// The restaurant owner must:
+//   1. Create a free account at https://formspree.io
+//   2. Create a new form and copy its ID (e.g. "xpwzgakq")
+//   3. Set NEXT_PUBLIC_FORMSPREE_ID=<form-id> in .env.local (or in the
+//      Hostinger / Vercel environment variables panel before deploying)
+//
+// This site uses `output: 'export'` (static export), so only NEXT_PUBLIC_
+// prefixed variables are available client-side — they are inlined at build time.
+// ─────────────────────────────────────────────────────────────────────────────
+const FORMSPREE_ENDPOINT = `https://formspree.io/f/${
+  process.env.NEXT_PUBLIC_FORMSPREE_ID ?? ""
+}`;
 
 type Step = "form" | "sending" | "success" | "error";
 
