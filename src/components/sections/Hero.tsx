@@ -1,6 +1,3 @@
-"use client";
-
-import Image from "next/image";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import { PHONE } from "@/lib/constants";
 
@@ -28,15 +25,24 @@ export default function Hero({ dict }: Props) {
             animation: "hero-settle 1800ms ease-out both",
           }}
         >
-          <Image
-            src="/assets/dish-boeuf.jpg"
-            alt="Plat signature du restaurant Les Gras Q"
-            fill
-            priority
-            fetchPriority="high"
-            className="object-cover object-center"
-            sizes="100vw"
-          />
+          {/* WebP served first (40% smaller), JPEG as fallback */}
+          <picture style={{ position: "absolute", inset: 0 }}>
+            <source type="image/webp" srcSet="/assets/dish-boeuf.webp" />
+            <img
+              src="/assets/dish-boeuf.jpg"
+              alt="Plat signature du restaurant Les Gras Q"
+              fetchPriority="high"
+              decoding="async"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+            />
+          </picture>
         </div>
       </div>
 

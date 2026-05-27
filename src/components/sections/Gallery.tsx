@@ -11,16 +11,16 @@ const GalleryLightbox = dynamic(() => import("@/components/ui/GalleryLightbox"),
 type Props = { dict: Dictionary };
 
 const photos = [
-  { src: "/assets/dish-boeuf.jpg",       alt: "Joue de bœuf braisée",         pos: "center" },
-  { src: "/assets/dish-entree.jpg",      alt: "Mise en bouche du chef",        pos: "50% 40%" },
-  { src: "/assets/dish-bar.jpg",         alt: "Bar de ligne, sauce vierge",    pos: "center" },
-  { src: "/assets/dish-dessert.jpg",     alt: "Dessert maison",                pos: "center" },
-  { src: "/assets/salle.jpg",            alt: "Salle du restaurant Les Gras Q",pos: "50% 40%" },
-  { src: "/assets/terrasse.jpg",         alt: "Terrasse estivale",             pos: "50% 55%" },
-  { src: "/assets/equipe.jpg",           alt: "Christelle & Gérald",           pos: "50% 35%" },
-  { src: "/assets/cave-vin.jpg",         alt: "Cave à vins",                   pos: "50% 45%" },
-  { src: "/assets/village.jpg",          alt: "Château de Cons-la-Grandville", pos: "50% 70%" },
-  { src: "/assets/hero-restaurant.jpg",  alt: "Restaurant Les Gras Q",         pos: "50% 40%" },
+  { src: "/assets/dish-boeuf.webp",       alt: "Joue de bœuf braisée",         pos: "center" },
+  { src: "/assets/dish-entree.webp",      alt: "Mise en bouche du chef",        pos: "50% 40%" },
+  { src: "/assets/dish-bar.webp",         alt: "Bar de ligne, sauce vierge",    pos: "center" },
+  { src: "/assets/dish-dessert.webp",     alt: "Dessert maison",                pos: "center" },
+  { src: "/assets/salle.webp",            alt: "Salle du restaurant Les Gras Q",pos: "50% 40%" },
+  { src: "/assets/terrasse.webp",         alt: "Terrasse estivale",             pos: "50% 55%" },
+  { src: "/assets/equipe.webp",           alt: "Christelle & Gérald",           pos: "50% 35%" },
+  { src: "/assets/cave-vin.webp",         alt: "Cave à vins",                   pos: "50% 45%" },
+  { src: "/assets/village.webp",          alt: "Château de Cons-la-Grandville", pos: "50% 70%" },
+  { src: "/assets/hero-restaurant.webp",  alt: "Restaurant Les Gras Q",         pos: "50% 40%" },
 ];
 
 function PhotoTile({

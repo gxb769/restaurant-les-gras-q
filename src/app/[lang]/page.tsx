@@ -1,19 +1,27 @@
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale } from "@/lib/i18n/getDictionary";
 import type { Locale } from "@/lib/i18n/getDictionary";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import Experience from "@/components/sections/Experience";
-import MenuSection from "@/components/sections/MenuSection";
-import Gallery from "@/components/sections/Gallery";
-import QuoteBreak from "@/components/sections/QuoteBreak";
-import Reviews from "@/components/sections/Reviews";
-import PrivateEvents from "@/components/sections/PrivateEvents";
-import FinalCta from "@/components/sections/FinalCta";
-import Contact from "@/components/sections/Contact";
-import { PHONE } from "@/lib/constants";
 import MobileBottomBar from "@/components/ui/MobileBottomBar";
+import { PHONE } from "@/lib/constants";
+
+/**
+ * Below-fold sections are lazy-loaded via next/dynamic.
+ * SSR is preserved (ssr: true by default) so content is still in the HTML for SEO.
+ * The JS for each section is code-split into its own chunk → lower TBT on the
+ * main thread during initial parse.
+ */
+const Experience    = dynamic(() => import("@/components/sections/Experience"));
+const MenuSection   = dynamic(() => import("@/components/sections/MenuSection"));
+const Gallery       = dynamic(() => import("@/components/sections/Gallery"));
+const QuoteBreak    = dynamic(() => import("@/components/sections/QuoteBreak"));
+const Reviews       = dynamic(() => import("@/components/sections/Reviews"));
+const PrivateEvents = dynamic(() => import("@/components/sections/PrivateEvents"));
+const FinalCta      = dynamic(() => import("@/components/sections/FinalCta"));
+const Contact       = dynamic(() => import("@/components/sections/Contact"));
 
 // JSON-LD is static data sourced entirely from our own constants — no user input
 const SITE_URL = "https://restaurant-les-gras-q.fr";

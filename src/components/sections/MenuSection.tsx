@@ -7,10 +7,10 @@ import { PHONE } from "@/lib/constants";
 type Props = { dict: Dictionary };
 
 const DISH_META = [
-  { photo: "/assets/dish-entree.jpg", price: "14€", num: "01" },
-  { photo: "/assets/dish-bar.jpg",    price: "22€", num: "02" },
-  { photo: "/assets/dish-boeuf.jpg",  price: "20€", num: "03" },
-  { photo: "/assets/dish-dessert.jpg",price: "7€",  num: "04" },
+  { photo: "/assets/dish-entree.webp", price: "14€", num: "01" },
+  { photo: "/assets/dish-bar.webp",    price: "22€", num: "02" },
+  { photo: "/assets/dish-boeuf.webp",  price: "20€", num: "03" },
+  { photo: "/assets/dish-dessert.webp",price: "7€",  num: "04" },
 ];
 
 export default function MenuSection({ dict }: Props) {

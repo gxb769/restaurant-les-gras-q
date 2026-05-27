@@ -11,7 +11,7 @@ export default function QuoteBreak({ dict }: Props) {
       <div className="absolute inset-0 -z-20 overflow-hidden" aria-hidden="true">
         <div style={{ position: "absolute", inset: "-12%" }}>
           <Image
-            src="/assets/ambiance-resto.jpg"
+            src="/assets/ambiance-resto.webp"
             alt=""
             fill
             className="object-cover object-[center_60%]"

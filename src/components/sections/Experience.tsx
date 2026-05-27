@@ -28,7 +28,7 @@ export default function Experience({ dict }: Props) {
           <ScrollReveal className="relative min-h-[520px] max-md:aspect-[4/3] max-md:min-h-0 max-sm:hidden">
             <div className="absolute w-[74%] h-[400px] left-0 top-0 rounded-lg overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">
               <Image
-                src="/assets/equipe.jpg"
+                src="/assets/equipe.webp"
                 alt="Christelle et Gérald vous accueillent au restaurant Les Gras Q"
                 fill
                 className="object-cover object-[50%_35%] transition-transform duration-500 group-hover:scale-[1.05]"
@@ -37,7 +37,7 @@ export default function Experience({ dict }: Props) {
             </div>
             <div className="absolute w-[58%] h-[310px] right-0 bottom-0 rounded-lg overflow-hidden border-[10px] border-[#0a0807] shadow-[0_24px_80px_rgba(22,19,17,0.28)] group">
               <Image
-                src="/assets/terrasse.jpg"
+                src="/assets/terrasse.webp"
                 alt="Terrasse du restaurant Les Gras Q"
                 fill
                 className="object-cover object-[50%_45%] transition-transform duration-500 group-hover:scale-[1.05]"
@@ -49,7 +49,7 @@ export default function Experience({ dict }: Props) {
           {/* Single image — mobile */}
           <ScrollReveal className="hidden max-sm:block relative aspect-[4/3] rounded-xl overflow-hidden shadow-[0_24px_80px_rgba(22,19,17,0.28)]">
             <Image
-              src="/assets/equipe.jpg"
+              src="/assets/equipe.webp"
               alt="L'équipe du restaurant Les Gras Q"
               fill
               className="object-cover object-[50%_35%]"

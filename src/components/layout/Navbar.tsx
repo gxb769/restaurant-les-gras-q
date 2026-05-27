@@ -112,7 +112,7 @@ export default function Navbar({ dict, lang }: Props) {
             className="flex items-center gap-3 min-w-0 shrink-0 group min-h-[44px]"
           >
             <Image
-              src="/assets/logo-gras-q.jpg"
+              src="/assets/logo-gras-q.webp"
               alt=""
               aria-hidden="true"
               width={38}

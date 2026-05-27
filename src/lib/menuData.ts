@@ -38,7 +38,7 @@ export const menuCategories: MenuCategory[] = [
         detail: "Confiture de figues et toast brioche",
         price: "14€",
         signature: true,
-        photo: "/assets/dish-entree.jpg",
+        photo: "/assets/dish-entree.webp",
       },
       {
         name: "Velouté de légumes de saison",
@@ -65,14 +65,14 @@ export const menuCategories: MenuCategory[] = [
         detail: "Légumes de saison, beurre blanc au citron",
         price: "22€",
         signature: true,
-        photo: "/assets/dish-bar.jpg",
+        photo: "/assets/dish-bar.webp",
       },
       {
         name: "Joue de bœuf braisée 7h",
         detail: "Purée maison, jus de cuisson réduit au vin rouge",
         price: "20€",
         signature: true,
-        photo: "/assets/dish-boeuf.jpg",
+        photo: "/assets/dish-boeuf.webp",
       },
       {
         name: "Côte de porc fermière",
@@ -94,7 +94,7 @@ export const menuCategories: MenuCategory[] = [
         detail: "À découvrir selon la carte du moment",
         price: "7€",
         signature: true,
-        photo: "/assets/dish-dessert.jpg",
+        photo: "/assets/dish-dessert.webp",
       },
       {
         name: "Tarte aux fruits de saison",
