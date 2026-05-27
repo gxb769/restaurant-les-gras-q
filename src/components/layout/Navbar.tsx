@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import type { Locale } from "@/lib/i18n/getDictionary";
 import { PHONE } from "@/lib/constants";
@@ -20,6 +19,8 @@ type Props = { dict: Dictionary["nav"]; lang: Locale };
 export default function Navbar({ dict, lang }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false); // controls opacity (for exit fade)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -30,24 +31,36 @@ export default function Navbar({ dict, lang }: Props) {
   }, []);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") handleClose(); };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth >= 768) setOpen(false); };
+    const onResize = () => { if (window.innerWidth >= 768) handleClose(); };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  // Custom ease-out-quart scroll — respects navbar offset
+  // Mount overlay → next frame set visible (triggers CSS fade-in)
+  const handleOpen = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(true);
+    requestAnimationFrame(() => setVisible(true));
+  };
+
+  // Fade-out → then unmount
+  const handleClose = () => {
+    setVisible(false);
+    closeTimer.current = setTimeout(() => setOpen(false), 220);
+  };
+
+  // Custom ease-out-quart scroll
   const scrollTo = (hash: string) => {
     const id = hash.replace("#", "");
     const el = id === "top" ? document.body : document.getElementById(id);
@@ -118,7 +131,7 @@ export default function Navbar({ dict, lang }: Props) {
               <a
                 key={l.href}
                 href={l.href}
-                onClick={(e) => { e.preventDefault(); setOpen(false); scrollTo(l.href); }}
+                onClick={(e) => { e.preventDefault(); handleClose(); scrollTo(l.href); }}
                 className="relative px-3 py-[10px] rounded-full text-cream/[0.78] hover:text-cream transition-colors duration-[180ms] after:absolute after:bottom-[6px] after:left-3 after:right-3 after:h-px after:bg-gold-soft after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-[220ms]"
               >
                 {l.label}
@@ -164,7 +177,7 @@ export default function Navbar({ dict, lang }: Props) {
             {/* Hamburger */}
             <button
               type="button"
-              onClick={() => setOpen((o) => !o)}
+              onClick={() => open ? handleClose() : handleOpen()}
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
@@ -194,115 +207,104 @@ export default function Navbar({ dict, lang }: Props) {
       </nav>
 
       {/* ── Full-screen mobile overlay menu ─────────────────── */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            id="mobile-menu"
-            key="mobile-menu"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Menu de navigation"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 md:hidden flex flex-col"
-            style={{ background: "rgba(10,8,7,0.97)", backdropFilter: "blur(22px)" }}
-          >
-            {/* Ambient gold glow */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(ellipse 70% 45% at 50% 0%, rgba(201,168,76,0.10), transparent)",
-              }}
-              aria-hidden="true"
-            />
+      {open && (
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu de navigation"
+          className="fixed inset-0 z-40 md:hidden flex flex-col"
+          style={{
+            background: "rgba(10,8,7,0.97)",
+            backdropFilter: "blur(22px)",
+            opacity: visible ? 1 : 0,
+            transition: "opacity 0.2s ease",
+          }}
+        >
+          {/* Ambient gold glow */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse 70% 45% at 50% 0%, rgba(201,168,76,0.10), transparent)",
+            }}
+            aria-hidden="true"
+          />
 
-            {/* Nav links — centered vertically */}
-            <nav className="flex-1 flex flex-col justify-center px-8 pt-24 pb-8 gap-[3px]">
-              {links.map((l, i) => (
-                <motion.a
-                  key={l.href}
-                  href={l.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpen(false);
-                    // small delay to let menu close first
-                    setTimeout(() => scrollTo(l.href), 240);
-                  }}
-                  initial={{ opacity: 0, x: -28 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{
-                    duration: 0.38,
-                    delay: i * 0.06,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="group flex items-center justify-between py-5 border-b border-cream/[0.07] last:border-b-0"
-                >
-                  <span className="font-serif text-cream text-[clamp(2rem,9vw,3rem)] font-bold leading-none tracking-tight group-hover:text-gold-soft transition-colors duration-200">
-                    {l.label}
-                  </span>
-                  <motion.span
-                    className="text-gold-soft/50 text-[22px] leading-none"
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.06 + 0.15, duration: 0.3 }}
-                    aria-hidden="true"
-                  >
-                    →
-                  </motion.span>
-                </motion.a>
-              ))}
-            </nav>
-
-            {/* Bottom — CTA + lang switcher */}
-            <motion.div
-              className="px-8 pb-10 flex flex-col gap-4"
-              style={{ paddingBottom: "max(2.5rem, env(safe-area-inset-bottom, 2.5rem))" }}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ duration: 0.35, delay: links.length * 0.06 + 0.05 }}
-            >
-              {/* Reserve button */}
+          {/* Nav links — centered vertically */}
+          <nav className="flex-1 flex flex-col justify-center px-8 pt-24 pb-8 gap-[3px]">
+            {links.map((l, i) => (
               <a
-                href={`tel:${PHONE}`}
-                onClick={() => setOpen(false)}
-                className="flex items-center justify-center min-h-[56px] rounded-full text-[14px] font-[900] tracking-[0.06em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold shadow-[0_8px_32px_rgba(201,168,76,0.28)] active:scale-[0.97] transition-transform duration-100"
+                key={l.href}
+                href={l.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleClose();
+                  setTimeout(() => scrollTo(l.href), 240);
+                }}
+                style={{
+                  animation: `navLinkIn 0.38s ${i * 0.06 + 0.06}s cubic-bezier(0.22,1,0.36,1) both`,
+                }}
+                className="group flex items-center justify-between py-5 border-b border-cream/[0.07] last:border-b-0"
               >
-                {dict.reserve}
+                <span className="font-serif text-cream text-[clamp(2rem,9vw,3rem)] font-bold leading-none tracking-tight group-hover:text-gold-soft transition-colors duration-200">
+                  {l.label}
+                </span>
+                <span
+                  className="text-gold-soft/50 text-[22px] leading-none"
+                  style={{
+                    animation: `navLinkIn 0.3s ${i * 0.06 + 0.21}s ease-out both`,
+                  }}
+                  aria-hidden="true"
+                >
+                  →
+                </span>
               </a>
+            ))}
+          </nav>
 
-              {/* Language pills */}
-              <div
-                role="group"
-                aria-label="Langue"
-                className="flex items-center justify-center gap-2"
-              >
-                {LOCALES.map(({ code, label }) => (
-                  <Link
-                    key={code}
-                    href={`/${code}`}
-                    onClick={() => setOpen(false)}
-                    aria-label={`Langue : ${label}`}
-                    aria-current={lang === code ? "true" : undefined}
-                    className={[
-                      "min-w-[52px] py-3 rounded-full text-[12px] font-[800] text-center transition-all duration-[180ms]",
-                      lang === code
-                        ? "bg-gold-soft/[0.18] text-gold-soft border border-gold-soft/30"
-                        : "text-cream/[0.50] hover:text-cream border border-cream/[0.10] hover:border-cream/[0.25]",
-                    ].join(" ")}
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          {/* Bottom — CTA + lang switcher */}
+          <div
+            className="px-8 flex flex-col gap-4"
+            style={{
+              paddingBottom: "max(2.5rem, env(safe-area-inset-bottom, 2.5rem))",
+              animation: `fade-up 0.35s ${links.length * 0.06 + 0.11}s ease-out both`,
+            }}
+          >
+            <a
+              href={`tel:${PHONE}`}
+              onClick={() => handleClose()}
+              className="flex items-center justify-center min-h-[56px] rounded-full text-[14px] font-[900] tracking-[0.06em] uppercase text-[#211812] bg-gradient-to-br from-[#f3dfb2] to-gold shadow-[0_8px_32px_rgba(201,168,76,0.28)] active:scale-[0.97] transition-transform duration-100"
+            >
+              {dict.reserve}
+            </a>
+
+            <div
+              role="group"
+              aria-label="Langue"
+              className="flex items-center justify-center gap-2"
+            >
+              {LOCALES.map(({ code, label }) => (
+                <Link
+                  key={code}
+                  href={`/${code}`}
+                  onClick={() => handleClose()}
+                  aria-label={`Langue : ${label}`}
+                  aria-current={lang === code ? "true" : undefined}
+                  className={[
+                    "min-w-[52px] py-3 rounded-full text-[12px] font-[800] text-center transition-all duration-[180ms]",
+                    lang === code
+                      ? "bg-gold-soft/[0.18] text-gold-soft border border-gold-soft/30"
+                      : "text-cream/[0.50] hover:text-cream border border-cream/[0.10] hover:border-cream/[0.25]",
+                  ].join(" ")}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -1,36 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { useScroll, useTransform, motion } from "framer-motion";
 import type { Dictionary } from "@/lib/i18n/dictionaries/fr";
 import { PHONE } from "@/lib/constants";
-import MagneticButton from "@/components/ui/MagneticButton";
 
 type Props = { dict: Dictionary };
 
 export default function Hero({ dict }: Props) {
   const h = dict.hero;
   const q = dict.quick;
-  const { scrollY } = useScroll();
-  // Shift bg image up by 18% over the first 700px of scroll — classic parallax depth
-  const bgY = useTransform(scrollY, [0, 700], ["0%", "18%"]);
 
   return (
     <header
       id="top"
       className="min-h-svh relative text-cream flex flex-col justify-end pt-[130px] pb-16 max-sm:pb-28 isolate overflow-hidden"
     >
-      {/* Background — appetizing dish photo, LCP-priority, parallax on scroll */}
+      {/* Background — appetizing dish photo, LCP-priority, subtle settle-in on load */}
       <div
         className="absolute inset-0 -z-30 overflow-hidden"
         aria-hidden="true"
       >
-        {/* Extra headroom (-15% inset) so parallax shift never shows white edges */}
-        <motion.div
-          className="absolute"
+        {/* Extra headroom (-15% inset) prevents white edges on small zoom/scroll */}
+        <div
           style={{
+            position: "absolute",
             inset: "-15%",
-            y: bgY,
             animation: "hero-settle 1800ms ease-out both",
           }}
         >
@@ -43,7 +37,7 @@ export default function Hero({ dict }: Props) {
             className="object-cover object-center"
             sizes="100vw"
           />
-        </motion.div>
+        </div>
       </div>
 
       {/* Overlays — cinematic grounding for the dish photo */}
@@ -98,14 +92,12 @@ export default function Hero({ dict }: Props) {
           className="flex flex-wrap items-center gap-5 mt-9 max-sm:flex-col max-sm:items-start"
           style={{ animation: "fade-up 700ms 520ms ease-out both" }}
         >
-          <MagneticButton strength={0.25}>
-            <a
-              href={`tel:${PHONE}`}
-              className="inline-flex items-center justify-center min-h-[58px] px-10 py-[16px] rounded-full text-[14px] font-[900] tracking-[0.06em] uppercase text-[#211812] bg-gradient-to-br from-[#f5e4ba] to-gold shadow-[0_10px_36px_rgba(196,160,93,0.40)] transition-all duration-[200ms] hover:-translate-y-[3px] hover:shadow-[0_22px_56px_rgba(196,160,93,0.54)] active:translate-y-0 max-sm:w-full"
-            >
-              {h.callBtn}
-            </a>
-          </MagneticButton>
+          <a
+            href={`tel:${PHONE}`}
+            className="inline-flex items-center justify-center min-h-[58px] px-10 py-[16px] rounded-full text-[14px] font-[900] tracking-[0.06em] uppercase text-[#211812] bg-gradient-to-br from-[#f5e4ba] to-gold shadow-[0_10px_36px_rgba(196,160,93,0.40)] transition-all duration-[200ms] hover:-translate-y-[3px] hover:shadow-[0_22px_56px_rgba(196,160,93,0.54)] active:translate-y-0 max-sm:w-full"
+          >
+            {h.callBtn}
+          </a>
 
           {/* Google rating badge */}
           <div className="inline-flex items-center gap-[8px] px-[14px] py-[9px] rounded-full border border-cream/[0.14] bg-[rgba(10,8,7,0.55)] backdrop-blur-sm max-sm:w-full max-sm:justify-center">
