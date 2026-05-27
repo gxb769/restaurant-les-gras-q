@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://restaurant-les-gras-q.fr/sitemap.xml
