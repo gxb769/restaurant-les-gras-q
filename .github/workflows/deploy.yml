@@ -34,6 +34,8 @@ jobs:
         env:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
+          echo "machine 213.130.145.210 login u800689494 password ${FTP_PASSWORD}" > ~/.netrc
+          chmod 600 ~/.netrc
           printf '%s\n' \
             'set ftp:ssl-allow yes' \
             'set ftp:ssl-force no' \
@@ -42,10 +44,7 @@ jobs:
             'set net:max-retries 3' \
             'set ftp:passive-mode yes' \
             'open 213.130.145.210' \
-            > /tmp/lftp_cmd.lftp
-          printf 'user u800689494 %s\n' "$FTP_PASSWORD" >> /tmp/lftp_cmd.lftp
-          printf '%s\n' \
             'mirror -R --delete ./out/ /home/u800689494/domains/darksalmon-manatee-847606.hostingersite.com/public_html/' \
             'bye' \
-            >> /tmp/lftp_cmd.lftp
+            > /tmp/lftp_cmd.lftp
           lftp -f /tmp/lftp_cmd.lftp
