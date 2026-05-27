@@ -38,6 +38,6 @@ jobs:
             set ftp:ssl-allow no;
             set net:timeout 30;
             set net:max-retries 3;
-            open -u 'u800689494.gxb','$FTP_PASSWORD' '213.130.145.210';
+            open -u u800689494.gxb,$FTP_PASSWORD 213.130.145.210;
             mirror -R --delete --verbose ./out/ /home/u800689494/domains/papayawhip-peafowl-285432.hostingersite.com/public_html/
           "
