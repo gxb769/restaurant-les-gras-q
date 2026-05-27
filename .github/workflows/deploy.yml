@@ -27,11 +27,15 @@ jobs:
           NEXT_PUBLIC_SITE_URL: https://restaurant-les-gras-q.fr
           NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
 
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
       - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
-          server-dir: /home/u800689494/domains/papayawhip-peafowl-285432.hostingersite.com/public_html/
+        run: |
+          lftp -c "
+            set ftp:ssl-allow no;
+            set net:timeout 30;
+            set net:max-retries 3;
+            open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' '${{ secrets.FTP_SERVER }}';
+            mirror -R --delete --verbose ./out/ /home/u800689494/domains/papayawhip-peafowl-285432.hostingersite.com/public_html/
+          "
