@@ -4,11 +4,18 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import { getDictionary, hasLocale, locales } from "@/lib/i18n/getDictionary";
 import "@/app/globals.css";
 import Grain from "@/components/ui/Grain";
-import SmoothScroll from "@/components/ui/SmoothScroll";
 import Analytics from "@/components/ui/Analytics";
-import PageTransition from "@/components/ui/PageTransition";
+import dynamic from "next/dynamic";
 
-import CookieBanner from "@/components/ui/CookieBannerClient";
+// CookieBanner uses Framer Motion — lazy-load so it never enters the initial JS
+// bundle. It's a leaf component (no children) so dynamic() is safe: React renders
+// null while the chunk loads, then mounts the banner. No content flash risk.
+const CookieBanner = dynamic(() => import("@/components/ui/CookieBannerClient"));
+
+// PageTransition is a CSS overlay (leaf, no children) — safe to lazy-load.
+// Lazy-loading also removes it from the critical path; if JS is slow the
+// overlay simply never blocks LCP.
+const PageTransition = dynamic(() => import("@/components/ui/PageTransition"));
 
 // 6 font files instead of 14 — removed weight 500 (→ 600) and trimmed Inter
 const cormorant = Cormorant_Garamond({
@@ -104,7 +111,6 @@ export default async function LangLayout({
           <div className="ambient-orb-2" />
         </div>
         <PageTransition />
-        <SmoothScroll />
         <Grain />
         <Analytics />
         <CookieBanner lang={lang} strings={dict.cookie} />

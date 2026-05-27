@@ -180,11 +180,17 @@ export default async function Page({
 
   return (
     <>
-      {/* eslint-disable-next-line react/no-danger -- static schema.org data, no user input */}
+      {/* LCP image preloads: React 18 hoists these <link> tags to <head> from RSC.
+          Browser fetches hero image before HTML parse completes → faster LCP.
+          Responsive media queries ensure mobile (32KB) vs desktop (70KB). */}
+      <link rel="preload" as="image" href="/assets/dish-boeuf-mobile.webp" media="(max-width: 640px)" />
+      <link rel="preload" as="image" href="/assets/dish-boeuf.webp" media="(min-width: 641px)" />
+
+      {/* eslint-disable-next-line react/no-danger */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString }} />
-      {/* eslint-disable-next-line react/no-danger -- static schema.org data, no user input */}
+      {/* eslint-disable-next-line react/no-danger */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdMenuString }} />
-      {/* eslint-disable-next-line react/no-danger -- static schema.org data, no user input */}
+      {/* eslint-disable-next-line react/no-danger */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdReviewsString }} />
 
       <Navbar dict={dict.nav} lang={lang as Locale} />
