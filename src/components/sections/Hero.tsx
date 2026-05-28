@@ -25,15 +25,21 @@ export default function Hero({ dict }: Props) {
             animation: "hero-settle 1800ms ease-out both",
           }}
         >
-          {/* Responsive WebP — 32KB mobile / 69KB desktop vs 116KB JPEG original */}
+          {/* Responsive AVIF/WebP — 28KB/32KB mobile, 60KB/72KB desktop vs 116KB JPEG */}
           <picture style={{ position: "absolute", inset: 0 }}>
-            {/* Mobile ≤640px: smaller crop, half the bytes */}
+            {/* Mobile ≤640px: AVIF first (12% < WebP), then WebP fallback */}
+            <source
+              type="image/avif"
+              media="(max-width: 640px)"
+              srcSet="/assets/dish-boeuf-mobile.avif"
+            />
             <source
               type="image/webp"
               media="(max-width: 640px)"
               srcSet="/assets/dish-boeuf-mobile.webp"
             />
-            {/* Desktop: full-resolution WebP */}
+            {/* Desktop: AVIF first (17% < WebP), then WebP fallback */}
+            <source type="image/avif" srcSet="/assets/dish-boeuf.avif" />
             <source type="image/webp" srcSet="/assets/dish-boeuf.webp" />
             <img
               src="/assets/dish-boeuf.jpg"
