@@ -113,8 +113,8 @@ figure {
 
 /* Blur-in reveal for hero heading words */
 @keyframes blur-in {
-  from { opacity: 0; filter: blur(14px); transform: translateY(10px); }
-  to   { opacity: 1; filter: blur(0px);  transform: translateY(0);    }
+  from { opacity: 0; filter: blur(6px); transform: translateY(8px); }
+  to   { opacity: 1; filter: blur(0px); transform: translateY(0);   }
 }
 
 /* ── Mobile nav link slide-in ────────────────── */

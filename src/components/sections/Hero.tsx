@@ -22,7 +22,7 @@ export default function Hero({ dict }: Props) {
           style={{
             position: "absolute",
             inset: "-15%",
-            animation: "hero-settle 1800ms ease-out both",
+            animation: "hero-settle 1200ms ease-out both",
           }}
         >
           {/* Responsive AVIF/WebP — 28KB/32KB mobile, 60KB/72KB desktop vs 116KB JPEG */}
@@ -78,13 +78,13 @@ export default function Hero({ dict }: Props) {
         <h1 className="font-serif font-[700] leading-[0.88] tracking-[-0.02em] mt-5 text-[clamp(72px,12vw,172px)] max-sm:text-[clamp(58px,17vw,140px)]">
           <span
             className="block"
-            style={{ animation: "blur-in 900ms 200ms ease-out both" }}
+            style={{ animation: "fade-up 700ms 180ms ease-out both" }}
           >
             Restaurant
           </span>
           <span
             className="block"
-            style={{ animation: "blur-in 900ms 380ms ease-out both" }}
+            style={{ animation: "fade-up 700ms 320ms ease-out both" }}
           >
             Les Gras Q
           </span>

@@ -100,6 +100,11 @@ export default async function LangLayout({
       lang={lang}
       className={`${cormorant.variable} ${inter.variable}`}
     >
+      <head>
+        {/* LCP hero — preload both sizes before HTML is fully parsed */}
+        <link rel="preload" as="image" href="/assets/dish-boeuf-mobile.avif" type="image/avif" media="(max-width: 640px)" />
+        <link rel="preload" as="image" href="/assets/dish-boeuf.avif"        type="image/avif" media="(min-width: 641px)" />
+      </head>
       <body>
         <SmoothScroll>
           {/* Skip to main content — keyboard & screen reader navigation (WCAG 2.4.1) */}
