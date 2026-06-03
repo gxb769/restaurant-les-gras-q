@@ -5,6 +5,7 @@ import { getDictionary, hasLocale, locales } from "@/lib/i18n/getDictionary";
 import "@/app/globals.css";
 import Grain from "@/components/ui/Grain";
 import Analytics from "@/components/ui/Analytics";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 import dynamic from "next/dynamic";
 
 // CookieBanner uses Framer Motion — lazy-load so it never enters the initial JS
@@ -100,24 +101,26 @@ export default async function LangLayout({
       className={`${cormorant.variable} ${inter.variable}`}
     >
       <body>
-        {/* Skip to main content — keyboard & screen reader navigation (WCAG 2.4.1) */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-5 focus:py-3 focus:rounded-full focus:bg-gold focus:text-ink focus:text-[13px] focus:font-[800] focus:tracking-[0.04em] focus:shadow-[0_8px_24px_rgba(196,160,93,0.4)]"
-        >
-          Aller au contenu principal
-        </a>
+        <SmoothScroll>
+          {/* Skip to main content — keyboard & screen reader navigation (WCAG 2.4.1) */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-5 focus:py-3 focus:rounded-full focus:bg-gold focus:text-ink focus:text-[13px] focus:font-[800] focus:tracking-[0.04em] focus:shadow-[0_8px_24px_rgba(196,160,93,0.4)]"
+          >
+            Aller au contenu principal
+          </a>
 
-        {/* Ambient dark canvas — single warm-dark tone with drifting gold orbs */}
-        <div aria-hidden="true" className="fixed inset-0 -z-10 overflow-hidden pointer-events-none select-none">
-          <div className="ambient-orb-1" />
-          <div className="ambient-orb-2" />
-        </div>
-        <PageTransition />
-        <Grain />
-        <Analytics />
-        <CookieBanner lang={lang} strings={dict.cookie} />
-        {children}
+          {/* Ambient dark canvas — single warm-dark tone with drifting gold orbs */}
+          <div aria-hidden="true" className="fixed inset-0 -z-10 overflow-hidden pointer-events-none select-none">
+            <div className="ambient-orb-1" />
+            <div className="ambient-orb-2" />
+          </div>
+          <PageTransition />
+          <Grain />
+          <Analytics />
+          <CookieBanner lang={lang} strings={dict.cookie} />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
